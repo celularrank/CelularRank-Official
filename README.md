@@ -1,248 +1,624 @@
 # CelularRank-Official
 <!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+/* ========================================
+   CELULARRANK-OFFICIAL
+   TEMA AZUL
+======================================== */
+
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #061326;
+    color: #ffffff;
+    line-height: 1.6;
+}
+
+
+/* ========================================
+   HEADER
+======================================== */
 
-    <title>CelularRank-Official</title>
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 
-    <meta
-        name="description"
-        content="Compare celulares, PCs e notebooks por desempenho, jogos, custo-benefício e preço."
-    >
+    width: 100%;
+    padding: 18px 7%;
 
-    <link rel="stylesheet" href="css/style.css">
-</head>
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 
-<body>
+    background: rgba(5, 18, 38, 0.95);
+    border-bottom: 1px solid #12345d;
 
-    <!-- ==============================
-         CABEÇALHO
-    =============================== -->
+    backdrop-filter: blur(12px);
+}
 
-    <header class="header">
+.logo {
+    font-size: 25px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+}
 
-        <div class="logo">
-            <span>Celular</span>Rank
-        </div>
+.logo span {
+    color: #1683ff;
+}
 
-        <nav>
-            <a href="#inicio">Início</a>
-            <a href="#produtos">Produtos</a>
-            <a href="#como-funciona">Como funciona</a>
-        </nav>
+nav {
+    display: flex;
+    gap: 28px;
+}
 
-    </header>
+nav a {
+    color: #b9cbe2;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.2s;
+}
 
+nav a:hover {
+    color: #1683ff;
+}
 
-    <!-- ==============================
-         INÍCIO
-    =============================== -->
 
-    <main id="inicio">
+/* ========================================
+   HERO / INÍCIO
+======================================== */
 
-        <section class="hero">
+.hero {
+    min-height: 680px;
 
-            <div class="hero-content">
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-                <div class="badge">
-                    🚀 Compare antes de comprar
-                </div>
+    padding: 90px 7%;
 
-                <h1>
-                    Encontre o produto
-                    <span>ideal para você</span>
-                </h1>
+    text-align: center;
 
-                <p>
-                    Compare celulares, PCs e notebooks por desempenho,
-                    jogos, custo-benefício e preço.
-                </p>
+    background:
+        radial-gradient(
+            circle at 50% 0%,
+            rgba(0, 119, 255, 0.28),
+            transparent 45%
+        ),
+        linear-gradient(
+            180deg,
+            #071a35 0%,
+            #061326 100%
+        );
+}
 
+.hero-content {
+    width: 100%;
+    max-width: 950px;
+}
 
-                <!-- PESQUISA -->
 
-                <div class="search-box">
+/* ========================================
+   BADGE
+======================================== */
 
-                    <input
-                        type="text"
-                        id="searchInput"
-                        placeholder="🔎 Pesquise um celular, PC ou notebook..."
-                        autocomplete="off"
-                    >
+.badge {
+    display: inline-block;
 
-                    <button onclick="pesquisar()">
-                        Pesquisar
-                    </button>
+    padding: 9px 17px;
+    margin-bottom: 22px;
 
-                </div>
+    border: 1px solid #155aa3;
+    border-radius: 50px;
 
+    background: rgba(16, 104, 190, 0.12);
 
-                <!-- CATEGORIAS -->
+    color: #53aaff;
 
-                <div class="categories">
+    font-size: 14px;
+    font-weight: 700;
 
-                    <button onclick="filtrarCategoria('celular')">
-                        📱 Celulares
-                    </button>
+    box-shadow: 0 0 25px rgba(0, 119, 255, 0.08);
+}
 
-                    <button onclick="filtrarCategoria('pc')">
-                        🖥️ PCs
-                    </button>
 
-                    <button onclick="filtrarCategoria('notebook')">
-                        💻 Notebooks
-                    </button>
+/* ========================================
+   TÍTULO
+======================================== */
 
-                </div>
+.hero h1 {
+    font-size: clamp(42px, 7vw, 76px);
+    line-height: 1.05;
 
-            </div>
+    letter-spacing: -2px;
 
-        </section>
+    margin-bottom: 25px;
+}
 
+.hero h1 span {
+    display: block;
 
-        <!-- ==============================
-             RESULTADOS
-        =============================== -->
+    color: #1683ff;
 
-        <section id="produtos" class="products-section">
+    text-shadow:
+        0 0 30px rgba(22, 131, 255, 0.25);
+}
 
-            <div class="section-title">
+.hero p {
+    max-width: 700px;
 
-                <span>🔎 PESQUISA</span>
+    margin: 0 auto;
 
-                <h2>
-                    Encontre seu próximo dispositivo
-                </h2>
+    color: #a9bdd5;
 
-                <p>
-                    Pesquise pelo nome do produto para ver sua avaliação.
-                </p>
+    font-size: 18px;
+}
 
-            </div>
 
+/* ========================================
+   PESQUISA
+======================================== */
 
-            <div id="resultados" class="products-grid">
+.search-box {
+    max-width: 800px;
 
-                <!-- Produtos aparecem aqui pelo JavaScript -->
+    margin: 38px auto 20px;
 
-            </div>
+    display: flex;
+    align-items: center;
 
-        </section>
+    padding: 7px;
 
+    background: #0b203b;
 
-        <!-- ==============================
-             COMO FUNCIONA
-        =============================== -->
+    border: 1px solid #1b4e83;
 
-        <section id="como-funciona" class="how-section">
+    border-radius: 15px;
 
-            <div class="section-title">
+    box-shadow:
+        0 15px 45px rgba(0, 0, 0, 0.25),
+        0 0 30px rgba(0, 119, 255, 0.08);
+}
 
-                <span>📊 COMO FUNCIONA</span>
+.search-box:focus-within {
+    border-color: #1683ff;
 
-                <h2>
-                    Avaliamos o que realmente importa
-                </h2>
+    box-shadow:
+        0 0 0 3px rgba(22, 131, 255, 0.12),
+        0 15px 45px rgba(0, 0, 0, 0.25);
+}
 
-            </div>
+.search-box input {
+    flex: 1;
 
+    min-width: 0;
 
-            <div class="features">
+    padding: 17px;
 
-                <div class="feature">
+    border: none;
+    outline: none;
 
-                    <div class="feature-icon">
-                        ⚡
-                    </div>
+    background: transparent;
 
-                    <h3>Desempenho</h3>
+    color: #ffffff;
 
-                    <p>
-                        Avaliação baseada no hardware e desempenho
-                        geral do dispositivo.
-                    </p>
+    font-size: 16px;
+}
 
-                </div>
+.search-box input::placeholder {
+    color: #7189a5;
+}
 
+.search-box button {
+    padding: 15px 25px;
 
-                <div class="feature">
+    border: none;
+    border-radius: 11px;
 
-                    <div class="feature-icon">
-                        🎮
-                    </div>
+    background: #1683ff;
 
-                    <h3>Jogos</h3>
+    color: #ffffff;
 
-                    <p>
-                        Veja como o aparelho ou computador se
-                        comporta em diferentes níveis de jogos.
-                    </p>
+    font-size: 15px;
+    font-weight: 800;
 
-                </div>
+    cursor: pointer;
 
+    transition: 0.2s;
 
-                <div class="feature">
+    box-shadow:
+        0 8px 20px rgba(22, 131, 255, 0.22);
+}
 
-                    <div class="feature-icon">
-                        💰
-                    </div>
+.search-box button:hover {
+    background: #3194ff;
 
-                    <h3>Custo-benefício</h3>
+    transform: translateY(-2px);
+}
 
-                    <p>
-                        Descubra se o desempenho compensa o preço
-                        do produto.
-                    </p>
 
-                </div>
+/* ========================================
+   CATEGORIAS
+======================================== */
 
+.categories {
+    display: flex;
 
-                <div class="feature">
+    justify-content: center;
 
-                    <div class="feature-icon">
-                        🛒
-                    </div>
+    gap: 12px;
 
-                    <h3>Onde comprar</h3>
+    flex-wrap: wrap;
 
-                    <p>
-                        Encontre links para lojas onde o produto
-                        pode ser comprado.
-                    </p>
+    margin-top: 18px;
+}
 
-                </div>
+.categories button {
+    padding: 12px 20px;
 
-            </div>
+    border: 1px solid #1c4771;
+    border-radius: 11px;
 
-        </section>
+    background: #0b1e35;
 
-    </main>
+    color: #c8d8eb;
 
+    font-weight: 700;
 
-    <!-- ==============================
-         RODAPÉ
-    =============================== -->
+    cursor: pointer;
 
-    <footer>
+    transition: 0.2s;
+}
 
-        <div class="logo">
-            <span>Celular</span>Rank
-        </div>
+.categories button:hover {
+    background: #0e3158;
 
-        <p>
-            Compare. Avalie. Escolha melhor.
-        </p>
+    border-color: #1683ff;
 
-        <small>
-            © 2026 CelularRank-Official
-        </small>
+    color: #ffffff;
 
-    </footer>
+    transform: translateY(-2px);
+}
 
 
-    <script src="js/app.js"></script>
+/* ========================================
+   PRODUTOS
+======================================== */
 
-</body>
-</html>
+.products-section {
+    padding: 95px 7%;
+
+    background: #081a31;
+
+    border-top: 1px solid #0d2a4b;
+}
+
+.section-title {
+    text-align: center;
+
+    margin-bottom: 48px;
+}
+
+.section-title span {
+    color: #1683ff;
+
+    font-size: 13px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.5px;
+}
+
+.section-title h2 {
+    margin: 8px 0;
+
+    font-size: clamp(30px, 5vw, 42px);
+}
+
+.section-title p {
+    color: #8fa8c4;
+}
+
+
+/* ========================================
+   CARDS
+======================================== */
+
+.products-grid {
+    max-width: 1200px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(280px, 1fr));
+
+    gap: 22px;
+}
+
+.product-card {
+    padding: 25px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #0d2747,
+            #0a1c32
+        );
+
+    border: 1px solid #19456f;
+
+    border-radius: 18px;
+
+    transition: 0.25s;
+}
+
+.product-card:hover {
+    transform: translateY(-6px);
+
+    border-color: #1683ff;
+
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.25),
+        0 0 25px rgba(22, 131, 255, 0.08);
+}
+
+.product-type {
+    color: #53aaff;
+
+    font-size: 13px;
+
+    font-weight: 800;
+}
+
+.product-card h3 {
+    margin: 8px 0 20px;
+
+    font-size: 22px;
+}
+
+.score {
+    display: flex;
+
+    justify-content: space-between;
+
+    padding: 11px 0;
+
+    border-bottom: 1px solid #183652;
+
+    color: #a8bbd0;
+}
+
+.score strong {
+    color: #ffffff;
+}
+
+.cost {
+    margin-top: 18px;
+
+    padding: 13px;
+
+    border-radius: 11px;
+
+    background: #092d49;
+
+    border: 1px solid #14547e;
+
+    color: #57c6ff;
+
+    font-weight: 800;
+}
+
+.buy-button {
+    width: 100%;
+
+    margin-top: 18px;
+
+    padding: 14px;
+
+    border: none;
+
+    border-radius: 11px;
+
+    background: #1683ff;
+
+    color: #ffffff;
+
+    font-weight: 800;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.buy-button:hover {
+    background: #3194ff;
+
+    transform: translateY(-2px);
+}
+
+.no-results {
+    grid-column: 1 / -1;
+
+    padding: 50px;
+
+    text-align: center;
+
+    color: #8fa8c4;
+}
+
+
+/* ========================================
+   COMO FUNCIONA
+======================================== */
+
+.how-section {
+    padding: 95px 7%;
+
+    background: #061326;
+}
+
+.features {
+    max-width: 1200px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(220px, 1fr));
+
+    gap: 20px;
+}
+
+.feature {
+    padding: 30px;
+
+    text-align: center;
+
+    background: #0a1d34;
+
+    border: 1px solid #173b60;
+
+    border-radius: 18px;
+
+    transition: 0.2s;
+}
+
+.feature:hover {
+    border-color: #1683ff;
+
+    transform: translateY(-4px);
+}
+
+.feature-icon {
+    width: 65px;
+    height: 65px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    margin: 0 auto 17px;
+
+    border-radius: 16px;
+
+    background: #0c3158;
+
+    font-size: 30px;
+}
+
+.feature h3 {
+    margin-bottom: 10px;
+}
+
+.feature p {
+    color: #8fa8c4;
+}
+
+
+/* ========================================
+   FOOTER
+======================================== */
+
+footer {
+    padding: 55px 7%;
+
+    text-align: center;
+
+    background: #030b16;
+
+    border-top: 1px solid #102b49;
+
+    color: #7f95ad;
+}
+
+footer .logo {
+    color: #ffffff;
+
+    margin-bottom: 8px;
+}
+
+footer small {
+    display: block;
+
+    margin-top: 20px;
+
+    color: #60758d;
+}
+
+
+/* ========================================
+   RESPONSIVIDADE
+======================================== */
+
+@media (max-width: 700px) {
+
+    .header {
+        padding: 15px 5%;
+    }
+
+    nav {
+        display: none;
+    }
+
+    .hero {
+        min-height: 620px;
+
+        padding: 65px 5%;
+    }
+
+    .hero h1 {
+        font-size: 44px;
+
+        letter-spacing: -1.5px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    .search-box {
+        flex-direction: column;
+
+        gap: 7px;
+
+        padding: 7px;
+    }
+
+    .search-box input {
+        width: 100%;
+
+        padding: 15px;
+    }
+
+    .search-box button {
+        width: 100%;
+    }
+
+    .products-section,
+    .how-section {
+        padding: 70px 5%;
+    }
+
+    .section-title h2 {
+        font-size: 30px;
+    }
+
+    .categories button {
+        flex: 1;
+
+        min-width: 140px;
+    }
+}
