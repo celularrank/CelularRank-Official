@@ -778,8 +778,6 @@ const marcasCelulares = [
     "OPPO",
     "Nothing"
 ];
-];
-
 
 /* =========================================================
    📦 TODOS OS PRODUTOS
