@@ -513,16 +513,16 @@
     <script>
 
         const lista =
-            document.getElementById("listaPCs");
+            document.getElementById(listaPCs);
 
         const busca =
-            document.getElementById("busca");
+            document.getElementById(busca);
 
         const ordenacao =
-            document.getElementById("ordenacao");
+            document.getElementById(ordenacao);
 
         const contador =
-            document.getElementById("contador");
+            document.getElementById(contador);
 
 
         /* ========================================
@@ -555,7 +555,7 @@
         function notaProduto(produto) {
 
             if (
-                typeof produto.nota === "number"
+                typeof produto.nota === number
             ) {
                 return produto.nota;
             }
@@ -565,28 +565,28 @@
 
 
             if (
-                typeof produto.desempenho === "number"
+                typeof produto.desempenho === number
             ) {
                 notas.push(produto.desempenho);
             }
 
 
             if (
-                typeof produto.jogos === "number"
+                typeof produto.jogos === number
             ) {
                 notas.push(produto.jogos);
             }
 
 
             if (
-                typeof produto.trabalho === "number"
+                typeof produto.trabalho === number
             ) {
                 notas.push(produto.trabalho);
             }
 
 
             if (
-                typeof produto.qualidade === "number"
+                typeof produto.qualidade === number
             ) {
                 notas.push(produto.qualidade);
             }
@@ -934,7 +934,7 @@
                     break;
 
 
-                case "qualidade":
+                case qualidade:
 
                     resultado.sort(
                         (a, b) =>
