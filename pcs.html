@@ -4,16 +4,13 @@
 <head>
     <meta charset="UTF-8">
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>PCs | CelularRank-Official</title>
 
     <meta
         name="description"
-        content="Compare PCs e notebooks por preço, desempenho, jogos, trabalho e qualidade
+        content="Compare PCs e notebooks por preço, desempenho, jogos, trabalho e qualidade."
     >
 
     <link rel="stylesheet" href="style.css">
@@ -40,12 +37,9 @@
         .voltar {
             display: inline-block;
             margin-bottom: 25px;
-
             color: #58b7ff;
             text-decoration: none;
-
             font-weight: bold;
-
             transition: 0.2s ease;
         }
 
@@ -72,9 +66,7 @@
         .pagina-topo p {
             color: #b9c7dd;
             line-height: 1.6;
-
             max-width: 680px;
-
             margin: 0 auto;
         }
 
@@ -82,31 +74,22 @@
 
         .controles {
             display: grid;
-
-            grid-template-columns: 1 fr 230 px;
-
-            gap: 15 px;
-
-            margin-bottom: 30 px;
+            grid-template-columns: 1fr 230px;
+            gap: 15px;
+            margin-bottom: 30px;
         }
 
         .campo,
         .select {
             width: 100%;
-
-            padding: 14 px 16 px;
-
-            border-radius: 12 px;
-
-            border: 1 px solid rgba (255,255,255,0.12);
-
+            padding: 14px 16px;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.12);
             background: #0b2552;
-
             color: white;
-
             outline: none;
-
-            font-size: 15 px;
+            font-size: 15px;
+            box-sizing: border-box;
         }
 
         .campo::placeholder {
@@ -127,15 +110,10 @@
 
         .informacoes {
             display: flex;
-
             justify-content: space-between;
-
             align-items: center;
-
             margin-bottom: 20px;
-
             color: #b9c7dd;
-
             font-size: 14px;
         }
 
@@ -143,9 +121,7 @@
 
         .produtos {
             display: grid;
-
             grid-template-columns: repeat(3, 1fr);
-
             gap: 20px;
         }
 
@@ -153,13 +129,9 @@
 
         .produto {
             background: #0b2552;
-
-            border: 1 px solid rgba (255,255,255,0.10);
-
-            border-radius: 20 px;
-
+            border: 1px solid rgba(255, 255, 255, 0.10);
+            border-radius: 20px;
             padding: 22px;
-
             transition:
                 transform 0.25s ease,
                 border-color 0.25s ease,
@@ -167,31 +139,21 @@
         }
 
         .produto:hover {
-            transform: translateY (-5 px);
-
+            transform: translateY(-5px);
             border-color: #35a9ff;
-
-            box-shadow:
-                0 12px 35 px rgba (0,0,0,0.25);
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.25);
         }
 
         /* MARCA */
 
         .marca {
             display: inline-block;
-
             padding: 6px 10px;
-
-            background: rgba(53,169,255,0.12);
-
+            background: rgba(53, 169, 255, 0.12);
             color: #58b7ff;
-
             border-radius: 20px;
-
             font-size: 12px;
-
             font-weight: bold;
-
             margin-bottom: 12px;
         }
 
@@ -199,7 +161,6 @@
 
         .produto h2 {
             font-size: 21px;
-
             margin-bottom: 10px;
         }
 
@@ -207,11 +168,8 @@
 
         .preco {
             font-size: 27px;
-
             font-weight: bold;
-
             color: white;
-
             margin-bottom: 18px;
         }
 
@@ -219,21 +177,13 @@
 
         .nota {
             display: inline-flex;
-
             align-items: center;
-
             gap: 5px;
-
             background: #123a78;
-
             color: white;
-
             padding: 7px 10px;
-
             border-radius: 8px;
-
             font-size: 13px;
-
             margin-bottom: 18px;
         }
 
@@ -241,35 +191,26 @@
 
         .especificacoes {
             display: grid;
-
             grid-template-columns: 1fr 1fr;
-
             gap: 10px;
-
             margin-bottom: 20px;
         }
 
         .spec {
-            background: rgba(255,255,255,0.04);
-
+            background: rgba(255, 255, 255, 0.04);
             border-radius: 10px;
-
             padding: 10px;
         }
 
         .spec small {
             display: block;
-
             color: #8294b2;
-
             font-size: 11px;
-
             margin-bottom: 4px;
         }
 
         .spec strong {
             font-size: 13px;
-
             color: #e5efff;
         }
 
@@ -277,41 +218,29 @@
 
         .avaliacoes {
             display: flex;
-
             flex-direction: column;
-
             gap: 10px;
         }
 
         .avaliacao {
             display: grid;
-
-            grid-template-columns: 70px 1fr 30px;
-
+            grid-template-columns: 80px 1fr 30px;
             align-items: center;
-
             gap: 8px;
-
             font-size: 12px;
-
             color: #b9c7dd;
         }
 
         .barra {
             height: 7px;
-
             background: #061530;
-
             border-radius: 10px;
-
             overflow: hidden;
         }
 
         .barra div {
             height: 100%;
-
             background: #35a9ff;
-
             border-radius: 10px;
         }
 
@@ -319,21 +248,15 @@
 
         .sem-resultados {
             grid-column: 1 / -1;
-
             text-align: center;
-
             padding: 60px 20px;
-
             background: #0b2552;
-
             border-radius: 20px;
-
             color: #b9c7dd;
         }
 
         .sem-resultados h2 {
             color: white;
-
             margin-bottom: 10px;
         }
 
@@ -363,9 +286,7 @@
 
             .informacoes {
                 flex-direction: column;
-
                 align-items: flex-start;
-
                 gap: 8px;
             }
 
@@ -374,7 +295,6 @@
     </style>
 
 </head>
-
 
 <body>
 
@@ -386,16 +306,11 @@
 
         <div class="container">
 
-
             <!-- VOLTAR -->
 
-            <a
-                href="index.html"
-                class="voltar"
-            >
+            <a href="index.html" class="voltar">
                 ← Voltar para o início
             </a>
-
 
             <!-- CABEÇALHO -->
 
@@ -418,7 +333,6 @@
 
             </section>
 
-
             <!-- BUSCA E ORDENAÇÃO -->
 
             <section class="controles">
@@ -431,11 +345,7 @@
                     autocomplete="off"
                 >
 
-
-                <select
-                    id="ordenacao"
-                    class="select"
-                >
+                <select id="ordenacao" class="select">
 
                     <option value="ranking">
                         🏆 Melhor ranking
@@ -469,7 +379,6 @@
 
             </section>
 
-
             <!-- INFORMAÇÕES -->
 
             <div class="informacoes">
@@ -484,13 +393,9 @@
 
             </div>
 
-
             <!-- LISTA -->
 
-            <section
-                id="listaPCs"
-                class="produtos"
-            >
+            <section id="listaPCs" class="produtos">
                 <!-- PCs aparecem aqui -->
             </section>
 
@@ -503,7 +408,7 @@
          📦 BANCO DE DADOS
     ========================================= -->
 
-    <script src="dados.js"></script>
+    <script src="./dados.js"></script>
 
 
     <!-- ========================================
@@ -512,17 +417,21 @@
 
     <script>
 
+        /* ========================================
+           ELEMENTOS
+        ======================================== */
+
         const lista =
-            document.getElementById(listaPCs);
+            document.getElementById("listaPCs");
 
         const busca =
-            document.getElementById(busca);
+            document.getElementById("busca");
 
         const ordenacao =
-            document.getElementById(ordenacao);
+            document.getElementById("ordenacao");
 
         const contador =
-            document.getElementById(contador);
+            document.getElementById("contador");
 
 
         /* ========================================
@@ -531,22 +440,23 @@
 
         function precoBRL(valor) {
 
-    if (
-        valor === null ||
-        valor === undefined ||
-        valor === "" ||
-        !Number.isFinite(Number(valor)) ||
-        Number(valor) <= 0
-    ) {
-        return "Preço não informado";
-    }
+            if (
+                valor === null ||
+                valor === undefined ||
+                valor === "" ||
+                !Number.isFinite(Number(valor)) ||
+                Number(valor) <= 0
+            ) {
+                return "Preço não informado";
+            }
 
-    return Number(valor).toLocaleString("pt-BR", {
-        style: "currency",
-        currency: "BRL"
-    });
+            return Number(valor).toLocaleString("pt-BR", {
+                style: "currency",
+                currency: "BRL"
+            });
 
         }
+
 
         /* ========================================
            🏆 NOTA GERAL
@@ -554,60 +464,34 @@
 
         function notaProduto(produto) {
 
-            if (
-                typeof produto.nota === number
-            ) {
-                return produto.nota;
-            }
-
-
             const notas = [];
 
-
-            if (
-                typeof produto.desempenho === number
-            ) {
+            if (typeof produto.desempenho === "number") {
                 notas.push(produto.desempenho);
             }
 
-
-            if (
-                typeof produto.jogos === number
-            ) {
+            if (typeof produto.jogos === "number") {
                 notas.push(produto.jogos);
             }
 
-
-            if (
-                typeof produto.trabalho === number
-            ) {
+            if (typeof produto.trabalho === "number") {
                 notas.push(produto.trabalho);
             }
 
-
-            if (
-                typeof produto.qualidade === number
-            ) {
+            if (typeof produto.qualidade === "number") {
                 notas.push(produto.qualidade);
             }
-
 
             if (notas.length === 0) {
                 return 0;
             }
 
-
-            const soma =
-                notas.reduce(
-                    (total, nota) =>
-                        total + nota,
-                    0
-                );
-
-
-            return Math.round(
-                soma / notas.length
+            const soma = notas.reduce(
+                (total, nota) => total + nota,
+                0
             );
+
+            return Math.round(soma / notas.length);
 
         }
 
@@ -618,12 +502,9 @@
 
         function avaliacao(nome, valor) {
 
-            if (
-                typeof valor !== "number"
-            ) {
+            if (typeof valor !== "number") {
                 return "";
             }
-
 
             return `
                 <div class="avaliacao">
@@ -631,16 +512,10 @@
                     <span>${nome}</span>
 
                     <div class="barra">
-
-                        <div
-                            style="width:${valor}%"
-                        ></div>
-
+                        <div style="width:${valor}%"></div>
                     </div>
 
-                    <strong>
-                        ${valor}
-                    </strong>
+                    <strong>${valor}</strong>
 
                 </div>
             `;
@@ -652,14 +527,9 @@
            🃏 CRIAR CARD
         ======================================== */
 
-        function criarCard(
-            produto,
-            posicao
-        ) {
+        function criarCard(produto, posicao) {
 
-            const nota =
-                notaProduto(produto);
-
+            const nota = notaProduto(produto);
 
             return `
                 <article class="produto">
@@ -668,40 +538,31 @@
                         ${produto.marca || "Marca"}
                     </span>
 
-
                     <h2>
-                        ${produto.nome}
+                        ${produto.nome || "Produto sem nome"}
                     </h2>
-
 
                     <div class="preco">
                         ${precoBRL(produto.preco)}
                     </div>
 
-
                     <div class="nota">
                         🏆 Nota ${nota}/100
                     </div>
 
-
                     <div class="especificacoes">
 
-
-                        <div class= spec>
+                        <div class="spec">
 
                             <small>
                                 Processador
                             </small>
 
                             <strong>
-                                ${
-                                    produto.processador ||
-                                    "Não informado"
-                                }
+                                ${produto.processador || "Não informado"}
                             </strong>
 
                         </div>
-
 
                         <div class="spec">
 
@@ -710,14 +571,10 @@
                             </small>
 
                             <strong>
-                                ${
-                                    produto.ram ||
-                                    "Não informado"
-                                }
+                                ${produto.ram || "Não informado"}
                             </strong>
 
                         </div>
-
 
                         <div class="spec">
 
@@ -726,14 +583,10 @@
                             </small>
 
                             <strong>
-                                ${
-                                    produto.armazenamento ||
-                                    "Não informado"
-                                }
+                                ${produto.armazenamento || "Não informado"}
                             </strong>
 
                         </div>
-
 
                         <div class="spec">
 
@@ -742,14 +595,10 @@
                             </small>
 
                             <strong>
-                                ${
-                                    produto.placaVideo ||
-                                    "Não informado"
-                                }
+                                ${produto.video || "Não informado"}
                             </strong>
 
                         </div>
-
 
                         <div class="spec">
 
@@ -758,14 +607,10 @@
                             </small>
 
                             <strong>
-                                ${
-                                    produto.categoria ||
-                                    "PC"
-                                }
+                                ${produto.categoria || "PC"}
                             </strong>
 
                         </div>
-
 
                         <div class="spec">
 
@@ -781,26 +626,25 @@
 
                     </div>
 
-
                     <div class="avaliacoes">
 
                         ${avaliacao(
-                            Desempenho,
+                            "Desempenho",
                             produto.desempenho
                         )}
 
                         ${avaliacao(
-                            Jogos,
+                            "Jogos",
                             produto.jogos
                         )}
 
                         ${avaliacao(
-                            Trabalho,
+                            "Trabalho",
                             produto.trabalho
                         )}
 
                         ${avaliacao(
-                            Qualidade,
+                            "Qualidade",
                             produto.qualidade
                         )}
 
@@ -823,53 +667,41 @@
                     .toLowerCase()
                     .trim();
 
-
-            let resultado = [...pcs];
+            let resultado = Array.isArray(window.pcs)
+                ? [...window.pcs]
+                : [];
 
 
             /* BUSCA */
 
             if (texto) {
 
-                resultado =
-                    resultado.filter(
-                        produto => {
+                resultado = resultado.filter(produto => {
 
-                            const nome =
-                                String(
-                                    produto.nome || ""
-                                ).toLowerCase();
+                    const nome =
+                        String(produto.nome || "")
+                            .toLowerCase();
 
+                    const marca =
+                        String(produto.marca || "")
+                            .toLowerCase();
 
-                            const marca =
-                                String(
-                                    produto.marca || ""
-                                ).toLowerCase();
+                    const processador =
+                        String(produto.processador || "")
+                            .toLowerCase();
 
+                    const categoria =
+                        String(produto.categoria || "")
+                            .toLowerCase();
 
-                            const processador =
-                                String(
-                                    produto.processador ||
-                                    ""
-                                ).toLowerCase();
-
-
-                            const categoria =
-                                String(
-                                    produto.categoria ||
-                                    ""
-                                ).toLowerCase();
-
-
-                            return (
-                                nome.includes(texto) ||
-                                marca.includes(texto) ||
-                                processador.includes(texto) ||
-   A                             categoria.includes(texto)
-                            );
-
-                        }
+                    return (
+                        nome.includes(texto) ||
+                        marca.includes(texto) ||
+                        processador.includes(texto) ||
+                        categoria.includes(texto)
                     );
+
+                });
 
             }
 
@@ -878,30 +710,49 @@
 
             switch (ordenacao.value) {
 
+                case "menor-preco":
 
-                case menor-preco:
+                    resultado.sort((a, b) => {
 
-                    resultado.sort(
-                        (a, b) =>
-                            Number(a.preco) -
-                            Number(b.preco)
-                    );
+                        const precoA =
+                            typeof a.preco === "number"
+                                ? a.preco
+                                : Infinity;
 
-                    break;
+                        const precoB =
+                            typeof b.preco === "number"
+                                ? b.preco
+                                : Infinity;
 
+                        return precoA - precoB;
 
-                case maior-preco:
-
-                    resultado.sort(
-                        (a, b) =>
-                            Number(b.preco) -
-                            Number(a.preco)
-                    );
+                    });
 
                     break;
 
 
-                case desempenho:
+                case "maior-preco":
+
+                    resultado.sort((a, b) => {
+
+                        const precoA =
+                            typeof a.preco === "number"
+                                ? a.preco
+                                : -Infinity;
+
+                        const precoB =
+                            typeof b.preco === "number"
+                                ? b.preco
+                                : -Infinity;
+
+                        return precoB - precoA;
+
+                    });
+
+                    break;
+
+
+                case "desempenho":
 
                     resultado.sort(
                         (a, b) =>
@@ -912,7 +763,7 @@
                     break;
 
 
-                case jogos:
+                case "jogos":
 
                     resultado.sort(
                         (a, b) =>
@@ -923,7 +774,7 @@
                     break;
 
 
-                case trabalho:
+                case "trabalho":
 
                     resultado.sort(
                         (a, b) =>
@@ -934,7 +785,7 @@
                     break;
 
 
-                case qualidade:
+                case "qualidade":
 
                     resultado.sort(
                         (a, b) =>
@@ -969,7 +820,6 @@
 
             lista.innerHTML = "";
 
-
             contador.textContent =
                 `${produtos.length} produto${
                     produtos.length !== 1
@@ -982,7 +832,7 @@
                 }`;
 
 
-             (produtos.length === 0) {
+            if (produtos.length === 0) {
 
                 lista.innerHTML = `
 
@@ -1005,17 +855,15 @@
             }
 
 
-            produtos.forEach(
-                (produto, index) => {
+            produtos.forEach((produto, index) => {
 
-                    lista.innerHTML +=
-                        criarCard(
-                            produto,
-                            index + 1
-                        );
+                lista.innerHTML +=
+                    criarCard(
+                        produto,
+                        index + 1
+                    );
 
-                }
-            );
+            });
 
         }
 
@@ -1029,9 +877,8 @@
             filtrarProdutos
         );
 
-
         ordenacao.addEventListener(
-            change,
+            "change",
             filtrarProdutos
         );
 
@@ -1041,8 +888,8 @@
         ======================================== */
 
         if (
-            typeof pcs !== "undefined" &&
-            Array.isArray(pcs)
+            typeof window.pcs !== "undefined" &&
+            Array.isArray(window.pcs)
         ) {
 
             filtrarProdutos();
@@ -1058,9 +905,15 @@
                     </h2>
 
                     <p>
-                        Verifique se o arquivo
+                        O arquivo
                         <strong>dados.js</strong>
-                        está na mesma pasta.
+                        não foi carregado.
+                    </p>
+
+                    <p>
+                        Verifique se
+                        <strong>dados.js</strong>
+                        está na mesma pasta deste arquivo.
                     </p>
 
                 </div>
@@ -1076,4 +929,4 @@
 
 </body>
 
-  </html>
+</html>
