@@ -768,43 +768,26 @@ const marcasCelulares = [
     "Samsung",
     "Apple",
     "Xiaomi",
+    "POCO",
     "Motorola",
     "Realme",
     "ASUS",
-    "POCO",
     "Google",
     "OnePlus",
     "Honor",
     "OPPO",
     "Nothing"
 ];
-
-const marcasPCs = [
-    "Lenovo",
-    "ASUS",
-    "Acer",
-    "Dell",
-    "HP",
-    "Intel",
-    "AMD",
-    "MSI",
-    "Gigabyte"
 ];
 
 
 /* =========================================================
    📦 TODOS OS PRODUTOS
 ========================================================= */
-
 const todosProdutos = [
     ...celulares,
     ...pcs
 ];
-
-
-/* =========================================================
-   💰 FORMATAÇÃO DE PREÇO
-========================================================= */
 
 function precoBRL(valor) {
 
@@ -826,11 +809,6 @@ function precoBRL(valor) {
     });
 }
 
-
-/* =========================================================
-   🏆 NOTA GERAL
-========================================================= */
-
 function calcularNota(produto) {
 
     const desempenho = Number(produto.desempenho) || 0;
@@ -842,32 +820,15 @@ function calcularNota(produto) {
     );
 }
 
-
-/* =========================================================
-   🏆 RANKING
-========================================================= */
-
 function ordenarPorRanking(lista) {
-
-    if (!Array.isArray(lista)) {
-        return [];
-    }
 
     return [...lista].sort(
         (a, b) => calcularNota(b) - calcularNota(a)
     );
+
 }
 
-
-/* =========================================================
-   🔎 PESQUISA
-========================================================= */
-
 function pesquisarProdutos(lista, termo) {
-
-    if (!Array.isArray(lista)) {
-        return [];
-    }
 
     const busca = String(termo || "")
         .toLowerCase()
@@ -880,36 +841,17 @@ function pesquisarProdutos(lista, termo) {
     return lista.filter(produto => {
 
         return (
-            String(produto.nome || "")
-                .toLowerCase()
-                .includes(busca) ||
-
-            String(produto.marca || "")
-                .toLowerCase()
-                .includes(busca) ||
-
-            String(produto.processador || "")
-                .toLowerCase()
-                .includes(busca) ||
-
-            String(produto.categoria || "")
-                .toLowerCase()
-                .includes(busca)
+            String(produto.nome || "").toLowerCase().includes(busca) ||
+            String(produto.marca || "").toLowerCase().includes(busca) ||
+            String(produto.processador || "").toLowerCase().includes(busca) ||
+            String(produto.categoria || "").toLowerCase().includes(busca)
         );
 
     });
+
 }
 
-
-/* =========================================================
-   💰 PRODUTOS COM PREÇO
-========================================================= */
-
 function produtosComPreco(lista) {
-
-    if (!Array.isArray(lista)) {
-        return [];
-    }
 
     return lista.filter(produto => {
 
@@ -918,12 +860,8 @@ function produtosComPreco(lista) {
         return Number.isFinite(preco) && preco > 0;
 
     });
+
 }
-
-
-/* =========================================================
-   📊 ESTATÍSTICAS
-========================================================= */
 
 function estatisticasCatalogo() {
 
@@ -934,12 +872,8 @@ function estatisticasCatalogo() {
         marcasCelulares: marcasCelulares.length,
         marcasPCs: marcasPCs.length
     };
+
 }
-
-
-/* =========================================================
-   🚀 INFORMAÇÕES DO CATÁLOGO
-========================================================= */
 
 console.log("====================================");
 console.log("📱 CELULARRANK");
