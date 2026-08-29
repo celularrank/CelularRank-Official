@@ -154,9 +154,9 @@
         .produto {
             background: #0b2552;
 
-            border: 1px solid rgba(255,255,255,0.10);
+            border: 1 px solid rgba (255,255,255,0.10);
 
-            border-radius: 20px;
+            border-radius: 20 px;
 
             padding: 22px;
 
@@ -167,12 +167,12 @@
         }
 
         .produto:hover {
-            transform: translateY(-5px);
+            transform: translateY (-5 px);
 
             border-color: #35a9ff;
 
             box-shadow:
-                0 12px 35px rgba(0,0,0,0.25);
+                0 12px 35 px rgba (0,0,0,0.25);
         }
 
         /* MARCA */
@@ -865,7 +865,7 @@
                                 nome.includes(texto) ||
                                 marca.includes(texto) ||
                                 processador.includes(texto) ||
-                                categoria.includes(texto)
+   A                             categoria.includes(texto)
                             );
 
                         }
@@ -890,7 +890,7 @@
                     break;
 
 
-                case "maior-preco":
+                case maior-preco:
 
                     resultado.sort(
                         (a, b) =>
@@ -923,7 +923,7 @@
                     break;
 
 
-                case "trabalho":
+                case trabalho:
 
                     resultado.sort(
                         (a, b) =>
@@ -982,7 +982,7 @@
                 }`;
 
 
-            if (produtos.length === 0) {
+             (produtos.length === 0) {
 
                 lista.innerHTML = `
 
@@ -1031,7 +1031,7 @@
 
 
         ordenacao.addEventListener(
-            "change",
+            change,
             filtrarProdutos
         );
 
