@@ -949,8 +949,4 @@ console.log("PCs/Notebooks:", pcs.length);
 console.log("Total:", todosProdutos.length);
 console.log("====================================");
 console.log("✅ dados.js carregado corretamente!");
-
-<script src="dados.js"></script>
-<script src="script.js"></script>
-</body>
-</html>
+<script src="./dados.js"></script>
