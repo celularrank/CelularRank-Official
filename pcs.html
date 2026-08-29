@@ -13,7 +13,7 @@
 
     <meta
         name="description"
-        content="Compare PCs e notebooks por preço, desempenho, jogos, trabalho e qualidade."
+        content="Compare PCs e notebooks por preço, desempenho, jogos, trabalho e qualidade
     >
 
     <link rel="stylesheet" href="style.css">
@@ -83,22 +83,22 @@
         .controles {
             display: grid;
 
-            grid-template-columns: 1fr 230px;
+            grid-template-columns: 1 fr 230 px;
 
-            gap: 15px;
+            gap: 15 px;
 
-            margin-bottom: 30px;
+            margin-bottom: 30 px;
         }
 
         .campo,
         .select {
             width: 100%;
 
-            padding: 14px 16px;
+            padding: 14 px 16 px;
 
-            border-radius: 12px;
+            border-radius: 12 px;
 
-            border: 1px solid rgba(255,255,255,0.12);
+            border: 1 px solid rgba (255,255,255,0.12);
 
             background: #0b2552;
 
@@ -106,7 +106,7 @@
 
             outline: none;
 
-            font-size: 15px;
+            font-size: 15 px;
         }
 
         .campo::placeholder {
@@ -687,7 +687,7 @@
                     <div class="especificacoes">
 
 
-                        <div class="spec">
+                        <div class= spec>
 
                             <small>
                                 Processador
@@ -785,22 +785,22 @@
                     <div class="avaliacoes">
 
                         ${avaliacao(
-                            "Desempenho",
+                            Desempenho,
                             produto.desempenho
                         )}
 
                         ${avaliacao(
-                            "Jogos",
+                            Jogos,
                             produto.jogos
                         )}
 
                         ${avaliacao(
-                            "Trabalho",
+                            Trabalho,
                             produto.trabalho
                         )}
 
                         ${avaliacao(
-                            "Qualidade",
+                            Qualidade,
                             produto.qualidade
                         )}
 
@@ -879,7 +879,7 @@
             switch (ordenacao.value) {
 
 
-                case "menor-preco":
+                case menor-preco:
 
                     resultado.sort(
                         (a, b) =>
@@ -901,7 +901,7 @@
                     break;
 
 
-                case "desempenho":
+                case desempenho:
 
                     resultado.sort(
                         (a, b) =>
@@ -912,7 +912,7 @@
                     break;
 
 
-                case "jogos":
+                case jogos:
 
                     resultado.sort(
                         (a, b) =>
