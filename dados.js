@@ -770,12 +770,12 @@ const pcs = [
 
 const marcasCelulares = [
     "Samsung",
-    "Apple",
-    "Xiaomi",
+   "Apple",
+   "Xiaomi",
+   "POCO",
     "Motorola",
     "Realme",
     "ASUS",
-    "POCO",
     "Google",
     "OnePlus",
     "Honor",
