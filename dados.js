@@ -957,5 +957,6 @@ console.log("Celulares:", celulares.length);
 console.log("PCs/Notebooks:", pcs.length);
 console.log("Total:", todosProdutos.length);
 console.log("====================================");
-<script src="dados.js"></script>
-<script src="script.js"></script>
+
+<script src="./dados.js"></script>
+<script src="./dados.js"></script>
