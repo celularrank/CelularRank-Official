@@ -6,21 +6,20 @@
 
 "use strict";
 
-
 /* =========================================================
    📱 CELULARES
 ========================================================= */
 
 const celulares = [
 
-    // ================= SAMSUNG =================
+    /* ================= SAMSUNG ================= */
 
     {
         id: "samsung-a15-5g",
         nome: "Galaxy A15 5G",
         marca: "Samsung",
         categoria: "Celular",
-        preco:1350,
+        preco: 1350,
         ram: "8 GB",
         armazenamento: "256 GB",
         processador: "Dimensity 6100+",
@@ -113,15 +112,14 @@ const celulares = [
         qualidade: 99
     },
 
-
-    // ================= APPLE =================
+    /* ================= APPLE ================= */
 
     {
         id: "apple-iphone-13",
         nome: "iPhone 13",
         marca: "Apple",
         categoria: "Celular",
-        preco:  2790,
+        preco: 2790,
         ram: "4 GB",
         armazenamento: "128 GB",
         processador: "A15 Bionic",
@@ -186,15 +184,14 @@ const celulares = [
         qualidade: 99
     },
 
-
-    // ================= XIAOMI =================
+    /* ================= XIAOMI ================= */
 
     {
         id: "xiaomi-redmi-note-13",
         nome: "Redmi Note 13",
         marca: "Xiaomi",
         categoria: "Celular",
-        preco:  4000,
+        preco: 4000,
         ram: "8 GB",
         armazenamento: "256 GB",
         processador: "Snapdragon 685",
@@ -245,8 +242,7 @@ const celulares = [
         qualidade: 98
     },
 
-
-    // ================= MOTOROLA =================
+    /* ================= MOTOROLA ================= */
 
     {
         id: "motorola-g54",
@@ -304,8 +300,7 @@ const celulares = [
         qualidade: 95
     },
 
-
-    // ================= REALME =================
+    /* ================= REALME ================= */
 
     {
         id: "realme-c67",
@@ -349,8 +344,7 @@ const celulares = [
         qualidade: 96
     },
 
-
-    // ================= ASUS =================
+    /* ================= ASUS ================= */
 
     {
         id: "asus-zenfone-10",
@@ -380,8 +374,7 @@ const celulares = [
         qualidade: 98
     },
 
-
-    // ================= POCO =================
+    /* ================= POCO ================= */
 
     {
         id: "poco-x6",
@@ -425,8 +418,7 @@ const celulares = [
         qualidade: 93
     },
 
-
-    // ================= GOOGLE =================
+    /* ================= GOOGLE ================= */
 
     {
         id: "google-pixel-8",
@@ -456,8 +448,7 @@ const celulares = [
         qualidade: 98
     },
 
-
-    // ================= ONEPLUS =================
+    /* ================= ONEPLUS ================= */
 
     {
         id: "oneplus-12",
@@ -473,8 +464,7 @@ const celulares = [
         qualidade: 97
     },
 
-
-    // ================= HONOR =================
+    /* ================= HONOR ================= */
 
     {
         id: "honor-90",
@@ -490,8 +480,7 @@ const celulares = [
         qualidade: 91
     },
 
-
-    // ================= OPPO =================
+    /* ================= OPPO ================= */
 
     {
         id: "oppo-reno-11",
@@ -507,8 +496,7 @@ const celulares = [
         qualidade: 91
     },
 
-
-    // ================= NOTHING =================
+    /* ================= NOTHING ================= */
 
     {
         id: "nothing-phone-2",
@@ -523,7 +511,6 @@ const celulares = [
         jogos: 91,
         qualidade: 94
     }
-
 ];
 
 
@@ -532,8 +519,6 @@ const celulares = [
 ========================================================= */
 
 const pcs = [
-
-    // ================= LENOVO =================
 
     {
         id: "lenovo-ideapad-3",
@@ -565,9 +550,6 @@ const pcs = [
         qualidade: 93
     },
 
-
-    // ================= ASUS =================
-
     {
         id: "asus-vivobook",
         nome: "Vivobook",
@@ -597,9 +579,6 @@ const pcs = [
         jogos: 97,
         qualidade: 94
     },
-
-
-    // ================= ACER =================
 
     {
         id: "acer-aspire-5",
@@ -631,9 +610,6 @@ const pcs = [
         qualidade: 92
     },
 
-
-    // ================= DELL =================
-
     {
         id: "dell-inspiron",
         nome: "Inspiron",
@@ -649,9 +625,6 @@ const pcs = [
         qualidade: 89
     },
 
-
-    // ================= HP =================
-
     {
         id: "hp-250",
         nome: "HP 250",
@@ -666,9 +639,6 @@ const pcs = [
         jogos: 64,
         qualidade: 86
     },
-
-
-    // ================= AMD =================
 
     {
         id: "pc-ryzen-5-5600g",
@@ -715,9 +685,6 @@ const pcs = [
         qualidade: 94
     },
 
-
-    // ================= INTEL =================
-
     {
         id: "pc-core-i3",
         nome: "PC Core i3",
@@ -763,9 +730,6 @@ const pcs = [
         qualidade: 96
     },
 
-
-    // ================= MSI =================
-
     {
         id: "msi-katana",
         nome: "MSI Katana",
@@ -781,9 +745,6 @@ const pcs = [
         qualidade: 94
     },
 
-
-    // ================= GIGABYTE =================
-
     {
         id: "gigabyte-g5",
         nome: "Gigabyte G5",
@@ -798,12 +759,13 @@ const pcs = [
         jogos: 94,
         qualidade: 91
     }
-
 ];
 
 
 /* =========================================================
    🏷️ MARCAS
+   IMPORTANTE:
+   Aqui usamos textos, não variáveis.
 ========================================================= */
 
 const marcasCelulares = [
@@ -833,6 +795,7 @@ const marcasPCs = [
     "Gigabyte"
 ];
 
+
 /* =========================================================
    📦 TODOS OS PRODUTOS
 ========================================================= */
@@ -849,22 +812,24 @@ const todosProdutos = [
 
 function precoBRL(valor) {
 
+    const numero = Number(valor);
+
     if (
         valor === null ||
         valor === undefined ||
         valor === "" ||
-        !Number.isFinite(Number(valor)) ||
-        Number(valor) <= 0
+        !Number.isFinite(numero) ||
+        numero <= 0
     ) {
         return "Preço não informado";
     }
 
-    return Number(valor).toLocaleString("pt-BR", {
+    return numero.toLocaleString("pt-BR", {
         style: "currency",
         currency: "BRL"
     });
-
 }
+
 
 /* =========================================================
    🏆 NOTA GERAL
@@ -872,9 +837,9 @@ function precoBRL(valor) {
 
 function calcularNota(produto) {
 
-    const desempenho = produto.desempenho || 0;
-    const jogos = produto.jogos || 0;
-    const qualidade = produto.qualidade || 0;
+    const desempenho = Number(produto.desempenho) || 0;
+    const jogos = Number(produto.jogos) || 0;
+    const qualidade = Number(produto.qualidade) || 0;
 
     return Math.round(
         (desempenho + jogos + qualidade) / 3
@@ -911,10 +876,10 @@ function pesquisarProdutos(lista, termo) {
     return lista.filter(produto => {
 
         return (
-            produto.nome.toLowerCase().includes(busca) ||
-            produto.marca.toLowerCase().includes(busca) ||
-            produto.processador.toLowerCase().includes(busca) ||
-            produto.categoria.toLowerCase().includes(busca)
+            String(produto.nome || "").toLowerCase().includes(busca) ||
+            String(produto.marca || "").toLowerCase().includes(busca) ||
+            String(produto.processador || "").toLowerCase().includes(busca) ||
+            String(produto.categoria || "").toLowerCase().includes(busca)
         );
 
     });
@@ -927,10 +892,12 @@ function pesquisarProdutos(lista, termo) {
 
 function produtosComPreco(lista) {
 
-    return lista.filter(produto =>
-        typeof produto.preco === "number" &&
-        produto.preco > 0
-    );
+    return lista.filter(produto => {
+
+        const preco = Number(produto.preco);
+
+        return Number.isFinite(preco) && preco > 0;
+    });
 }
 
 
@@ -947,7 +914,6 @@ function estatisticasCatalogo() {
         marcasCelulares: marcasCelulares.length,
         marcasPCs: marcasPCs.length
     };
-
 }
 
 
@@ -962,3 +928,6 @@ console.log("Celulares:", celulares.length);
 console.log("PCs/Notebooks:", pcs.length);
 console.log("Total:", todosProdutos.length);
 console.log("====================================");
+console.log("✅ dados.js carregado corretamente!");
+<script src="dados.js"></script>
+<script src="script.js"></script>
