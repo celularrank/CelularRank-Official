@@ -848,18 +848,24 @@ const todosProdutos = [
    💰 FORMATAÇÃO DE PREÇO
 ========================================================= */
 
-function formatarPreco(preco) {
+function precoBRL(valor) {
 
-    if (preco === null || preco === undefined) {
+    if (
+        valor === null ||
+        valor === undefined ||
+        valor === "" ||
+        !Number.isFinite(Number(valor)) ||
+        Number(valor) <= 0
+    ) {
         return "Preço não informado";
     }
 
-    return Number(preco).toLocaleString("pt-BR", {
+    return Number(valor).toLocaleString("pt-BR", {
         style: "currency",
         currency: "BRL"
     });
-}
 
+}
 
 /* =========================================================
    🏆 NOTA GERAL
