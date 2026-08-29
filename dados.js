@@ -760,23 +760,18 @@ const pcs = [
         qualidade: 91
     }
 ];
-
-
 /* =========================================================
    🏷️ MARCAS
-   IMPORTANTE:
-   Aqui usamos textos, não variáveis.
 ========================================================= */
 
 const marcasCelulares = [
-"Samsung",
-"Apple",
-"Xiaomi",
-...
-"POCO",
+    "Samsung",
+    "Apple",
+    "Xiaomi",
     "Motorola",
     "Realme",
     "ASUS",
+    "POCO",
     "Google",
     "OnePlus",
     "Honor",
@@ -854,6 +849,10 @@ function calcularNota(produto) {
 
 function ordenarPorRanking(lista) {
 
+    if (!Array.isArray(lista)) {
+        return [];
+    }
+
     return [...lista].sort(
         (a, b) => calcularNota(b) - calcularNota(a)
     );
@@ -866,6 +865,10 @@ function ordenarPorRanking(lista) {
 
 function pesquisarProdutos(lista, termo) {
 
+    if (!Array.isArray(lista)) {
+        return [];
+    }
+
     const busca = String(termo || "")
         .toLowerCase()
         .trim();
@@ -877,10 +880,21 @@ function pesquisarProdutos(lista, termo) {
     return lista.filter(produto => {
 
         return (
-            String(produto.nome || "").toLowerCase().includes(busca) ||
-            String(produto.marca || "").toLowerCase().includes(busca) ||
-            String(produto.processador || "").toLowerCase().includes(busca) ||
-            String(produto.categoria || "").toLowerCase().includes(busca)
+            String(produto.nome || "")
+                .toLowerCase()
+                .includes(busca) ||
+
+            String(produto.marca || "")
+                .toLowerCase()
+                .includes(busca) ||
+
+            String(produto.processador || "")
+                .toLowerCase()
+                .includes(busca) ||
+
+            String(produto.categoria || "")
+                .toLowerCase()
+                .includes(busca)
         );
 
     });
@@ -893,11 +907,16 @@ function pesquisarProdutos(lista, termo) {
 
 function produtosComPreco(lista) {
 
+    if (!Array.isArray(lista)) {
+        return [];
+    }
+
     return lista.filter(produto => {
 
         const preco = Number(produto.preco);
 
         return Number.isFinite(preco) && preco > 0;
+
     });
 }
 
@@ -930,5 +949,8 @@ console.log("PCs/Notebooks:", pcs.length);
 console.log("Total:", todosProdutos.length);
 console.log("====================================");
 console.log("✅ dados.js carregado corretamente!");
+
 <script src="dados.js"></script>
 <script src="script.js"></script>
+</body>
+</html>
