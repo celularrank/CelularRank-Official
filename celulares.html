@@ -558,27 +558,21 @@
            📊 BARRA DE AVALIAÇÃO
         ======================================== */
 
-        function avaliacao(nome, valor) {
+        if (typeof celulares !== "undefined") {
 
-            if (typeof valor !== "number") {
-                return "";
-            }
+    if (Array.isArray(celulares)) {
+        filtrarProdutos();
+    } else {
+        mostrarErro("Os dados dos celulares não estão em formato válido.");
+    }
 
-            return `
-                <div class="avaliacao">
+} else {
 
-                    <span>${nome}</span>
+    mostrarErro(
+        O arquivo dados.js não foi carregado. Verifique o nome e o caminho do arquivo
+    );
 
-                    <div class="barra">
-                        <div style="width:${valor}%"></div>
-                    </div>
-
-                    <strong>${valor}</strong>
-
-                </div>
-            `;
         }
-
 
         /* ========================================
            🃏 CARD
@@ -900,3 +894,8 @@
 </body>
 
   </html>
+<script src="./dados.js"></script>
+
+<script>
+    // código do celulares.html
+</script>
