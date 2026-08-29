@@ -1,1 +1,310 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <title>CelularRank-Official</title>
+
+    <meta
+        name="description"
+        content="Compare celulares e PCs por desempenho, qualidade, jogos e trabalho."
+    >
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            background: #071a3d;
+            color: white;
+            min-height: 100vh;
+        }
+
+        /* CABEÇALHO */
+        header {
+            width: 100%;
+            padding: 18px 6%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: #061530;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        .logo span {
+            color: #35a9ff;
+        }
+
+        nav {
+            display: flex;
+            gap: 20px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        nav a:hover {
+            color: #35a9ff;
+        }
+
+        /* INÍCIO */
+        .inicio {
+            min-height: calc(100vh - 70px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 50px 20px;
+        }
+
+        .conteudo {
+            width: 100%;
+            max-width: 1100px;
+            text-align: center;
+        }
+
+        .badge {
+            display: inline-block;
+            background: rgba(53,169,255,0.15);
+            color: #58b7ff;
+            padding: 8px 15px;
+            border-radius: 30px;
+            margin-bottom: 20px;
+            font-size: 14px;
+        }
+
+        h1 {
+            font-size: clamp(38px, 7vw, 70px);
+            margin-bottom: 15px;
+        }
+
+        h1 span {
+            color: #35a9ff;
+        }
+
+        .descricao {
+            max-width: 650px;
+            margin: auto;
+            color: #b9c7dd;
+            font-size: 17px;
+            line-height: 1.6;
+        }
+
+        /* CARDS */
+        .opcoes {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+            margin-top: 45px;
+        }
+
+        .card {
+            background: #0b2552;
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 20px;
+            padding: 35px 25px;
+            text-decoration: none;
+            color: white;
+            transition: 0.25s;
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+            border-color: #35a9ff;
+            box-shadow: 0 10px 35px rgba(0,0,0,0.25);
+        }
+
+        .icone {
+            font-size: 55px;
+            margin-bottom: 15px;
+        }
+
+        .card h2 {
+            margin-bottom: 10px;
+            font-size: 25px;
+        }
+
+        .card p {
+            color: #b9c7dd;
+            line-height: 1.5;
+        }
+
+        /* CATEGORIAS */
+        .categorias {
+            margin-top: 45px;
+        }
+
+        .categorias h2 {
+            margin-bottom: 20px;
+        }
+
+        .tags {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .tag {
+            background: #0d2e63;
+            border: 1px solid rgba(53,169,255,0.25);
+            padding: 10px 16px;
+            border-radius: 25px;
+            color: #dceaff;
+            font-size: 14px;
+        }
+
+        /* RODAPÉ */
+        footer {
+            text-align: center;
+            padding: 25px;
+            color: #8294b2;
+            font-size: 13px;
+            background: #061530;
+        }
+
+        /* CELULAR */
+        @media (max-width: 700px) {
+
+            header {
+                padding: 16px 20px;
+            }
+
+            nav {
+                display: none;
+            }
+
+            .inicio {
+                padding: 40px 18px;
+            }
+
+            .opcoes {
+                grid-template-columns: 1fr;
+            }
+
+            h1 {
+                font-size: 42px;
+            }
+
+            .descricao {
+                font-size: 15px;
+            }
+
+            .card {
+                padding: 28px 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- CABEÇALHO -->
+    <header>
+        <div class="logo">
+            Celular<span>Rank</span>
+        </div>
+
+        <nav>
+            <a href="#inicio">Início</a>
+            <a href="#categorias">Categorias</a>
+        </nav>
+    </header>
+
+
+    <!-- TELA INICIAL -->
+    <main class="inicio" id="inicio">
+
+        <div class="conteudo">
+
+            <div class="badge">
+                🚀 Compare antes de comprar
+            </div>
+
+            <h1>
+                Encontre o melhor
+                <span>dispositivo</span>
+            </h1>
+
+            <p class="descricao">
+                Compare celulares e PCs de forma simples.
+                Veja desempenho, qualidade, jogos e trabalho
+                antes de escolher o seu próximo dispositivo.
+            </p>
+
+
+            <!-- CELULAR E PC -->
+            <div class="opcoes">
+
+                <a href="celulares.html" class="card">
+
+                    <div class="icone">📱</div>
+
+                    <h2>Celulares</h2>
+
+                    <p>
+                        Compare celulares por desempenho,
+                        jogos, câmera, bateria, memória,
+                        preço e custo-benefício.
+                    </p>
+
+                </a>
+
+
+                <a href="pcs.html" class="card">
+
+                    <div class="icone">💻</div>
+
+                    <h2>PCs</h2>
+
+                    <p>
+                        Compare computadores e notebooks
+                        para jogos, trabalho, estudos,
+                        desempenho e qualidade.
+                    </p>
+
+                </a>
+
+            </div>
+
+
+            <!-- CATEGORIAS -->
+            <section class="categorias" id="categorias">
+
+                <h2>O que você quer comparar?</h2>
+
+                <div class="tags">
+                    <div class="tag">🎮 Jogos</div>
+                    <div class="tag">⚡ Desempenho</div>
+                    <div class="tag">💼 Trabalho</div>
+                    <div class="tag">⭐ Qualidade</div>
+                    <div class="tag">💰 Preço</div>
+                    <div class="tag">🏆 Custo-benefício</div>
+                </div>
+
+            </section>
+
+        </div>
+
+    </main>
+
+
+    <!-- RODAPÉ -->
+    <footer>
+        © 2026 CelularRank-Official — Compare. Escolha. Compre melhor.
+    </footer>
+
+</body>
+</html>
