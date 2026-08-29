@@ -531,16 +531,22 @@
 
         function precoBRL(valor) {
 
-            return Number(valor).toLocaleString(
-                "pt-BR",
-                {
-                    style: "currency",
-                    currency: "BRL"
-                }
-            );
+    if (
+        valor === null ||
+        valor === undefined ||
+        valor === "" ||
+        !Number.isFinite(Number(valor)) ||
+        Number(valor) <= 0
+    ) {
+        return "Preço não informado";
+    }
+
+    return Number(valor).toLocaleString("pt-BR", {
+        style: "currency",
+        currency: "BRL"
+    });
 
         }
-
 
         /* ========================================
            🏆 NOTA GERAL
