@@ -769,10 +769,11 @@ const pcs = [
 ========================================================= */
 
 const marcasCelulares = [
-    "Samsung",
-   "Apple",
-   "Xiaomi",
-   "POCO",
+"Samsung",
+"Apple",
+"Xiaomi",
+...
+"POCO",
     "Motorola",
     "Realme",
     "ASUS",
