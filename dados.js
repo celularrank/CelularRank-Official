@@ -943,8 +943,7 @@ function estatisticasCatalogo() {
         marcasCelulares:
             marcasCelulares.length,
 
-        marcasPCs:
-            marcasPCs.length
+        marcasPCs: marcasPCs.length
 
     };
 
@@ -994,4 +993,4 @@ console.log("Celulares:", celulares.length);
 console.log("PCs/Notebooks:", pcs.length);
 console.log("Total:", todosProdutos.length);
 console.log("====================================");
-console.log("✅ dados.js carregado corretamente!");
+console.log("✅ dados.js carregado 
