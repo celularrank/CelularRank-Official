@@ -984,11 +984,6 @@ console.log(
 );
 
 console.log("====================================");
-console.log("✅ dados.js carregado corretamente!");
-console.log("====================================");
-console.log("====================================");
-console.log("📱 CELULARRANK");
-console.log("====================================");
 console.log("Celulares:", celulares.length);
 console.log("PCs/Notebooks:", pcs.length);
 console.log("Total:", todosProdutos.length);
