@@ -787,12 +787,11 @@ const marcasPCs = [
     "Acer",
     "Dell",
     "HP",
-    "Intel",
     "AMD",
+    "Intel",
     "MSI",
     "Gigabyte"
 ];
-
 
 /* =========================================================
    📦 TODOS OS PRODUTOS
