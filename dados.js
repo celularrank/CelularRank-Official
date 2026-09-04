@@ -1263,3 +1263,4 @@ function estatisticasCatalogo() {
     };
 
 }
+<script src="script.js"></script>
