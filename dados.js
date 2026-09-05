@@ -980,5 +980,5 @@ console.log(
     "✅ dados.js carregado corretamente!"
 );
 
-console.log(
+console.log);
     "===================================="
