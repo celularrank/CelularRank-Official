@@ -436,4 +436,114 @@ footer {
 ::selection {
     background: #35a9ff;
     color: white;
-      }
+   }
+
+
+/* ========================================
+   💠 SISTEMA DE PONTOS
+======================================== */
+
+.sistema-pontos {
+    width: 100%;
+    margin-top: 25px;
+}
+
+.card-pontos {
+    display: block;
+    width: 100%;
+
+    background: #0b2552;
+
+    border: 1px solid rgba(53, 169, 255, 0.30);
+
+    border-radius: 22px;
+
+    padding: 38px 28px;
+
+    text-decoration: none;
+    color: white;
+
+    transition: 0.25s ease;
+}
+
+.card-pontos:hover {
+    transform: translateY(-7px);
+
+    border-color: #35a9ff;
+
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.30);
+}
+
+.icone-pontos {
+    font-size: 60px;
+
+    margin-bottom: 15px;
+}
+
+.card-pontos h2 {
+    font-size: 28px;
+
+    margin-bottom: 10px;
+}
+
+.card-pontos p {
+    color: #b9c7dd;
+
+    font-size: 16px;
+
+    line-height: 1.6;
+}
+
+.pontos-mini {
+    display: flex;
+
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+
+    margin-top: 22px;
+}
+
+.pontos-mini span {
+    padding: 9px 14px;
+
+    background: #0d2e63;
+
+    border: 1px solid rgba(53, 169, 255, 0.25);
+
+    border-radius: 20px;
+
+    font-size: 13px;
+
+    color: #dceaff;
+}
+
+
+/* 📱 CELULAR */
+
+@media (max-width: 700px) {
+
+    .sistema-pontos {
+        margin-top: 18px;
+    }
+
+    .card-pontos {
+        padding: 30px 20px;
+    }
+
+    .icone-pontos {
+        font-size: 50px;
+    }
+
+    .card-pontos h2 {
+        font-size: 24px;
+    }
+
+    .pontos-mini span {
+        font-size: 12px;
+        padding: 8px 12px;
+    }
+}
