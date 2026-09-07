@@ -1,1 +1,608 @@
- 
+ <!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>CelularRank — Pontos</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            background: #071a3d;
+            color: white;
+            min-height: 100vh;
+        }
+
+        header {
+            padding: 18px 6%;
+
+            background: #061530;
+
+            border-bottom:
+                1px solid rgba(255,255,255,0.1);
+        }
+
+        .logo {
+            font-size: 23px;
+            font-weight: bold;
+        }
+
+        .logo span {
+            color: #35a9ff;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1000px;
+
+            margin: auto;
+
+            padding: 40px 20px;
+        }
+
+        .voltar {
+            display: inline-block;
+
+            color: #58b7ff;
+
+            text-decoration: none;
+
+            margin-bottom: 25px;
+        }
+
+        h1 {
+            text-align: center;
+
+            font-size: 42px;
+
+            margin-bottom: 10px;
+        }
+
+        .descricao {
+            text-align: center;
+
+            color: #b9c7dd;
+
+            margin-bottom: 35px;
+        }
+
+        /* FILTROS */
+
+        .filtros {
+            display: flex;
+
+            justify-content: center;
+
+            flex-wrap: wrap;
+
+            gap: 10px;
+
+            margin-bottom: 30px;
+        }
+
+        .filtros button {
+            border: 1px solid #1d5a9e;
+
+            background: #0b2552;
+
+            color: white;
+
+            padding: 10px 18px;
+
+            border-radius: 25px;
+
+            cursor: pointer;
+        }
+
+        .filtros button.ativo {
+            background: #35a9ff;
+
+            border-color: #35a9ff;
+        }
+
+        /* PRODUTOS */
+
+        #lista-pontos {
+            display: grid;
+
+            gap: 18px;
+        }
+
+        .produto {
+            background: #0b2552;
+
+            border: 1px solid
+                rgba(53,169,255,0.20);
+
+            border-radius: 20px;
+
+            padding: 22px;
+        }
+
+        .produto-topo {
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            gap: 15px;
+        }
+
+        .produto h2 {
+            font-size: 21px;
+        }
+
+        .total {
+            color: #35a9ff;
+
+            font-size: 22px;
+
+            font-weight: bold;
+
+            white-space: nowrap;
+        }
+
+        .categoria {
+            color: #8294b2;
+
+            margin-top: 5px;
+
+            font-size: 13px;
+        }
+
+        .pontos-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(4, 1fr);
+
+            gap: 10px;
+
+            margin-top: 20px;
+        }
+
+        .ponto {
+            background: #071a3d;
+
+            border-radius: 12px;
+
+            padding: 13px;
+
+            text-align: center;
+        }
+
+        .ponto strong {
+            display: block;
+
+            font-size: 13px;
+
+            color: #b9c7dd;
+
+            margin-bottom: 6px;
+        }
+
+        .ponto span {
+            font-size: 17px;
+
+            font-weight: bold;
+        }
+
+        @media (max-width: 600px) {
+
+            h1 {
+                font-size: 34px;
+            }
+
+            .produto-topo {
+                align-items: flex-start;
+
+                flex-direction: column;
+            }
+
+            .total {
+                font-size: 20px;
+            }
+
+            .pontos-grid {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<header>
+
+    <div class="logo">
+        Celular<span>Rank</span>
+    </div>
+
+</header>
+
+
+<main class="container">
+
+    <a href="index.html" class="voltar">
+        ← Voltar
+    </a>
+
+    <h1>💠 Pontos</h1>
+
+    <p class="descricao">
+        Ranking de pontuação dos dispositivos
+        do CelularRank.
+    </p>
+
+
+    <!-- FILTROS -->
+
+    <div class="filtros">
+
+        <button
+            class="ativo"
+            onclick="mostrar('todos', this)"
+        >
+            Todos
+        </button>
+
+        <button
+            onclick="mostrar('celular', this)"
+        >
+            📱 Celulares
+        </button>
+
+        <button
+            onclick="mostrar('pc', this)"
+        >
+            💻 PCs
+        </button>
+
+    </div>
+
+
+    <!-- LISTA -->
+
+    <div id="lista-pontos"></div>
+
+</main>
+
+
+<script src="dados.js"></script>
+<script src="pontuacao.js"></script>
+
+
+<script>
+
+/*
+    SISTEMA DE PONTOS
+    V1
+
+    Aqui transformamos os dados
+    existentes do catálogo em uma
+    pontuação do CelularRank.
+
+    IMPORTANTE:
+    Estes valores são uma estimativa
+    baseada nos dados do catálogo.
+    Não são resultados oficiais do AnTuTu.
+*/
+
+
+function calcularPontos(produto) {
+
+    const desempenho =
+        Number(produto.desempenho) || 0;
+
+    const jogos =
+        Number(produto.jogos) || 0;
+
+    const qualidade =
+        Number(produto.qualidade) || 0;
+
+    const trabalho =
+        Number(produto.trabalho) ||
+        Number(produto.qualidade) ||
+        0;
+
+
+    /*
+        CPU
+    */
+
+    const CPU =
+        Math.round(
+            desempenho * 3000
+        );
+
+
+    /*
+        GPU
+    */
+
+    const GPU =
+        Math.round(
+            jogos * 3000
+        );
+
+
+    /*
+        MEM
+    */
+
+    const RAM =
+        parseInt(produto.ram) || 0;
+
+    const MEM =
+        Math.min(
+            200000,
+            Math.round(
+                (RAM / 16) * 200000
+            )
+        );
+
+
+    /*
+        UX
+    */
+
+    const UX =
+        Math.round(
+            (
+                desempenho +
+                qualidade +
+                trabalho
+            ) / 3 * 2000
+        );
+
+
+    /*
+        TOTAL
+    */
+
+    const total =
+        Math.min(
+            1000000,
+            CPU +
+            GPU +
+            MEM +
+            UX
+        );
+
+
+    return {
+
+        CPU,
+        GPU,
+        MEM,
+        UX,
+        total
+
+    };
+
+}
+
+
+let filtroAtual = "todos";
+
+
+function obterProdutos() {
+
+    const celularesLista =
+        Array.isArray(window.celulares)
+            ? window.celulares
+            : [];
+
+    const pcsLista =
+        Array.isArray(window.pcs)
+            ? window.pcs
+            : [];
+
+    return [
+
+        ...celularesLista.map(
+            produto => ({
+                ...produto,
+                tipo: "celular"
+            })
+        ),
+
+        ...pcsLista.map(
+            produto => ({
+                ...produto,
+                tipo: "pc"
+            })
+        )
+
+    ];
+
+}
+
+
+function mostrar(filtro, botao) {
+
+    filtroAtual = filtro;
+
+    document
+        .querySelectorAll(".filtros button")
+        .forEach(
+            b => b.classList.remove("ativo")
+        );
+
+    botao.classList.add("ativo");
+
+    renderizar();
+
+}
+
+
+function renderizar() {
+
+    let produtos =
+        obterProdutos();
+
+
+    if (filtroAtual !== "todos") {
+
+        produtos =
+            produtos.filter(
+                produto =>
+                    produto.tipo === filtroAtual
+            );
+
+    }
+
+
+    /*
+        Calcula os pontos
+    */
+
+    produtos =
+        produtos.map(
+            produto => ({
+
+                ...produto,
+
+                pontos:
+                    calcularPontos(produto)
+
+            })
+        );
+
+
+    /*
+        Maior pontuação primeiro
+    */
+
+    produtos.sort(
+        (a, b) =>
+            b.pontos.total -
+            a.pontos.total
+    );
+
+
+    const lista =
+        document.getElementById(
+            "lista-pontos"
+        );
+
+
+    if (!produtos.length) {
+
+        lista.innerHTML =
+            "<p>Nenhum dispositivo encontrado.</p>";
+
+        return;
+
+    }
+
+
+    lista.innerHTML =
+        produtos.map(
+            (produto, index) => {
+
+                const p =
+                    produto.pontos;
+
+
+                return `
+
+                <article class="produto">
+
+                    <div class="produto-topo">
+
+                        <div>
+
+                            <h2>
+                                ${index + 1}º —
+                                ${produto.nome}
+                            </h2>
+
+                            <div class="categoria">
+                                ${produto.marca || ""}
+                                •
+                                ${produto.categoria || ""}
+                            </div>
+
+                        </div>
+
+                        <div class="total">
+                            💠
+                            ${p.total.toLocaleString("pt-BR")}
+                        </div>
+
+                    </div>
+
+
+                    <div class="pontos-grid">
+
+                        <div class="ponto">
+                            <strong>🧠 CPU</strong>
+                            <span>
+                                ${p.CPU.toLocaleString("pt-BR")}
+                            </span>
+                        </div>
+
+
+                        <div class="ponto">
+                            <strong>🎮 GPU</strong>
+                            <span>
+                                ${p.GPU.toLocaleString("pt-BR")}
+                            </span>
+                        </div>
+
+
+                        <div class="ponto">
+                            <strong>💾 MEM</strong>
+                            <span>
+                                ${p.MEM.toLocaleString("pt-BR")}
+                            </span>
+                        </div>
+
+
+                        <div class="ponto">
+                            <strong>📱 UX</strong>
+                            <span>
+                                ${p.UX.toLocaleString("pt-BR")}
+                            </span>
+                        </div>
+
+                    </div>
+
+                </article>
+
+                `;
+
+            }
+        )
+        .join("");
+
+}
+
+
+renderizar();
+
+</script>
+
+</body>
+
+</html>
