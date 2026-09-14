@@ -1,16 +1,17 @@
 /* =========================================================
-   CELULARRANK-OFFICIAL
-   dados.js
-   Catálogo de celulares, PCs e notebooks
-========================================================= */
-
-"use strict";
-
-/* =========================================================
    📱 CELULARES
+   CELULARRANK-OFFICIAL
+
+   Informações:
+   - câmera
+   - bateria
+   - tela
+   - carregamento
 ========================================================= */
 
 const celulares = [
+
+    /* ================= SAMSUNG ================= */
 
     {
         id: "samsung-a15-5g",
@@ -21,10 +22,17 @@ const celulares = [
         ram: "8 GB",
         armazenamento: "256 GB",
         processador: "Dimensity 6100+",
+
+        camera: "50 MP + 5 MP + 2 MP / frontal 13 MP",
+        bateria: "5.000 mAh",
+        tela: "6,5\" Super AMOLED • 90 Hz",
+        carregamento: "25 W",
+
         desempenho: 82,
         jogos: 78,
         qualidade: 84
     },
+
 
     {
         id: "samsung-a25-5g",
@@ -35,680 +43,709 @@ const celulares = [
         ram: "8 GB",
         armazenamento: "256 GB",
         processador: "Exynos 1280",
+
+        camera: "50 MP OIS + 8 MP + 2 MP / frontal 13 MP",
+        bateria: "5.000 mAh",
+        tela: "6,5\" Super AMOLED • 120 Hz",
+        carregamento: "25 W",
+
         desempenho: 86,
         jogos: 82,
-        qualidade: 88
+        qualidade: 87
     },
+
 
     {
         id: "samsung-a35-5g",
         nome: "Galaxy A35 5G",
         marca: "Samsung",
         categoria: "Celular",
-        preco: 2299,
+        preco: 1899,
         ram: "8 GB",
         armazenamento: "256 GB",
         processador: "Exynos 1380",
+
+        camera: "50 MP OIS + 8 MP + 5 MP / frontal 13 MP",
+        bateria: "5.000 mAh",
+        tela: "6,6\" Super AMOLED • 120 Hz",
+        carregamento: "25 W",
+
         desempenho: 89,
         jogos: 86,
         qualidade: 91
     },
+
 
     {
         id: "samsung-a55-5g",
         nome: "Galaxy A55 5G",
         marca: "Samsung",
         categoria: "Celular",
-        preco: 2499,
+        preco: 2399,
         ram: "8 GB",
         armazenamento: "256 GB",
         processador: "Exynos 1480",
+
+        camera: "50 MP OIS + 12 MP + 5 MP / frontal 32 MP",
+        bateria: "5.000 mAh",
+        tela: "6,6\" Super AMOLED • 120 Hz",
+        carregamento: "25 W",
+
         desempenho: 92,
-        jogos: 90,
+        jogos: 89,
         qualidade: 94
     },
+
 
     {
         id: "samsung-s23",
         nome: "Galaxy S23",
         marca: "Samsung",
         categoria: "Celular",
-        preco: 2999,
+        preco: 2700,
         ram: "8 GB",
-        armazenamento: "256 GB",
+        armazenamento: "128 GB",
         processador: "Snapdragon 8 Gen 2",
-        desempenho: 96,
+
+        camera: "50 MP + 10 MP telefoto + 12 MP ultrawide / frontal 12 MP",
+        bateria: "3.900 mAh",
+        tela: "6,1\" Dynamic AMOLED 2X • 120 Hz",
+        carregamento: "25 W",
+
+        desempenho: 95,
         jogos: 96,
         qualidade: 96
     },
+
 
     {
         id: "samsung-s24",
         nome: "Galaxy S24",
         marca: "Samsung",
         categoria: "Celular",
-        preco: 3999,
+        preco: 3800,
         ram: "8 GB",
         armazenamento: "256 GB",
         processador: "Exynos 2400",
-        desempenho: 97,
-        jogos: 96,
+
+        camera: "50 MP + 10 MP telefoto + 12 MP ultrawide / frontal 12 MP",
+        bateria: "4.000 mAh",
+        tela: "6,2\" Dynamic AMOLED 2X • 120 Hz",
+        carregamento: "25 W",
+
+        desempenho: 96,
+        jogos: 95,
         qualidade: 97
     },
+
 
     {
         id: "samsung-s24-ultra",
         nome: "Galaxy S24 Ultra",
         marca: "Samsung",
         categoria: "Celular",
-        preco: 6999,
+        preco: 6000,
         ram: "12 GB",
         armazenamento: "512 GB",
         processador: "Snapdragon 8 Gen 3",
-        desempenho: 100,
-        jogos: 100,
-        qualidade: 100
+
+        camera: "200 MP + 50 MP + 10 MP + 12 MP / frontal 12 MP",
+        bateria: "5.000 mAh",
+        tela: "6,8\" Dynamic AMOLED 2X • QHD+ • 120 Hz",
+        carregamento: "45 W",
+
+        desempenho: 99,
+        jogos: 99,
+        qualidade: 99
     },
 
+
+    /* ================= APPLE ================= */
+
     {
-        id: "iphone-13",
+        id: "apple-iphone-13",
         nome: "iPhone 13",
         marca: "Apple",
         categoria: "Celular",
-        preco: 2999,
+        preco: 2790,
         ram: "4 GB",
         armazenamento: "128 GB",
         processador: "A15 Bionic",
+
+        camera: "12 MP + 12 MP ultrawide / frontal 12 MP",
+        bateria: "3.227 mAh (aprox.)",
+        tela: "6,1\" Super Retina XDR OLED • 60 Hz",
+        carregamento: "20 W",
+
         desempenho: 94,
-        jogos: 94,
+        jogos: 95,
         qualidade: 95
     },
 
+
     {
-        id: "iphone-14",
+        id: "apple-iphone-14",
         nome: "iPhone 14",
         marca: "Apple",
         categoria: "Celular",
-        preco: 3499,
+        preco: 3200,
         ram: "6 GB",
         armazenamento: "128 GB",
         processador: "A15 Bionic",
+
+        camera: "12 MP + 12 MP ultrawide / frontal 12 MP",
+        bateria: "3.279 mAh (aprox.)",
+        tela: "6,1\" Super Retina XDR OLED • 60 Hz",
+        carregamento: "20 W",
+
         desempenho: 95,
-        jogos: 95,
+        jogos: 96,
         qualidade: 96
     },
 
+
     {
-        id: "iphone-15",
+        id: "apple-iphone-15",
         nome: "iPhone 15",
         marca: "Apple",
         categoria: "Celular",
-        preco: 3999,
+        preco: 3900,
         ram: "6 GB",
         armazenamento: "128 GB",
         processador: "A16 Bionic",
+
+        camera: "48 MP + 12 MP ultrawide / frontal 12 MP",
+        bateria: "3.349 mAh (aprox.)",
+        tela: "6,1\" Super Retina XDR OLED • 60 Hz",
+        carregamento: "20 W",
+
         desempenho: 97,
         jogos: 97,
         qualidade: 97
     },
 
+
     {
-        id: "iphone-15-pro",
+        id: "apple-iphone-15-pro",
         nome: "iPhone 15 Pro",
         marca: "Apple",
         categoria: "Celular",
-        preco: 4999,
+        preco: 5000,
         ram: "8 GB",
         armazenamento: "256 GB",
         processador: "A17 Pro",
+
+        camera: "48 MP + 12 MP ultrawide + 12 MP telefoto 3x / frontal 12 MP",
+        bateria: "3.274 mAh (aprox.)",
+        tela: "6,1\" Super Retina XDR OLED • ProMotion 120 Hz",
+        carregamento: "20 W",
+
         desempenho: 99,
         jogos: 99,
-        qualidade: 98
+        qualidade: 99
     },
 
+
     {
-        id: "iphone-16",
+        id: "apple-iphone-16",
         nome: "iPhone 16",
         marca: "Apple",
         categoria: "Celular",
-        preco: 4999,
+        preco: 4600,
         ram: "8 GB",
         armazenamento: "128 GB",
         processador: "A18",
+
+        camera: "48 MP + 12 MP ultrawide / frontal 12 MP",
+        bateria: "3.561 mAh (aprox.)",
+        tela: "6,1\" Super Retina XDR OLED • 60 Hz",
+        carregamento: "20 W",
+
         desempenho: 99,
-        jogos: 99,
-        qualidade: 98
+        jogos: 98,
+        qualidade: 99
     },
 
+
+    /* ================= XIAOMI ================= */
+
     {
-        id: "redmi-note-13",
+        id: "xiaomi-redmi-note-13",
         nome: "Redmi Note 13",
         marca: "Xiaomi",
         categoria: "Celular",
-        preco: 1399,
+        preco: 4000,
         ram: "8 GB",
         armazenamento: "256 GB",
         processador: "Snapdragon 685",
-        desempenho: 80,
-        jogos: 76,
-        qualidade: 83
-    },
 
-    {
-        id: "redmi-note-13-pro",
-        nome: "Redmi Note 13 Pro",
-        marca: "Xiaomi",
-        categoria: "Celular",
-        preco: 1999,
-        ram: "8 GB",
-        armazenamento: "256 GB",
-        processador: "Helio G99 Ultra",
-        desempenho: 85,
-        jogos: 83,
-        qualidade: 89
-    },
+        camera: "108 MP + 8 MP + 2 MP / frontal 16 MP",
+        bateria: "5.000 mAh",
+        tela: "6,67\" AMOLED • 120 Hz",
+        carregamento: "33 W",
 
-    {
-        id: "redmi-note-13-pro-plus",
-        nome: "Redmi Note 13 Pro+",
-        marca: "Xiaomi",
-        categoria: "Celular",
-        preco: 2399,
-        ram: "12 GB",
-        armazenamento: "512 GB",
-        processador: "Dimensity 7200 Ultra",
-        desempenho: 93,
-        jogos: 91,
-        qualidade: 94
-    },
-
-    {
-        id: "moto-g54",
-        nome: "Moto G54",
-        marca: "Motorola",
-        categoria: "Celular",
-        preco: 1399,
-        ram: "8 GB",
-        armazenamento: "256 GB",
-        processador: "Dimensity 7020",
-        desempenho: 83,
-        jogos: 80,
+        desempenho: 82,
+        jogos: 78,
         qualidade: 84
     },
 
+
     {
-        id: "moto-g84",
-        nome: "Moto G84",
+        id: "xiaomi-redmi-note-13-pro",
+        nome: "Redmi Note 13 Pro",
+        marca: "Xiaomi",
+        categoria: "Celular",
+        preco: 1650,
+        ram: "8 GB",
+        armazenamento: "256 GB",
+        processador: "Snapdragon 7s Gen 2",
+
+        camera: "200 MP OIS + 8 MP + 2 MP / frontal 16 MP",
+        bateria: "5.100 mAh",
+        tela: "6,67\" AMOLED 1,5K • 120 Hz",
+        carregamento: "67 W",
+
+        desempenho: 90,
+        jogos: 87,
+        qualidade: 91
+    },
+
+
+    {
+        id: "xiaomi-redmi-note-13-pro-plus",
+        nome: "Redmi Note 13 Pro+",
+        marca: "Xiaomi",
+        categoria: "Celular",
+        preco: 1650,
+        ram: "12 GB",
+        armazenamento: "512 GB",
+        processador: "Dimensity 7200 Ultra",
+
+        camera: "200 MP OIS + 8 MP + 2 MP / frontal 16 MP",
+        bateria: "5.000 mAh",
+        tela: "6,67\" AMOLED 1,5K • 120 Hz",
+        carregamento: "120 W",
+
+        desempenho: 94,
+        jogos: 92,
+        qualidade: 94
+    },
+
+
+    {
+        id: "xiaomi-14",
+        nome: "Xiaomi 14",
+        marca: "Xiaomi",
+        categoria: "Celular",
+        preco: 4000,
+        ram: "12 GB",
+        armazenamento: "512 GB",
+        processador: "Snapdragon 8 Gen 3",
+
+        camera: "50 MP + 50 MP telefoto + 50 MP ultrawide / frontal 32 MP",
+        bateria: "4.610 mAh",
+        tela: "6,36\" LTPO AMOLED • 120 Hz",
+        carregamento: "90 W",
+
+        desempenho: 99,
+        jogos: 98,
+        qualidade: 98
+    },
+
+
+    /* ================= MOTOROLA ================= */
+
+    {
+        id: "motorola-g54",
+        nome: "Moto G54 5G",
         marca: "Motorola",
         categoria: "Celular",
-        preco: 1699,
+        preco: 1200,
+        ram: "8 GB",
+        armazenamento: "256 GB",
+        processador: "Dimensity 7020",
+
+        camera: "50 MP OIS + 2 MP / frontal 16 MP",
+        bateria: "5.000 mAh",
+        tela: "6,5\" IPS LCD • 120 Hz",
+        carregamento: "20 W",
+
+        desempenho: 83,
+        jogos: 79,
+        qualidade: 84
+    },
+
+
+    {
+        id: "motorola-g84",
+        nome: "Moto G84 5G",
+        marca: "Motorola",
+        categoria: "Celular",
+        preco: 1400,
         ram: "8 GB",
         armazenamento: "256 GB",
         processador: "Snapdragon 695",
+
+        camera: "50 MP OIS + 8 MP ultrawide/macro / frontal 16 MP",
+        bateria: "5.000 mAh",
+        tela: "6,55\" pOLED • 120 Hz",
+        carregamento: "30 W",
+
         desempenho: 84,
-        jogos: 81,
-        qualidade: 88
+        jogos: 80,
+        qualidade: 87
     },
+
 
     {
         id: "motorola-edge-40",
         nome: "Motorola Edge 40",
         marca: "Motorola",
         categoria: "Celular",
-        preco: 2499,
+        preco: 2000,
         ram: "8 GB",
         armazenamento: "256 GB",
         processador: "Dimensity 8020",
+
+        camera: "50 MP OIS + 13 MP ultrawide/macro / frontal 32 MP",
+        bateria: "4.400 mAh",
+        tela: "6,55\" pOLED • 144 Hz",
+        carregamento: "68 W",
+
         desempenho: 91,
-        jogos: 89,
+        jogos: 88,
         qualidade: 92
     },
+
 
     {
         id: "motorola-edge-50-pro",
         nome: "Motorola Edge 50 Pro",
         marca: "Motorola",
         categoria: "Celular",
-        preco: 3499,
+        preco: 2700,
         ram: "12 GB",
         armazenamento: "256 GB",
         processador: "Snapdragon 7 Gen 3",
-        desempenho: 94,
-        jogos: 91,
-        qualidade: 96
+
+        camera: "50 MP OIS + 13 MP ultrawide/macro + 10 MP telefoto 3x / frontal 50 MP",
+        bateria: "4.500 mAh",
+        tela: "6,7\" pOLED • 144 Hz",
+        carregamento: "125 W",
+
+        desempenho: 92,
+        jogos: 89,
+        qualidade: 95
     },
+
+
+    /* ================= REALME ================= */
+
+    {
+        id: "realme-c67",
+        nome: "Realme C67",
+        marca: "Realme",
+        categoria: "Celular",
+        preco: 1200,
+        ram: "8 GB",
+        armazenamento: "256 GB",
+        processador: "Snapdragon 685",
+
+        camera: "108 MP + 2 MP / frontal 8 MP",
+        bateria: "5.000 mAh",
+        tela: "6,72\" IPS LCD • 90 Hz",
+        carregamento: "33 W",
+
+        desempenho: 82,
+        jogos: 78,
+        qualidade: 83
+    },
+
 
     {
         id: "realme-12-pro",
         nome: "Realme 12 Pro",
         marca: "Realme",
         categoria: "Celular",
-        preco: 2499,
-        ram: "8 GB",
-        armazenamento: "256 GB",
-        processador: "Snapdragon 6 Gen 1",
-        desempenho: 87,
-        jogos: 84,
-        qualidade: 91
-    },
-
-    {
-        id: "realme-gt-neo-5",
-        nome: "Realme GT Neo 5",
-        marca: "Realme",
-        categoria: "Celular",
-        preco: 3299,
+        preco: 2300,
         ram: "12 GB",
         armazenamento: "256 GB",
-        processador: "Snapdragon 8+ Gen 1",
-        desempenho: 96,
-        jogos: 97,
-        qualidade: 94
+        processador: "Snapdragon 6 Gen 1",
+
+        camera: "50 MP OIS + 32 MP telefoto 2x + 8 MP ultrawide / frontal 16 MP",
+        bateria: "5.000 mAh",
+        tela: "6,7\" OLED • 120 Hz",
+        carregamento: "67 W",
+
+        desempenho: 87,
+        jogos: 83,
+        qualidade: 90
     },
+
+
+    {
+        id: "realme-gt-6",
+        nome: "Realme GT 6",
+        marca: "Realme",
+        categoria: "Celular",
+        preco: 3000,
+        ram: "12 GB",
+        armazenamento: "256 GB",
+        processador: "Snapdragon 8s Gen 3",
+
+        camera: "50 MP OIS + 50 MP telefoto + 8 MP ultrawide / frontal 32 MP",
+        bateria: "5.500 mAh",
+        tela: "6,78\" LTPO AMOLED • 120 Hz",
+        carregamento: "120 W",
+
+        desempenho: 97,
+        jogos: 97,
+        qualidade: 96
+    },
+
+
+    /* ================= ASUS ================= */
 
     {
         id: "asus-zenfone-10",
         nome: "Zenfone 10",
         marca: "ASUS",
         categoria: "Celular",
-        preco: 3999,
+        preco: 3000,
         ram: "8 GB",
-        armazenamento: "256 GB",
+        armazenamento: "128 GB",
         processador: "Snapdragon 8 Gen 2",
-        desempenho: 97,
+
+        camera: "50 MP OIS/Gimbal + 13 MP ultrawide / frontal 32 MP",
+        bateria: "4.300 mAh",
+        tela: "5,9\" AMOLED • até 144 Hz",
+        carregamento: "30 W",
+
+        desempenho: 96,
         jogos: 97,
-        qualidade: 95
+        qualidade: 94
     },
+
 
     {
         id: "asus-rog-phone-8",
         nome: "ROG Phone 8",
         marca: "ASUS",
-        categoria: "Celular",
-        preco: 5999,
+        categoria: "Celular Gamer",
+        preco: 5500,
         ram: "16 GB",
         armazenamento: "512 GB",
         processador: "Snapdragon 8 Gen 3",
+
+        camera: "50 MP OIS + 13 MP ultrawide + 32 MP telefoto 3x / frontal 32 MP",
+        bateria: "5.500 mAh",
+        tela: "6,78\" Samsung Flexible AMOLED • até 165 Hz",
+        carregamento: "65 W",
+
         desempenho: 100,
         jogos: 100,
         qualidade: 98
     },
+
+
+    /* ================= POCO ================= */
 
     {
         id: "poco-x6",
         nome: "POCO X6",
         marca: "POCO",
         categoria: "Celular",
-        preco: 1899,
+        preco: 2199,
         ram: "8 GB",
         armazenamento: "256 GB",
         processador: "Snapdragon 7s Gen 2",
-        desempenho: 91,
-        jogos: 90,
-        qualidade: 89
+
+        camera: "64 MP OIS + 8 MP ultrawide + 2 MP macro / frontal 16 MP",
+        bateria: "5.100 mAh",
+        tela: "6,67\" AMOLED • 120 Hz",
+        carregamento: "67 W",
+
+        desempenho: 90,
+        jogos: 88,
+        qualidade: 88
     },
+
 
     {
         id: "poco-x6-pro",
         nome: "POCO X6 Pro",
         marca: "POCO",
         categoria: "Celular",
-        preco: 2299,
+        preco: 2231,
+        ram: "8 GB",
+        armazenamento: "256 GB",
+        processador: "Dimensity 8300 Ultra",
+
+        camera: "64 MP OIS + 8 MP ultrawide + 2 MP macro / frontal 16 MP",
+        bateria: "5.000 mAh",
+        tela: "6,67\" Flow AMOLED • 120 Hz",
+        carregamento: "67 W",
+
+        desempenho: 97,
+        jogos: 98,
+        qualidade: 91
+    },
+
+
+    {
+        id: "poco-f6",
+        nome: "POCO F6",
+        marca: "POCO",
+        categoria: "Celular",
+        preco: 2199,
         ram: "12 GB",
         armazenamento: "512 GB",
-        processador: "Dimensity 8300 Ultra",
+        processador: "Snapdragon 8s Gen 3",
+
+        camera: "50 MP OIS + 8 MP ultrawide / frontal 20 MP",
+        bateria: "5.000 mAh",
+        tela: "6,67\" AMOLED • 120 Hz",
+        carregamento: "90 W",
+
         desempenho: 98,
         jogos: 99,
         qualidade: 93
     },
+
+
+    /* ================= GOOGLE ================= */
 
     {
         id: "google-pixel-8",
         nome: "Pixel 8",
         marca: "Google",
         categoria: "Celular",
-        preco: 3999,
+        preco: 3200,
         ram: "8 GB",
         armazenamento: "128 GB",
         processador: "Google Tensor G3",
-        desempenho: 94,
-        jogos: 89,
-        qualidade: 98
+
+        camera: "50 MP OIS + 12 MP ultrawide / frontal 10,5 MP",
+        bateria: "4.575 mAh",
+        tela: "6,2\" OLED Actua • 120 Hz",
+        carregamento: "27 W",
+
+        desempenho: 91,
+        jogos: 86,
+        qualidade: 96
     },
+
 
     {
         id: "google-pixel-8-pro",
         nome: "Pixel 8 Pro",
         marca: "Google",
         categoria: "Celular",
-        preco: 4999,
+        preco: 3200,
         ram: "12 GB",
         armazenamento: "256 GB",
         processador: "Google Tensor G3",
-        desempenho: 96,
-        jogos: 92,
-        qualidade: 100
+
+        camera: "50 MP + 48 MP ultrawide + 48 MP telefoto 5x / frontal 10,5 MP",
+        bateria: "5.050 mAh",
+        tela: "6,7\" LTPO OLED • 120 Hz",
+        carregamento: "30 W",
+
+        desempenho: 93,
+        jogos: 89,
+        qualidade: 98
     },
+
+
+    /* ================= ONEPLUS ================= */
 
     {
         id: "oneplus-12",
         nome: "OnePlus 12",
         marca: "OnePlus",
         categoria: "Celular",
-        preco: 4999,
+        preco: 4000,
         ram: "12 GB",
         armazenamento: "256 GB",
         processador: "Snapdragon 8 Gen 3",
-        desempenho: 100,
-        jogos: 100,
-        qualidade: 98
+
+        camera: "50 MP OIS + 64 MP telefoto 3x + 48 MP ultrawide / frontal 32 MP",
+        bateria: "5.400 mAh",
+        tela: "6,82\" LTPO AMOLED • 120 Hz",
+        carregamento: "100 W",
+
+        desempenho: 99,
+        jogos: 99,
+        qualidade: 97
     },
+
+
+    /* ================= HONOR ================= */
 
     {
         id: "honor-90",
         nome: "Honor 90",
         marca: "Honor",
         categoria: "Celular",
-        preco: 2499,
+        preco: 2200,
         ram: "12 GB",
         armazenamento: "512 GB",
-        processador: "Snapdragon 7 Gen 1 Accelerated Edition",
-        desempenho: 89,
-        jogos: 85,
-        qualidade: 94
+        processador: "Snapdragon 7 Gen 1",
+
+        camera: "200 MP + 12 MP ultrawide/macro + 2 MP profundidade / frontal 50 MP",
+        bateria: "5.000 mAh",
+        tela: "6,7\" AMOLED 1,5K • 120 Hz",
+        carregamento: "66 W",
+
+        desempenho: 88,
+        jogos: 84,
+        qualidade: 91
     },
+
+
+    /* ================= OPPO ================= */
 
     {
         id: "oppo-reno-11",
         nome: "OPPO Reno 11",
         marca: "OPPO",
         categoria: "Celular",
-        preco: 2499,
-        ram: "8 GB",
+        preco: 2000,
+        ram: "12 GB",
         armazenamento: "256 GB",
         processador: "Dimensity 7050",
-        desempenho: 87,
-        jogos: 84,
-        qualidade: 92
+
+        camera: "50 MP OIS + 32 MP telefoto + 8 MP ultrawide / frontal 32 MP",
+        bateria: "5.000 mAh",
+        tela: "6,7\" AMOLED curva • 120 Hz",
+        carregamento: "67 W",
+
+        desempenho: 86,
+        jogos: 82,
+        qualidade: 91
     },
+
+
+    /* ================= NOTHING ================= */
 
     {
         id: "nothing-phone-2",
         nome: "Nothing Phone (2)",
         marca: "Nothing",
         categoria: "Celular",
-        preco: 2999,
-        ram: "12 GB",
+        preco: 3000,
+        ram: "8 GB",
         armazenamento: "256 GB",
         processador: "Snapdragon 8+ Gen 1",
-        desempenho: 95,
-        jogos: 94,
-        qualidade: 95
-    }
 
-];
+        camera: "50 MP OIS + 50 MP ultrawide / frontal 32 MP",
+        bateria: "4.700 mAh",
+        tela: "6,7\" LTPO OLED • 120 Hz",
+        carregamento: "45 W",
 
-
-/* =========================================================
-   💻 PCS E NOTEBOOKS
-========================================================= */
-
-const pcs = [
-
-    {
-        id: "lenovo-ideapad-3",
-        nome: "Lenovo IdeaPad 3",
-        marca: "Lenovo",
-        categoria: "Notebook",
-        preco: 2899,
-        ram: "8 GB",
-        armazenamento: "256 GB SSD",
-        processador: "Ryzen 5 5500U",
-        video: "Radeon Graphics",
-        desempenho: 78,
-        jogos: 65,
-        trabalho: 86,
-        qualidade: 85
-    },
-
-    {
-        id: "lenovo-loq",
-        nome: "Lenovo LOQ",
-        marca: "Lenovo",
-        categoria: "Notebook Gamer",
-        preco: 4999,
-        ram: "16 GB",
-        armazenamento: "512 GB SSD",
-        processador: "Core i5-12450H",
-        video: "RTX 3050",
-        desempenho: 91,
-        jogos: 92,
-        trabalho: 88,
-        qualidade: 93
-    },
-
-    {
-        id: "asus-vivobook",
-        nome: "ASUS Vivobook",
-        marca: "ASUS",
-        categoria: "Notebook",
-        preco: 2999,
-        ram: "8 GB",
-        armazenamento: "256 GB SSD",
-        processador: "Core i5",
-        video: "Intel UHD",
-        desempenho: 79,
-        jogos: 62,
-        trabalho: 88,
-        qualidade: 87
-    },
-
-    {
-        id: "asus-tuf-gaming",
-        nome: "ASUS TUF Gaming",
-        marca: "ASUS",
-        categoria: "Notebook Gamer",
-        preco: 5499,
-        ram: "16 GB",
-        armazenamento: "512 GB SSD",
-        processador: "Ryzen 7",
-        video: "RTX 4050",
-        desempenho: 94,
-        jogos: 95,
-        trabalho: 91,
-        qualidade: 94
-    },
-
-    {
-        id: "acer-aspire-5",
-        nome: "Acer Aspire 5",
-        marca: "Acer",
-        categoria: "Notebook",
-        preco: 2799,
-        ram: "8 GB",
-        armazenamento: "512 GB SSD",
-        processador: "Core i5",
-        video: "Intel Iris Xe",
-        desempenho: 81,
-        jogos: 68,
-        trabalho: 90,
-        qualidade: 89
-    },
-
-    {
-        id: "acer-nitro-v",
-        nome: "Acer Nitro V",
-        marca: "Acer",
-        categoria: "Notebook Gamer",
-        preco: 4599,
-        ram: "16 GB",
-        armazenamento: "512 GB SSD",
-        processador: "Core i5-13420H",
-        video: "RTX 4050",
         desempenho: 93,
-        jogos: 94,
-        trabalho: 89,
-        qualidade: 92
-    },
-
-    {
-        id: "dell-inspiron",
-        nome: "Dell Inspiron",
-        marca: "Dell",
-        categoria: "Notebook",
-        preco: 3199,
-        ram: "8 GB",
-        armazenamento: "256 GB SSD",
-        processador: "Core i5",
-        video: "Intel Iris Xe",
-        desempenho: 82,
-        jogos: 65,
-        trabalho: 91,
-        qualidade: 91
-    },
-
-    {
-        id: "hp-250",
-        nome: "HP 250",
-        marca: "HP",
-        categoria: "Notebook",
-        preco: 2499,
-        ram: "8 GB",
-        armazenamento: "256 GB SSD",
-        processador: "Core i3",
-        video: "Intel UHD",
-        desempenho: 68,
-        jogos: 52,
-        trabalho: 82,
-        qualidade: 83
-    },
-
-    {
-        id: "pc-ryzen-5-5600g",
-        nome: "PC Gamer Ryzen 5 5600G",
-        marca: "AMD",
-        categoria: "PC Gamer",
-        preco: 2499,
-        ram: "16 GB",
-        armazenamento: "480 GB SSD",
-        processador: "Ryzen 5 5600G",
-        video: "Radeon Vega 7",
-        desempenho: 86,
-        jogos: 78,
-        trabalho: 89,
-        qualidade: 88
-    },
-
-    {
-        id: "pc-ryzen-5-5600",
-        nome: "PC Gamer Ryzen 5 5600",
-        marca: "AMD",
-        categoria: "PC Gamer",
-        preco: 3199,
-        ram: "16 GB",
-        armazenamento: "512 GB SSD",
-        processador: "Ryzen 5 5600",
-        video: "RX 6600",
-        desempenho: 92,
-        jogos: 94,
-        trabalho: 91,
-        qualidade: 92
-    },
-
-    {
-        id: "pc-ryzen-7-5700x",
-        nome: "PC Gamer Ryzen 7 5700X",
-        marca: "AMD",
-        categoria: "PC Gamer",
-        preco: 3999,
-        ram: "32 GB",
-        armazenamento: "1 TB SSD",
-        processador: "Ryzen 7 5700X",
-        video: "RTX 4060",
-        desempenho: 96,
-        jogos: 97,
-        trabalho: 97,
-        qualidade: 95
-    },
-
-    {
-        id: "pc-core-i3",
-        nome: "PC Core i3",
-        marca: "Intel",
-        categoria: "PC",
-        preco: 1899,
-        ram: "8 GB",
-        armazenamento: "240 GB SSD",
-        processador: "Core i3",
-        video: "Intel UHD",
-        desempenho: 65,
-        jogos: 48,
-        trabalho: 78,
-        qualidade: 80
-    },
-
-    {
-        id: "pc-gamer-core-i5",
-        nome: "PC Gamer Core i5",
-        marca: "Intel",
-        categoria: "PC Gamer",
-        preco: 3299,
-        ram: "16 GB",
-        armazenamento: "512 GB SSD",
-        processador: "Core i5",
-        video: "RTX 3060",
-        desempenho: 91,
-        jogos: 93,
-        trabalho: 89,
-        qualidade: 91
-    },
-
-    {
-        id: "pc-gamer-core-i7",
-        nome: "PC Gamer Core i7",
-        marca: "Intel",
-        categoria: "PC Gamer",
-        preco: 4499,
-        ram: "32 GB",
-        armazenamento: "1 TB SSD",
-        processador: "Core i7",
-        video: "RTX 4070",
-        desempenho: 98,
-        jogos: 99,
-        trabalho: 98,
-        qualidade: 97
-    },
-
-    {
-        id: "msi-katana",
-        nome: "MSI Katana",
-        marca: "MSI",
-        categoria: "Notebook Gamer",
-        preco: 5999,
-        ram: "16 GB",
-        armazenamento: "512 GB SSD",
-        processador: "Core i7",
-        video: "RTX 4060",
-        desempenho: 96,
-        jogos: 98,
-        trabalho: 92,
+        jogos: 91,
         qualidade: 94
-    },
-
-    {
-        id: "gigabyte-g5",
-        nome: "Gigabyte G5",
-        marca: "Gigabyte",
-        categoria: "Notebook Gamer",
-        preco: 4999,
-        ram: "16 GB",
-        armazenamento: "512 GB SSD",
-        processador: "Core i5",
-        video: "RTX 4060",
-        desempenho: 94,
-        jogos: 97,
-        trabalho: 89,
-        qualidade: 92
     }
 
 ];
