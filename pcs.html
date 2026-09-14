@@ -2,6 +2,7 @@
 <html lang="pt-BR">
 
 <head>
+
     <meta charset="UTF-8">
 
     <meta
@@ -9,380 +10,1063 @@
         content="width=device-width, initial-scale=1.0"
     >
 
-    <title>CelularRank — Pontos</title>
+    <title>PCs | CelularRank-Official</title>
 
     <meta
         name="description"
-        content="Veja a pontuação dos celulares e PCs no sistema CelularRank."
+        content="Ranking e comparação de PCs e notebooks do CelularRank-Official."
     >
 
-    <link rel="stylesheet" href="pontos.css">
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+    <style>
+
+        .pagina {
+
+            min-height: 100vh;
+
+            padding:
+                45px
+                20px
+                70px;
+
+        }
+
+
+        .container {
+
+            width: 100%;
+
+            max-width: 1200px;
+
+            margin: 0 auto;
+
+        }
+
+
+        .voltar {
+
+            display: inline-block;
+
+            margin-bottom: 25px;
+
+            color: #58b7ff;
+
+            text-decoration: none;
+
+            font-weight: bold;
+
+        }
+
+
+        .pagina-topo {
+
+            text-align: center;
+
+            margin-bottom: 35px;
+
+        }
+
+
+        .pagina-topo h1 {
+
+            font-size:
+                clamp(
+                    34px,
+                    6vw,
+                    55px
+                );
+
+            margin-bottom: 12px;
+
+        }
+
+
+        .pagina-topo h1 span {
+
+            color: #35a9ff;
+
+        }
+
+
+        .pagina-topo p {
+
+            color: #b9c7dd;
+
+            line-height: 1.6;
+
+            max-width: 750px;
+
+            margin: 0 auto;
+
+        }
+
+
+        /* CONTROLES */
+
+        .controles {
+
+            display: grid;
+
+            grid-template-columns:
+                1fr
+                220px;
+
+            gap: 15px;
+
+            margin-bottom: 30px;
+
+        }
+
+
+        .campo,
+        .select {
+
+            width: 100%;
+
+            padding: 14px 16px;
+
+            border-radius: 12px;
+
+            border:
+                1px solid
+                rgba(
+                    255,
+                    255,
+                    255,
+                    0.12
+                );
+
+            background: #0b2552;
+
+            color: white;
+
+            outline: none;
+
+            font-size: 15px;
+
+        }
+
+
+        .campo::placeholder {
+
+            color: #8294b2;
+
+        }
+
+
+        .campo:focus,
+        .select:focus {
+
+            border-color:
+                #35a9ff;
+
+        }
+
+
+        .select option {
+
+            background: #0b2552;
+
+            color: white;
+
+        }
+
+
+        /* INFORMAÇÕES */
+
+        .informacoes {
+
+            display: flex;
+
+            justify-content:
+                space-between;
+
+            align-items: center;
+
+            margin-bottom: 20px;
+
+            color: #b9c7dd;
+
+            font-size: 14px;
+
+        }
+
+
+        /* PRODUTOS */
+
+        .produtos {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(
+                    3,
+                    1fr
+                );
+
+            gap: 20px;
+
+        }
+
+
+        /* CARD */
+
+        .produto {
+
+            background: #0b2552;
+
+            border:
+                1px solid
+                rgba(
+                    255,
+                    255,
+                    255,
+                    0.10
+                );
+
+            border-radius: 20px;
+
+            padding: 22px;
+
+            transition:
+                0.25s ease;
+
+        }
+
+
+        .produto:hover {
+
+            transform:
+                translateY(-5px);
+
+            border-color:
+                #35a9ff;
+
+        }
+
+
+        .marca {
+
+            display: inline-block;
+
+            padding:
+                6px
+                10px;
+
+            background:
+                rgba(
+                    53,
+                    169,
+                    255,
+                    0.12
+                );
+
+            color: #58b7ff;
+
+            border-radius: 20px;
+
+            font-size: 12px;
+
+            font-weight: bold;
+
+            margin-bottom: 12px;
+
+        }
+
+
+        .produto h2 {
+
+            font-size: 21px;
+
+            margin-bottom: 8px;
+
+        }
+
+
+        .categoria {
+
+            color: #8294b2;
+
+            font-size: 13px;
+
+            margin-bottom: 12px;
+
+        }
+
+
+        .preco {
+
+            font-size: 27px;
+
+            font-weight: bold;
+
+            margin-bottom: 18px;
+
+        }
+
+
+        /* ESPECIFICAÇÕES */
+
+        .especificacoes {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(
+                    2,
+                    1fr
+                );
+
+            gap: 9px;
+
+        }
+
+
+        .spec {
+
+            background: #071a3d;
+
+            border-radius: 10px;
+
+            padding: 11px;
+
+            color: #b9c7dd;
+
+            font-size: 12px;
+
+            line-height: 1.4;
+
+        }
+
+
+        .spec strong {
+
+            display: block;
+
+            color: white;
+
+            margin-bottom: 4px;
+
+        }
+
+
+        /* DESEMPENHO */
+
+        .desempenho {
+
+            margin-top: 15px;
+
+            padding-top: 15px;
+
+            border-top:
+                1px solid
+                rgba(
+                    255,
+                    255,
+                    255,
+                    0.08
+                );
+
+        }
+
+
+        .desempenho-titulo {
+
+            display: flex;
+
+            justify-content:
+                space-between;
+
+            margin-bottom: 7px;
+
+            font-size: 13px;
+
+            color: #b9c7dd;
+
+        }
+
+
+        .barra {
+
+            width: 100%;
+
+            height: 8px;
+
+            background: #071a3d;
+
+            border-radius: 10px;
+
+            overflow: hidden;
+
+        }
+
+
+        .barra span {
+
+            display: block;
+
+            height: 100%;
+
+            background: #35a9ff;
+
+            border-radius: 10px;
+
+        }
+
+
+        .vazio {
+
+            text-align: center;
+
+            padding: 40px;
+
+            color: #b9c7dd;
+
+            grid-column: 1 / -1;
+
+        }
+
+
+        /* MOBILE */
+
+        @media (max-width: 850px) {
+
+            .produtos {
+
+                grid-template-columns:
+                    repeat(
+                        2,
+                        1fr
+                    );
+
+            }
+
+        }
+
+
+        @media (max-width: 650px) {
+
+            .controles {
+
+                grid-template-columns:
+                    1fr;
+
+            }
+
+
+            .produtos {
+
+                grid-template-columns:
+                    1fr;
+
+            }
+
+
+            .informacoes {
+
+                flex-direction: column;
+
+                align-items: flex-start;
+
+                gap: 8px;
+
+            }
+
+        }
+
+    </style>
+
 </head>
+
 
 <body>
 
-    <!-- CABEÇALHO -->
-    <header class="topo">
 
-        <a href="index.html" class="logo">
-            Celular<span>Rank</span>
-        </a>
+<main class="pagina">
 
-        <nav>
-            <a href="index.html">Início</a>
-            <a href="celulares.html">Celulares</a>
-            <a href="pcs.html">PCs</a>
-            <a href="pontos.html" class="ativo">Pontos</a>
-        </nav>
-
-    </header>
+<div class="container">
 
 
-    <!-- CONTEÚDO -->
-    <main class="container">
+<a
+    href="index.html"
+    class="voltar"
+>
+    ← Voltar
+</a>
 
-        <!-- HERO -->
-        <section class="hero">
 
-            <div class="hero-icone">
-                💠
+<section class="pagina-topo">
+
+    <h1>
+        💻 <span>PCs</span>
+    </h1>
+
+    <p>
+        Encontre PCs e notebooks,
+        compare desempenho, jogos,
+        processador, memória e armazenamento.
+    </p>
+
+</section>
+
+
+<section class="controles">
+
+    <input
+        id="busca"
+        class="campo"
+        type="text"
+        placeholder="🔎 Pesquisar PC ou notebook..."
+        autocomplete="off"
+    >
+
+
+    <select
+        id="ordenacao"
+        class="select"
+    >
+
+        <option value="ranking">
+            Melhor desempenho
+        </option>
+
+        <option value="preco-menor">
+            Menor preço
+        </option>
+
+        <option value="preco-maior">
+            Maior preço
+        </option>
+
+        <option value="jogos">
+            Melhor para jogos
+        </option>
+
+        <option value="qualidade">
+            Melhor qualidade
+        </option>
+
+    </select>
+
+</section>
+
+
+<div class="informacoes">
+
+    <span id="contador">
+        Carregando PCs...
+    </span>
+
+</div>
+
+
+<section
+    id="produtos"
+    class="produtos"
+>
+
+    <div class="vazio">
+        Carregando PCs...
+    </div>
+
+</section>
+
+
+</div>
+
+</main>
+
+
+<!-- DADOS -->
+
+<script src="./dados.js?v=20260913"></script>
+
+
+<script>
+
+/* =====================================================
+   CELULARRANK — PÁGINA DE PCS
+===================================================== */
+
+
+const produtosContainer =
+    document.getElementById(
+        "produtos"
+    );
+
+
+const busca =
+    document.getElementById(
+        "busca"
+    );
+
+
+const ordenacao =
+    document.getElementById(
+        "ordenacao"
+    );
+
+
+const contador =
+    document.getElementById(
+        "contador"
+    );
+
+
+let listaPCs = [];
+
+
+/* =====================================================
+   CARREGAR PCS
+===================================================== */
+
+function carregarPCs() {
+
+    if (
+        typeof window.pcs === "undefined" ||
+        !Array.isArray(window.pcs)
+    ) {
+
+        produtosContainer.innerHTML = `
+
+            <div class="vazio">
+
+                ❌ Não foi possível carregar os PCs.
+
+                <br><br>
+
+                Verifique o arquivo
+                <strong>dados.js</strong>.
+
             </div>
 
-            <h1>
-                Sistema de <span>Pontos</span>
-            </h1>
+        `;
 
-            <p>
-                Compare o desempenho dos dispositivos
-                através de CPU, GPU, MEM e UX.
-            </p>
+        contador.textContent =
+            "Erro ao carregar PCs.";
 
-        </section>
+        return;
+
+    }
 
 
-        <!-- EXPLICAÇÃO -->
-        <section class="metodologia">
-
-            <h2>💠 Como funciona?</h2>
-
-            <p>
-                Cada dispositivo recebe uma pontuação
-                em quatro categorias principais.
-            </p>
-
-            <div class="categorias-pontos">
-
-                <div class="categoria cpu">
-                    <div class="categoria-icone">🧠</div>
-
-                    <h3>CPU</h3>
-
-                    <span>Processador</span>
-
-                    <strong>250.000 pts</strong>
-                </div>
+    listaPCs =
+        [...window.pcs];
 
 
-                <div class="categoria gpu">
-                    <div class="categoria-icone">🎮</div>
+    renderizar();
 
-                    <h3>GPU</h3>
-
-                    <span>Gráficos e jogos</span>
-
-                    <strong>250.000 pts</strong>
-                </div>
+}
 
 
-                <div class="categoria mem">
-                    <div class="categoria-icone">💾</div>
+/* =====================================================
+   ESCAPAR HTML
+===================================================== */
 
-                    <h3>MEM</h3>
+function escaparHTML(valor) {
 
-                    <span>Memória</span>
+    return String(valor ?? "")
+        .replace(
+            /&/g,
+            "&amp;"
+        )
+        .replace(
+            /</g,
+            "&lt;"
+        )
+        .replace(
+            />/g,
+            "&gt;"
+        )
+        .replace(
+            /"/g,
+            "&quot;"
+        )
+        .replace(
+            /'/g,
+            "&#039;"
+        );
 
-                    <strong>250.000 pts</strong>
-                </div>
+}
 
 
-                <div class="categoria ux">
-                    <div class="categoria-icone">📱</div>
+/* =====================================================
+   PREÇO
+===================================================== */
 
-                    <h3>UX</h3>
+function formatarPreco(valor) {
 
-                    <span>Experiência</span>
+    const numero =
+        Number(valor);
 
-                    <strong>250.000 pts</strong>
-                </div>
+
+    if (
+        !Number.isFinite(numero) ||
+        numero <= 0
+    ) {
+
+        return "Preço não informado";
+
+    }
+
+
+    return numero.toLocaleString(
+        "pt-BR",
+        {
+            style: "currency",
+            currency: "BRL"
+        }
+    );
+
+}
+
+
+/* =====================================================
+   RENDERIZAR
+===================================================== */
+
+function renderizar() {
+
+    let produtos =
+        [...listaPCs];
+
+
+    const termo =
+        busca.value
+            .toLowerCase()
+            .trim()
+            .normalize("NFD")
+            .replace(
+                /[\u0300-\u036f]/g,
+                ""
+            );
+
+
+    /* PESQUISA */
+
+    if (termo) {
+
+        produtos =
+            produtos.filter(
+                pc => {
+
+                    const texto = [
+
+                        pc.nome,
+                        pc.marca,
+                        pc.categoria,
+                        pc.processador,
+                        pc.video,
+                        pc.ram,
+                        pc.armazenamento
+
+                    ]
+                    .join(" ")
+                    .toLowerCase()
+                    .normalize("NFD")
+                    .replace(
+                        /[\u0300-\u036f]/g,
+                        ""
+                    );
+
+
+                    return texto.includes(
+                        termo
+                    );
+
+                }
+            );
+
+    }
+
+
+    /* ORDENAÇÃO */
+
+    switch (
+        ordenacao.value
+    ) {
+
+        case "preco-menor":
+
+            produtos.sort(
+                (a, b) =>
+                    Number(a.preco || 0) -
+                    Number(b.preco || 0)
+            );
+
+            break;
+
+
+        case "preco-maior":
+
+            produtos.sort(
+                (a, b) =>
+                    Number(b.preco || 0) -
+                    Number(a.preco || 0)
+            );
+
+            break;
+
+
+        case "jogos":
+
+            produtos.sort(
+                (a, b) =>
+                    Number(b.jogos || 0) -
+                    Number(a.jogos || 0)
+            );
+
+            break;
+
+
+        case "qualidade":
+
+            produtos.sort(
+                (a, b) =>
+                    Number(b.qualidade || 0) -
+                    Number(a.qualidade || 0)
+            );
+
+            break;
+
+
+        default:
+
+            produtos.sort(
+                (a, b) => {
+
+                    const notaA =
+                        (
+                            Number(a.desempenho || 0) +
+                            Number(a.jogos || 0) +
+                            Number(a.qualidade || 0)
+                        ) / 3;
+
+
+                    const notaB =
+                        (
+                            Number(b.desempenho || 0) +
+                            Number(b.jogos || 0) +
+                            Number(b.qualidade || 0)
+                        ) / 3;
+
+
+                    return notaB - notaA;
+
+                }
+            );
+
+    }
+
+
+    contador.textContent =
+        `${produtos.length} PC${produtos.length !== 1 ? "s" : ""} encontrado${produtos.length !== 1 ? "s" : ""}.`;
+
+
+    /* VAZIO */
+
+    if (!produtos.length) {
+
+        produtosContainer.innerHTML = `
+
+            <div class="vazio">
+
+                Nenhum PC encontrado.
 
             </div>
 
-        </section>
+        `;
+
+        return;
+
+    }
 
 
-        <!-- PESQUISA -->
-        <section class="pesquisa">
+    /* CARDS */
 
-            <h2>🔎 Ver pontuação</h2>
+    produtosContainer.innerHTML =
+        produtos.map(
+            (pc, index) => {
 
-            <p>
-                Pesquise um celular ou PC para ver sua pontuação.
-            </p>
-
-            <input
-                type="text"
-                id="busca"
-                placeholder="Digite o nome do aparelho..."
-                autocomplete="off"
-            >
-
-            <div id="resultados" class="resultados"></div>
-
-        </section>
+                const desempenho =
+                    Number(
+                        pc.desempenho || 0
+                    );
 
 
-        <!-- APARELHO SELECIONADO -->
-        <section
-            id="resultado-pontos"
-            class="resultado-pontos oculto"
-        >
+                return `
 
-            <div class="resultado-topo">
+                <article class="produto">
 
-                <div>
-                    <span id="tipo-produto" class="tipo">
-                        DISPOSITIVO
+                    <span class="marca">
+
+                        ${escaparHTML(
+                            pc.marca || "Marca"
+                        )}
+
                     </span>
 
-                    <h2 id="nome-produto">
-                        —
+
+                    <h2>
+
+                        ${escaparHTML(
+                            pc.nome || "PC"
+                        )}
+
                     </h2>
 
-                    <p id="processador-produto">
-                        —
-                    </p>
-                </div>
 
-                <div class="total-box">
+                    <div class="categoria">
 
-                    <span>💠 TOTAL</span>
-
-                    <strong id="pontuacao-total">
-                        0
-                    </strong>
-
-                    <small>
-                        pontos
-                    </small>
-
-                </div>
-
-            </div>
-
-
-            <!-- BARRAS -->
-            <div class="pontuacoes">
-
-                <!-- CPU -->
-                <div class="ponto-card">
-
-                    <div class="ponto-header">
-
-                        <span>
-                            🧠 CPU
-                        </span>
-
-                        <strong id="score-cpu">
-                            0
-                        </strong>
+                        ${escaparHTML(
+                            pc.categoria || "PC"
+                        )}
 
                     </div>
 
-                    <div class="barra">
-                        <div
-                            id="barra-cpu"
-                            class="barra-preenchida"
-                        ></div>
-                    </div>
 
-                    <small>
-                        Desempenho do processador
-                    </small>
+                    <div class="preco">
 
-                </div>
-
-
-                <!-- GPU -->
-                <div class="ponto-card">
-
-                    <div class="ponto-header">
-
-                        <span>
-                            🎮 GPU
-                        </span>
-
-                        <strong id="score-gpu">
-                            0
-                        </strong>
+                        ${formatarPreco(
+                            pc.preco
+                        )}
 
                     </div>
 
-                    <div class="barra">
-                        <div
-                            id="barra-gpu"
-                            class="barra-preenchida"
-                        ></div>
+
+                    <div class="especificacoes">
+
+                        <div class="spec">
+
+                            <strong>
+                                ⚙️ Processador
+                            </strong>
+
+                            ${escaparHTML(
+                                pc.processador ||
+                                "Não informado"
+                            )}
+
+                        </div>
+
+
+                        <div class="spec">
+
+                            <strong>
+                                💾 RAM
+                            </strong>
+
+                            ${escaparHTML(
+                                pc.ram ||
+                                "Não informado"
+                            )}
+
+                        </div>
+
+
+                        <div class="spec">
+
+                            <strong>
+                                💿 Armazenamento
+                            </strong>
+
+                            ${escaparHTML(
+                                pc.armazenamento ||
+                                "Não informado"
+                            )}
+
+                        </div>
+
+
+                        <div class="spec">
+
+                            <strong>
+                                🎮 Vídeo
+                            </strong>
+
+                            ${escaparHTML(
+                                pc.video ||
+                                "Não informado"
+                            )}
+
+                        </div>
+
                     </div>
 
-                    <small>
-                        Desempenho gráfico e jogos
-                    </small>
 
-                </div>
+                    <div class="desempenho">
 
+                        <div class="desempenho-titulo">
 
-                <!-- MEM -->
-                <div class="ponto-card">
+                            <span>
+                                🏆 Desempenho
+                            </span>
 
-                    <div class="ponto-header">
+                            <strong>
+                                ${desempenho}/100
+                            </strong>
 
-                        <span>
-                            💾 MEM
-                        </span>
-
-                        <strong id="score-mem">
-                            0
-                        </strong>
-
-                    </div>
-
-                    <div class="barra">
-                        <div
-                            id="barra-mem"
-                            class="barra-preenchida"
-                        ></div>
-                    </div>
-
-                    <small>
-                        Memória e armazenamento
-                    </small>
-
-                </div>
+                        </div>
 
 
-                <!-- UX -->
-                <div class="ponto-card">
+                        <div class="barra">
 
-                    <div class="ponto-header">
+                            <span
+                                style="
+                                    width:${Math.max(
+                                        0,
+                                        Math.min(
+                                            100,
+                                            desempenho
+                                        )
+                                    )}%;
+                                "
+                            ></span>
 
-                        <span>
-                            📱 UX
-                        </span>
-
-                        <strong id="score-ux">
-                            0
-                        </strong>
+                        </div>
 
                     </div>
 
-                    <div class="barra">
-                        <div
-                            id="barra-ux"
-                            class="barra-preenchida"
-                        ></div>
-                    </div>
+                </article>
 
-                    <small>
-                        Experiência geral do dispositivo
-                    </small>
+                `;
 
-                </div>
+            }
+        )
+        .join("");
 
-            </div>
+}
 
 
-            <!-- RESUMO -->
-            <div class="resumo">
+/* =====================================================
+   EVENTOS
+===================================================== */
 
-                <h3>📊 Resumo da pontuação</h3>
-
-                <div class="resumo-grid">
-
-                    <div>
-                        <span>CPU</span>
-                        <strong id="resumo-cpu">0</strong>
-                    </div>
-
-                    <div>
-                        <span>GPU</span>
-                        <strong id="resumo-gpu">0</strong>
-                    </div>
-
-                    <div>
-                        <span>MEM</span>
-                        <strong id="resumo-mem">0</strong>
-                    </div>
-
-                    <div>
-                        <span>UX</span>
-                        <strong id="resumo-ux">0</strong>
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
+busca.addEventListener(
+    "input",
+    renderizar
+);
 
 
-        <!-- RANKING -->
-        <section class="ranking">
-
-            <div class="secao-titulo">
-
-                <div>
-                    <span>🏆</span>
-
-                    <div>
-                        <h2>Ranking CelularRank</h2>
-
-                        <p>
-                            Dispositivos com maior pontuação.
-                        </p>
-                    </div>
-                </div>
-
-            </div>
+ordenacao.addEventListener(
+    "change",
+    renderizar
+);
 
 
-            <div id="lista-ranking" class="lista-ranking">
+/* =====================================================
+   INICIAR
+===================================================== */
 
-                <div class="carregando">
-                    Carregando ranking...
-                </div>
+carregarPCs();
 
-            </div>
+</script>
 
-        </section>
-
-
-    </main>
-
-
-    <!-- RODAPÉ -->
-    <footer>
-
-        © 2026 CelularRank-Official —
-        Compare. Escolha. Compre melhor.
-
-    </footer>
-
-
-    <!-- DADOS DO SITE -->
-    <script src="dados.js"></script>
-
-    <!-- SISTEMA DE PONTOS -->
-    <script src="pontos.js"></script>
 
 </body>
+
 </html>
