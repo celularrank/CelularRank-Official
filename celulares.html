@@ -2,6 +2,7 @@
 <html lang="pt-BR">
 
 <head>
+
     <meta charset="UTF-8">
 
     <meta
@@ -13,7 +14,7 @@
 
     <meta
         name="description"
-        content="Compare celulares por preço, desempenho, jogos, qualidade, câmera, bateria, tela e carregamento."
+        content="Ranking e comparação de celulares do CelularRank-Official."
     >
 
     <link rel="stylesheet" href="style.css">
@@ -48,7 +49,7 @@
         .pagina-topo p {
             color: #b9c7dd;
             line-height: 1.6;
-            max-width: 700px;
+            max-width: 750px;
             margin: 0 auto;
         }
 
@@ -64,7 +65,10 @@
             color: white;
         }
 
-        /* CONTROLES */
+
+        /* ==========================================
+           CONTROLES
+        ========================================== */
 
         .controles {
             display: grid;
@@ -77,12 +81,19 @@
         .select {
             width: 100%;
             padding: 14px 16px;
+
             border-radius: 12px;
+
             border: 1px solid rgba(255,255,255,0.12);
+
             background: #0b2552;
+
             color: white;
+
             outline: none;
+
             font-size: 15px;
+
             box-sizing: border-box;
         }
 
@@ -100,191 +111,412 @@
             color: white;
         }
 
-        /* INFORMAÇÕES */
+
+        /* ==========================================
+           INFORMAÇÕES
+        ========================================== */
 
         .informacoes {
             display: flex;
+
             justify-content: space-between;
+
             align-items: center;
+
             margin-bottom: 20px;
+
             color: #b9c7dd;
+
             font-size: 14px;
         }
 
-        /* PRODUTOS */
+
+        /* ==========================================
+           PRODUTOS
+        ========================================== */
 
         .produtos {
             display: grid;
+
             grid-template-columns: repeat(3, 1fr);
+
             gap: 20px;
         }
 
-        /* CARD */
+
+        /* ==========================================
+           CARD
+        ========================================== */
 
         .produto {
             background: #0b2552;
+
             border: 1px solid rgba(255,255,255,0.10);
+
             border-radius: 20px;
+
             padding: 22px;
+
             transition: 0.25s ease;
         }
 
         .produto:hover {
             transform: translateY(-5px);
+
             border-color: #35a9ff;
-            box-shadow: 0 12px 35px rgba(0,0,0,0.25);
+
+            box-shadow:
+                0 12px 35px rgba(0,0,0,0.25);
         }
 
-        /* MARCA */
+
+        /* ==========================================
+           MARCA
+        ========================================== */
 
         .marca {
             display: inline-block;
+
             padding: 6px 10px;
-            background: rgba(53,169,255,0.12);
+
+            background:
+                rgba(53,169,255,0.12);
+
             color: #58b7ff;
+
             border-radius: 20px;
+
             font-size: 12px;
+
             font-weight: bold;
+
             margin-bottom: 12px;
         }
 
-        /* NOME */
+
+        /* ==========================================
+           NOME
+        ========================================== */
 
         .produto h2 {
             font-size: 21px;
+
             margin-bottom: 10px;
         }
 
-        /* PREÇO */
+
+        /* ==========================================
+           PREÇO
+        ========================================== */
 
         .preco {
             font-size: 27px;
+
             font-weight: bold;
+
             color: white;
+
+            margin-bottom: 15px;
+        }
+
+
+        /* ==========================================
+           CUSTO-BENEFÍCIO
+        ========================================== */
+
+        .custo-beneficio {
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(53,169,255,0.16),
+                    rgba(53,169,255,0.05)
+                );
+
+            border:
+                1px solid
+                rgba(53,169,255,0.25);
+
+            border-radius: 14px;
+
+            padding: 14px;
+
             margin-bottom: 18px;
         }
 
-        /* NOTA */
+        .cb-topo {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            gap: 10px;
+
+            margin-bottom: 8px;
+        }
+
+        .cb-titulo {
+
+            font-size: 13px;
+
+            font-weight: bold;
+
+            color: #cfe7ff;
+        }
+
+        .cb-nota {
+
+            font-size: 22px;
+
+            font-weight: 900;
+
+            color: #58b7ff;
+
+            white-space: nowrap;
+        }
+
+        .cb-classificacao {
+
+            font-size: 12px;
+
+            color: #9db3d2;
+
+            margin-bottom: 10px;
+        }
+
+        .cb-barra {
+
+            width: 100%;
+
+            height: 8px;
+
+            background: #061530;
+
+            border-radius: 20px;
+
+            overflow: hidden;
+        }
+
+        .cb-barra div {
+
+            height: 100%;
+
+            background: #35a9ff;
+
+            border-radius: 20px;
+
+            transition: width 0.4s ease;
+        }
+
+
+        /* ==========================================
+           NOTA GERAL
+        ========================================== */
 
         .nota {
+
             display: inline-flex;
+
             align-items: center;
+
             gap: 5px;
+
             background: #123a78;
+
             color: white;
+
             padding: 7px 10px;
+
             border-radius: 8px;
+
             font-size: 13px;
+
             margin-bottom: 18px;
         }
 
-        /* ESPECIFICAÇÕES */
+
+        /* ==========================================
+           ESPECIFICAÇÕES
+        ========================================== */
 
         .especificacoes {
+
             display: grid;
+
             grid-template-columns: 1fr 1fr;
+
             gap: 10px;
+
             margin-bottom: 20px;
         }
 
         .spec {
-            background: rgba(255,255,255,0.04);
+
+            background:
+                rgba(255,255,255,0.04);
+
             border-radius: 10px;
+
             padding: 10px;
+
             min-width: 0;
         }
 
         .spec small {
+
             display: block;
+
             color: #8294b2;
+
             font-size: 11px;
+
             margin-bottom: 5px;
         }
 
         .spec strong {
+
             display: block;
+
             font-size: 13px;
+
             color: #e5efff;
+
             line-height: 1.4;
+
             word-break: break-word;
         }
 
-        /* AVALIAÇÕES */
+
+        /* ==========================================
+           AVALIAÇÕES
+        ========================================== */
 
         .avaliacoes {
+
             display: flex;
+
             flex-direction: column;
+
             gap: 10px;
         }
 
         .avaliacao {
+
             display: grid;
-            grid-template-columns: 85px 1fr 30px;
+
+            grid-template-columns:
+                85px 1fr 30px;
+
             align-items: center;
+
             gap: 8px;
+
             font-size: 12px;
+
             color: #b9c7dd;
         }
 
         .barra {
+
             height: 7px;
+
             background: #061530;
+
             border-radius: 10px;
+
             overflow: hidden;
         }
 
         .barra div {
+
             height: 100%;
+
             background: #35a9ff;
+
             border-radius: 10px;
         }
 
-        /* SEM RESULTADOS */
+
+        /* ==========================================
+           SEM RESULTADOS
+        ========================================== */
 
         .sem-resultados {
+
             grid-column: 1 / -1;
+
             text-align: center;
+
             padding: 60px 20px;
+
             background: #0b2552;
+
             border-radius: 20px;
+
             color: #b9c7dd;
         }
 
         .sem-resultados h2 {
+
             color: white;
+
             margin-bottom: 10px;
         }
 
-        /* TABLET */
+
+        /* ==========================================
+           TABLET
+        ========================================== */
 
         @media (max-width: 900px) {
 
             .produtos {
-                grid-template-columns: repeat(2, 1fr);
+
+                grid-template-columns:
+                    repeat(2, 1fr);
+
             }
 
         }
 
-        /* CELULAR */
+
+        /* ==========================================
+           CELULAR
+        ========================================== */
 
         @media (max-width: 650px) {
 
             .pagina {
-                padding: 30px 15px 50px;
+
+                padding:
+                    30px
+                    15px
+                    50px;
+
             }
 
             .controles {
+
                 grid-template-columns: 1fr;
+
             }
 
             .produtos {
+
                 grid-template-columns: 1fr;
+
             }
 
             .informacoes {
+
                 flex-direction: column;
+
                 align-items: flex-start;
+
                 gap: 8px;
+
             }
 
         }
@@ -296,41 +528,65 @@
 
 <body>
 
+
 <main class="pagina">
 
     <div class="container">
 
-        <!-- VOLTAR -->
 
-        <a href="index.html" class="voltar">
+        <!-- ==========================================
+             VOLTAR
+        ========================================== -->
+
+        <a
+            href="index.html"
+            class="voltar"
+        >
+
             ← Voltar para o início
+
         </a>
 
 
-        <!-- CABEÇALHO -->
+        <!-- ==========================================
+             CABEÇALHO
+        ========================================== -->
 
         <section class="pagina-topo">
 
             <div class="badge">
+
                 📱 CelularRank
+
             </div>
 
+
             <h1>
+
                 Ranking de
                 <span>Celulares</span>
+
             </h1>
 
+
             <p>
-                Compare celulares por preço, desempenho, jogos,
-                qualidade, câmera, bateria, tela e carregamento.
+
+                Compare celulares por preço,
+                desempenho, jogos, qualidade,
+                câmera, bateria, tela,
+                carregamento e custo-benefício.
+
             </p>
 
         </section>
 
 
-        <!-- BUSCA E ORDENAÇÃO -->
+        <!-- ==========================================
+             BUSCA
+        ========================================== -->
 
         <section class="controles">
+
 
             <input
                 type="search"
@@ -339,6 +595,7 @@
                 placeholder="🔎 Procurar celular ou marca..."
                 autocomplete="off"
             >
+
 
             <select
                 id="ordenacao"
@@ -349,8 +606,12 @@
                     🏆 Melhor ranking
                 </option>
 
+                <option value="custo-beneficio">
+                    💰 Melhor custo-benefício
+                </option>
+
                 <option value="menor-preco">
-                    💰 Menor preço
+                    💵 Menor preço
                 </option>
 
                 <option value="maior-preco">
@@ -374,119 +635,431 @@
         </section>
 
 
-        <!-- INFORMAÇÕES -->
+        <!-- ==========================================
+             INFORMAÇÕES
+        ========================================== -->
 
         <div class="informacoes">
 
             <span id="contador">
+
                 Carregando celulares...
+
             </span>
 
+
             <span>
-                📊 Ranking CelularRank
+
+                💰 Custo-benefício
+                calculado pelo CelularRank
+
             </span>
 
         </div>
 
 
-        <!-- LISTA DOS CELULARES -->
+        <!-- ==========================================
+             LISTA
+        ========================================== -->
 
         <section
             id="listaCelulares"
             class="produtos"
         ></section>
 
+
     </div>
 
 </main>
 
 
-<!-- =====================================================
-     📦 CARREGAR DADOS
-===================================================== -->
+<!-- ==========================================
+     📦 DADOS
+========================================== -->
 
 <script src="./dados.js"></script>
 
-
-<!-- =====================================================
-     ⚙️ SISTEMA DA PÁGINA
-===================================================== -->
 
 <script>
 
 "use strict";
 
 
-/* ELEMENTOS */
+/* ==========================================
+   ELEMENTOS
+========================================== */
 
 const lista =
-    document.getElementById("listaCelulares");
+    document.getElementById(
+        "listaCelulares"
+    );
 
 const busca =
-    document.getElementById("busca");
+    document.getElementById(
+        "busca"
+    );
 
 const ordenacao =
-    document.getElementById("ordenacao");
+    document.getElementById(
+        "ordenacao"
+    );
 
 const contador =
-    document.getElementById("contador");
+    document.getElementById(
+        "contador"
+    );
 
 
-/* =====================================================
-   💰 FORMATAR PREÇO
-===================================================== */
+/* ==========================================
+   ⭐ GARANTIR INFORMAÇÕES EM TODOS OS CELULARES
+==========================================
 
-function precoBRL(valor) {
+   Se algum celular não possuir:
 
-    const numero = Number(valor);
+   camera
+   bateria
+   tela
+   carregamento
 
-    if (!Number.isFinite(numero) || numero <= 0) {
-        return "Preço não informado";
+   o sistema automaticamente coloca:
+
+   "Não informado"
+
+========================================== */
+
+function completarInformacoes(
+    produto
+) {
+
+    if (
+        !produto.camera ||
+        String(produto.camera).trim() === ""
+    ) {
+
+        produto.camera =
+            "Não informado";
+
     }
 
-    return numero.toLocaleString("pt-BR", {
-        style: "currency",
-        currency: "BRL"
-    });
+
+    if (
+        !produto.bateria ||
+        String(produto.bateria).trim() === ""
+    ) {
+
+        produto.bateria =
+            "Não informado";
+
+    }
+
+
+    if (
+        !produto.tela ||
+        String(produto.tela).trim() === ""
+    ) {
+
+        produto.tela =
+            "Não informado";
+
+    }
+
+
+    if (
+        !produto.carregamento ||
+        String(produto.carregamento).trim() === ""
+    ) {
+
+        produto.carregamento =
+            "Não informado";
+
+    }
+
+
+    return produto;
 
 }
 
 
-/* =====================================================
-   🏆 CALCULAR NOTA
-===================================================== */
+/* ==========================================
+   📱 APLICAR EM TODOS OS CELULARES
+========================================== */
 
-function notaProduto(produto) {
+if (
+    typeof celulares !== "undefined" &&
+    Array.isArray(celulares)
+) {
 
-    const notas = [
+    celulares.forEach(
+        completarInformacoes
+    );
 
-        Number(produto.desempenho) || 0,
+}
 
-        Number(produto.jogos) || 0,
 
-        Number(produto.qualidade) || 0
+/* ==========================================
+   💰 PREÇO
+========================================== */
 
-    ];
+function precoBRL(
+    valor
+) {
+
+    const numero =
+        Number(valor);
+
+
+    if (
+        !Number.isFinite(numero) ||
+        numero <= 0
+    ) {
+
+        return "Preço não informado";
+
+    }
+
+
+    return numero.toLocaleString(
+        "pt-BR",
+        {
+            style: "currency",
+            currency: "BRL"
+        }
+    );
+
+}
+
+
+/* ==========================================
+   🏆 NOTA GERAL
+========================================== */
+
+function notaProduto(
+    produto
+) {
+
+    const desempenho =
+        Number(
+            produto.desempenho
+        ) || 0;
+
+
+    const jogos =
+        Number(
+            produto.jogos
+        ) || 0;
+
+
+    const qualidade =
+        Number(
+            produto.qualidade
+        ) || 0;
+
 
     return Math.round(
 
-        notas.reduce(
-            (total, nota) => total + nota,
-            0
-        ) / notas.length
+        (
+            desempenho +
+            jogos +
+            qualidade
+        ) / 3
 
     );
 
 }
 
 
-/* =====================================================
-   📊 CRIAR BARRA DE AVALIAÇÃO
-===================================================== */
+/* ==========================================
+   💰 CUSTO-BENEFÍCIO
+========================================== */
 
-function avaliacao(nome, valor) {
+function calcularCustoBeneficio(
+    produto
+) {
 
-    const numero = Number(valor);
+    const nota =
+        notaProduto(produto);
+
+
+    const preco =
+        Number(produto.preco);
+
+
+    if (
+        !Number.isFinite(preco) ||
+        preco <= 0
+    ) {
+
+        return null;
+
+    }
+
+
+    const beneficio =
+        nota / 100;
+
+
+    let fatorPreco;
+
+
+    if (preco <= 700) {
+
+        fatorPreco = 1.30;
+
+    }
+
+    else if (preco <= 1000) {
+
+        fatorPreco = 1.20;
+
+    }
+
+    else if (preco <= 1500) {
+
+        fatorPreco = 1.10;
+
+    }
+
+    else if (preco <= 2000) {
+
+        fatorPreco = 1.00;
+
+    }
+
+    else if (preco <= 3000) {
+
+        fatorPreco = 0.90;
+
+    }
+
+    else if (preco <= 4000) {
+
+        fatorPreco = 0.82;
+
+    }
+
+    else {
+
+        fatorPreco = 0.75;
+
+    }
+
+
+    let resultado =
+        beneficio *
+        10 *
+        fatorPreco;
+
+
+    resultado =
+        Math.max(
+            0,
+            Math.min(
+                10,
+                resultado
+            )
+        );
+
+
+    return Number(
+        resultado.toFixed(1)
+    );
+
+}
+
+
+/* ==========================================
+   🏷️ CLASSIFICAÇÃO
+========================================== */
+
+function classificacaoCustoBeneficio(
+    nota
+) {
+
+    if (
+        nota === null
+    ) {
+
+        return "Preço não informado";
+
+    }
+
+
+    if (nota >= 9) {
+
+        return "🔥 Excelente";
+
+    }
+
+
+    if (nota >= 8) {
+
+        return "🟢 Muito bom";
+
+    }
+
+
+    if (nota >= 7) {
+
+        return "🟢 Bom";
+
+    }
+
+
+    if (nota >= 6) {
+
+        return "🟡 Razoável";
+
+    }
+
+
+    if (nota >= 5) {
+
+        return "🟠 Mediano";
+
+    }
+
+
+    return "🔴 Baixo";
+
+}
+
+
+/* ==========================================
+   📊 BARRA
+========================================== */
+
+function barraCustoBeneficio(
+    nota
+) {
+
+    if (
+        nota === null
+    ) {
+
+        return 0;
+
+    }
+
+
+    return Math.round(
+        nota * 10
+    );
+
+}
+
+
+/* ==========================================
+   📊 AVALIAÇÃO
+========================================== */
+
+function avaliacao(
+    nome,
+    valor
+) {
+
+    const numero =
+        Number(valor);
+
 
     if (
         !Number.isFinite(numero) ||
@@ -525,39 +1098,109 @@ function avaliacao(nome, valor) {
 }
 
 
-/* =====================================================
-   🃏 CRIAR CARD DO CELULAR
-===================================================== */
+/* ==========================================
+   🃏 CARD
+========================================== */
 
-function criarCard(produto, posicao) {
+function criarCard(
+    produto,
+    posicao
+) {
 
     const nota =
-        notaProduto(produto);
+        notaProduto(
+            produto
+        );
+
+
+    const custoBeneficio =
+        calcularCustoBeneficio(
+            produto
+        );
+
+
+    const classificacao =
+        classificacaoCustoBeneficio(
+            custoBeneficio
+        );
+
+
+    const barra =
+        barraCustoBeneficio(
+            custoBeneficio
+        );
 
 
     return `
 
         <article class="produto">
 
-            <!-- MARCA -->
 
             <span class="marca">
+
                 ${produto.marca || "Marca"}
+
             </span>
 
 
-            <!-- NOME -->
-
             <h2>
+
                 ${produto.nome || "Celular"}
+
             </h2>
 
 
-            <!-- PREÇO -->
-
             <div class="preco">
 
-                ${precoBRL(produto.preco)}
+                ${precoBRL(
+                    produto.preco
+                )}
+
+            </div>
+
+
+            <!-- CUSTO-BENEFÍCIO -->
+
+            <div class="custo-beneficio">
+
+                <div class="cb-topo">
+
+                    <span class="cb-titulo">
+
+                        💰 Custo-benefício
+
+                    </span>
+
+
+                    <span class="cb-nota">
+
+                        ${
+                            custoBeneficio !== null
+                                ? custoBeneficio + "/10"
+                                : "N/D"
+                        }
+
+                    </span>
+
+                </div>
+
+
+                <div class="cb-classificacao">
+
+                    ${classificacao}
+
+                </div>
+
+
+                <div class="cb-barra">
+
+                    <div
+                        style="
+                            width:${barra}%
+                        "
+                    ></div>
+
+                </div>
 
             </div>
 
@@ -566,7 +1209,8 @@ function criarCard(produto, posicao) {
 
             <div class="nota">
 
-                🏆 Nota ${nota}/100
+                🏆 Nota geral:
+                ${nota}/100
 
             </div>
 
@@ -576,8 +1220,6 @@ function criarCard(produto, posicao) {
             <div class="especificacoes">
 
 
-                <!-- PROCESSADOR -->
-
                 <div class="spec">
 
                     <small>
@@ -585,13 +1227,16 @@ function criarCard(produto, posicao) {
                     </small>
 
                     <strong>
-                        ${produto.processador || "Não informado"}
+
+                        ${
+                            produto.processador ||
+                            "Não informado"
+                        }
+
                     </strong>
 
                 </div>
 
-
-                <!-- RAM -->
 
                 <div class="spec">
 
@@ -600,13 +1245,16 @@ function criarCard(produto, posicao) {
                     </small>
 
                     <strong>
-                        ${produto.ram || "Não informado"}
+
+                        ${
+                            produto.ram ||
+                            "Não informado"
+                        }
+
                     </strong>
 
                 </div>
 
-
-                <!-- ARMAZENAMENTO -->
 
                 <div class="spec">
 
@@ -615,7 +1263,12 @@ function criarCard(produto, posicao) {
                     </small>
 
                     <strong>
-                        ${produto.armazenamento || "Não informado"}
+
+                        ${
+                            produto.armazenamento ||
+                            "Não informado"
+                        }
+
                     </strong>
 
                 </div>
@@ -630,7 +1283,11 @@ function criarCard(produto, posicao) {
                     </small>
 
                     <strong>
-                        ${produto.camera || "Não informado"}
+
+                        ${
+                            produto.camera
+                        }
+
                     </strong>
 
                 </div>
@@ -645,7 +1302,11 @@ function criarCard(produto, posicao) {
                     </small>
 
                     <strong>
-                        ${produto.bateria || "Não informado"}
+
+                        ${
+                            produto.bateria
+                        }
+
                     </strong>
 
                 </div>
@@ -660,7 +1321,11 @@ function criarCard(produto, posicao) {
                     </small>
 
                     <strong>
-                        ${produto.tela || "Não informado"}
+
+                        ${
+                            produto.tela
+                        }
+
                     </strong>
 
                 </div>
@@ -675,7 +1340,11 @@ function criarCard(produto, posicao) {
                     </small>
 
                     <strong>
-                        ${produto.carregamento || "Não informado"}
+
+                        ${
+                            produto.carregamento
+                        }
+
                     </strong>
 
                 </div>
@@ -690,7 +1359,9 @@ function criarCard(produto, posicao) {
                     </small>
 
                     <strong>
+
                         #${posicao}
+
                     </strong>
 
                 </div>
@@ -708,10 +1379,12 @@ function criarCard(produto, posicao) {
                     produto.desempenho
                 )}
 
+
                 ${avaliacao(
                     "Jogos",
                     produto.jogos
                 )}
+
 
                 ${avaliacao(
                     "Qualidade",
@@ -728,9 +1401,9 @@ function criarCard(produto, posicao) {
 }
 
 
-/* =====================================================
-   🔎 FILTRAR PRODUTOS
-===================================================== */
+/* ==========================================
+   🔎 FILTRAR
+========================================== */
 
 function filtrarProdutos() {
 
@@ -751,47 +1424,98 @@ function filtrarProdutos() {
     if (texto) {
 
         resultado =
-            resultado.filter(produto => {
+            resultado.filter(
+                produto => {
 
-                const nome =
-                    String(
-                        produto.nome || ""
-                    ).toLowerCase();
-
-
-                const marca =
-                    String(
-                        produto.marca || ""
-                    ).toLowerCase();
+                    const nome =
+                        String(
+                            produto.nome || ""
+                        ).toLowerCase();
 
 
-                const processador =
-                    String(
-                        produto.processador || ""
-                    ).toLowerCase();
+                    const marca =
+                        String(
+                            produto.marca || ""
+                        ).toLowerCase();
 
 
-                return (
+                    const processador =
+                        String(
+                            produto.processador || ""
+                        ).toLowerCase();
 
-                    nome.includes(texto) ||
 
-                    marca.includes(texto) ||
+                    return (
 
-                    processador.includes(texto)
+                        nome.includes(
+                            texto
+                        ) ||
 
-                );
+                        marca.includes(
+                            texto
+                        ) ||
 
-            });
+                        processador.includes(
+                            texto
+                        )
+
+                    );
+
+                }
+            );
 
     }
 
 
     /* ORDENAÇÃO */
 
-    switch (ordenacao.value) {
+    switch (
+        ordenacao.value
+    ) {
 
 
-        /* MENOR PREÇO */
+        case "custo-beneficio":
+
+            resultado.sort(
+                (a, b) => {
+
+                    const notaA =
+                        calcularCustoBeneficio(
+                            a
+                        );
+
+
+                    const notaB =
+                        calcularCustoBeneficio(
+                            b
+                        );
+
+
+                    if (
+                        notaA === null
+                    ) {
+
+                        return 1;
+
+                    }
+
+
+                    if (
+                        notaB === null
+                    ) {
+
+                        return -1;
+
+                    }
+
+
+                    return notaB - notaA;
+
+                }
+            );
+
+            break;
+
 
         case "menor-preco":
 
@@ -799,15 +1523,18 @@ function filtrarProdutos() {
 
                 (a, b) =>
 
-                    Number(a.preco || 0) -
-                    Number(b.preco || 0)
+                    Number(
+                        a.preco || 0
+                    ) -
+
+                    Number(
+                        b.preco || 0
+                    )
 
             );
 
             break;
 
-
-        /* MAIOR PREÇO */
 
         case "maior-preco":
 
@@ -815,15 +1542,18 @@ function filtrarProdutos() {
 
                 (a, b) =>
 
-                    Number(b.preco || 0) -
-                    Number(a.preco || 0)
+                    Number(
+                        b.preco || 0
+                    ) -
+
+                    Number(
+                        a.preco || 0
+                    )
 
             );
 
             break;
 
-
-        /* DESEMPENHO */
 
         case "desempenho":
 
@@ -831,15 +1561,18 @@ function filtrarProdutos() {
 
                 (a, b) =>
 
-                    Number(b.desempenho || 0) -
-                    Number(a.desempenho || 0)
+                    Number(
+                        b.desempenho || 0
+                    ) -
+
+                    Number(
+                        a.desempenho || 0
+                    )
 
             );
 
             break;
 
-
-        /* JOGOS */
 
         case "jogos":
 
@@ -847,15 +1580,18 @@ function filtrarProdutos() {
 
                 (a, b) =>
 
-                    Number(b.jogos || 0) -
-                    Number(a.jogos || 0)
+                    Number(
+                        b.jogos || 0
+                    ) -
+
+                    Number(
+                        a.jogos || 0
+                    )
 
             );
 
             break;
 
-
-        /* QUALIDADE */
 
         case "qualidade":
 
@@ -863,15 +1599,18 @@ function filtrarProdutos() {
 
                 (a, b) =>
 
-                    Number(b.qualidade || 0) -
-                    Number(a.qualidade || 0)
+                    Number(
+                        b.qualidade || 0
+                    ) -
+
+                    Number(
+                        a.qualidade || 0
+                    )
 
             );
 
             break;
 
-
-        /* RANKING */
 
         default:
 
@@ -887,16 +1626,20 @@ function filtrarProdutos() {
     }
 
 
-    mostrarProdutos(resultado);
+    mostrarProdutos(
+        resultado
+    );
 
 }
 
 
-/* =====================================================
-   📱 MOSTRAR PRODUTOS
-===================================================== */
+/* ==========================================
+   📱 MOSTRAR
+========================================== */
 
-function mostrarProdutos(produtos) {
+function mostrarProdutos(
+    produtos
+) {
 
     lista.innerHTML = "";
 
@@ -904,15 +1647,19 @@ function mostrarProdutos(produtos) {
     contador.textContent =
 
         `${produtos.length} celular${
-            produtos.length !== 1 ? "es" : ""
+            produtos.length !== 1
+                ? "es"
+                : ""
         } encontrado${
-            produtos.length !== 1 ? "s" : ""
+            produtos.length !== 1
+                ? "s"
+                : ""
         }`;
 
 
-    /* NENHUM RESULTADO */
-
-    if (produtos.length === 0) {
+    if (
+        produtos.length === 0
+    ) {
 
         lista.innerHTML = `
 
@@ -923,8 +1670,8 @@ function mostrarProdutos(produtos) {
                 </h2>
 
                 <p>
-                    Tente pesquisar por outra marca
-                    ou modelo.
+                    Tente pesquisar por outra
+                    marca ou modelo.
                 </p>
 
             </div>
@@ -936,10 +1683,7 @@ function mostrarProdutos(produtos) {
     }
 
 
-    /* CRIAR CARDS */
-
     produtos.forEach(
-
         (produto, index) => {
 
             lista.innerHTML +=
@@ -950,20 +1694,20 @@ function mostrarProdutos(produtos) {
                 );
 
         }
-
     );
 
 }
 
 
-/* =====================================================
-   🔄 EVENTOS
-===================================================== */
+/* ==========================================
+   EVENTOS
+========================================== */
 
 busca.addEventListener(
     "input",
     filtrarProdutos
 );
+
 
 ordenacao.addEventListener(
     "change",
@@ -971,9 +1715,9 @@ ordenacao.addEventListener(
 );
 
 
-/* =====================================================
+/* ==========================================
    🚀 INICIAR
-===================================================== */
+========================================== */
 
 if (
 
@@ -988,9 +1732,22 @@ if (
         celulares.length
     );
 
+
+    /*
+       Garante os 4 campos
+       em TODOS os celulares.
+    */
+
+    celulares.forEach(
+        completarInformacoes
+    );
+
+
     filtrarProdutos();
 
-} else {
+}
+
+else {
 
     contador.textContent =
         "Erro ao carregar dados.";
@@ -1005,7 +1762,8 @@ if (
             </h2>
 
             <p>
-                O arquivo <strong>dados.js</strong>
+                O arquivo
+                <strong>dados.js</strong>
                 não foi carregado corretamente.
             </p>
 
@@ -1017,5 +1775,7 @@ if (
 
 </script>
 
+
 </body>
+
 </html>
