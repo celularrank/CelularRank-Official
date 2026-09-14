@@ -937,86 +937,23 @@ function estatisticasCatalogo() {
    🌐 COMPATIBILIDADE COM AS PÁGINAS
 ========================================================= */
 
-window.celulares =
-    celulares;
+window.celulares = celulares;
+window.pcs = pcs;
+window.todosProdutos = todosProdutos;
+window.marcasCelulares = marcasCelulares;
+window.marcasPCs = marcasPCs;
+window.precoBRL = precoBRL;
+window.calcularNota = calcularNota;
+window.ordenarPorRanking = ordenarPorRanking;
+window.pesquisarProdutos = pesquisarProdutos;
+window.estatisticasCatalogo = estatisticasCatalogo;
 
-window.pcs =
-    pcs;
-
-window.todosProdutos =
-    todosProdutos;
-
-window.marcasCelulares =
-    marcasCelulares;
-
-window.marcasPCs =
-    marcasPCs;
-
-window.precoBRL =
-    precoBRL;
-
-window.calcularNota =
-    calcularNota;
-
-window.ordenarPorRanking =
-    ordenarPorRanking;
-
-window.pesquisarProdutos =
-    pesquisarProdutos;
-
-window.estatisticasCatalogo =
-    estatisticasCatalogo;
-
-
-/* =========================================================
-   ✅ TESTE
-========================================================= */
-
-console.log(
-    "===================================="
-);
-
-console.log(
-    "📱 CELULARRANK"
-);
-
-console.log(
-    "===================================="
-);
-
-console.log(
-    "Celulares:",
-    celulares.length
-);
-
-console.log(
-    "PCs/Notebooks:",
-    pcs.length
-);
-
-console.log(
-    "Total:",
-    todosProdutos.length
-);
-
-console.log(
-    "Marcas de celulares:",
-    marcasCelulares.length
-);
-
-console.log(
-    "Marcas de PCs:",
-    marcasPCs.length
-);
-
-console.log(
-    "===================================="
-);
-
-console.log(
-    "✅ dados.js carregado corretamente!"
-);
-
-console.log(
-    "===================================="
-);
+console.log("====================================");
+console.log("📱 CELULARRANK");
+console.log("====================================");
+console.log("Celulares:", celulares.length);
+console.log("PCs/Notebooks:", pcs.length);
+console.log("Total:", todosProdutos.length);
+console.log("====================================");
+console.log("✅ dados.js carregado corretamente!");
+console.log("====================================");
