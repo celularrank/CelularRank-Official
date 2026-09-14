@@ -1,8 +1,7 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 
 <head>
-
     <meta charset="UTF-8">
 
     <meta
@@ -29,11 +28,8 @@
 
         header {
             padding: 18px 6%;
-
             background: #061530;
-
-            border-bottom:
-                1px solid rgba(255,255,255,0.1);
+            border-bottom: 1px solid rgba(255,255,255,0.1);
         }
 
         .logo {
@@ -48,98 +44,79 @@
         .container {
             width: 100%;
             max-width: 1000px;
-
             margin: auto;
-
             padding: 40px 20px;
         }
 
         .voltar {
             display: inline-block;
-
             color: #58b7ff;
-
             text-decoration: none;
-
             margin-bottom: 25px;
+            font-size: 18px;
         }
 
         h1 {
             text-align: center;
-
             font-size: 42px;
-
             margin-bottom: 10px;
         }
 
         .descricao {
             text-align: center;
-
             color: #b9c7dd;
-
             margin-bottom: 35px;
+            font-size: 17px;
         }
 
         /* FILTROS */
 
         .filtros {
             display: flex;
-
             justify-content: center;
-
             flex-wrap: wrap;
-
             gap: 10px;
-
             margin-bottom: 30px;
         }
 
         .filtros button {
             border: 1px solid #1d5a9e;
-
             background: #0b2552;
-
             color: white;
-
-            padding: 10px 18px;
-
+            padding: 11px 20px;
             border-radius: 25px;
-
             cursor: pointer;
+            font-size: 15px;
+            transition: 0.2s;
+        }
+
+        .filtros button:hover {
+            border-color: #35a9ff;
         }
 
         .filtros button.ativo {
             background: #35a9ff;
-
             border-color: #35a9ff;
         }
 
-        /* PRODUTOS */
+        /* LISTA */
 
         #lista-pontos {
             display: grid;
-
             gap: 18px;
         }
 
         .produto {
             background: #0b2552;
-
-            border: 1px solid
-                rgba(53,169,255,0.20);
-
+            border: 1px solid rgba(53,169,255,0.25);
             border-radius: 20px;
-
             padding: 22px;
         }
 
         .produto-topo {
             display: flex;
-
             align-items: center;
-
             justify-content: space-between;
-
             gap: 15px;
         }
 
@@ -149,60 +126,84 @@
 
         .total {
             color: #35a9ff;
-
             font-size: 22px;
-
             font-weight: bold;
-
             white-space: nowrap;
         }
 
         .categoria {
             color: #8294b2;
-
             margin-top: 5px;
-
             font-size: 13px;
         }
 
         .pontos-grid {
             display: grid;
-
-            grid-template-columns:
-                repeat(4, 1fr);
-
+            grid-template-columns: repeat(4, 1fr);
             gap: 10px;
-
             margin-top: 20px;
         }
 
         .ponto {
             background: #071a3d;
-
             border-radius: 12px;
-
-            padding: 13px;
-
+            padding: 15px 10px;
             text-align: center;
         }
 
         .ponto strong {
             display: block;
-
             font-size: 13px;
-
             color: #b9c7dd;
-
             margin-bottom: 6px;
         }
 
         .ponto span {
             font-size: 17px;
-
             font-weight: bold;
         }
 
-        @media (max-width: 600px) {
+        /* INFORMAÇÕES EXTRAS */
+
+        .info-extra {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 8px;
+            margin-top: 12px;
+        }
+
+        .info {
+            background: rgba(7,26,61,0.65);
+            border-radius: 9px;
+            padding: 9px;
+            color: #b9c7dd;
+            font-size: 12px;
+        }
+
+        .info strong {
+            color: white;
+        }
+
+        /* MENSAGEM */
+
+        .mensagem {
+            text-align: center;
+            color: #b9c7dd;
+            padding: 30px;
+        }
+
+        .erro {
+            background: #3b1520;
+            border: 1px solid #8f3045;
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+            color: #ffd5dc;
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 700px) {
 
             h1 {
                 font-size: 34px;
@@ -210,7 +211,6 @@
 
             .produto-topo {
                 align-items: flex-start;
-
                 flex-direction: column;
             }
 
@@ -219,8 +219,31 @@
             }
 
             .pontos-grid {
-                grid-template-columns:
-                    repeat(2, 1fr);
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .info-extra {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+        }
+
+        @media (max-width: 420px) {
+
+            .container {
+                padding: 30px 14px;
+            }
+
+            .produto {
+                padding: 17px;
+            }
+
+            .pontos-grid {
+                gap: 7px;
+            }
+
+            .ponto span {
+                font-size: 15px;
             }
 
         }
@@ -249,8 +272,7 @@
     <h1>💠 Pontos</h1>
 
     <p class="descricao">
-        Ranking de pontuação dos dispositivos
-        do CelularRank.
+        Ranking de pontuação dos dispositivos do CelularRank.
     </p>
 
 
@@ -282,33 +304,112 @@
 
     <!-- LISTA -->
 
-    <div id="lista-pontos"></div>
+    <div id="lista-pontos">
+
+        <div class="mensagem">
+            Carregando dispositivos...
+        </div>
+
+    </div>
 
 </main>
 
 
-<script src="dados.js"></script>
-<script src="pontuacao.js"></script>
+<!--
+    IMPORTANTE:
+    O ?v=20260913 força o navegador a buscar
+    uma versão nova do dados.js e evita cache antigo.
+-->
+
+<script src="./dados.js?v=20260913"></script>
 
 
 <script>
 
+/* =========================================================
+   CELULARRANK — SISTEMA DE PONTOS
+========================================================= */
+
+
 /*
-    SISTEMA DE PONTOS
-    V1
+    Pega diretamente as constantes do dados.js.
 
-    Aqui transformamos os dados
-    existentes do catálogo em uma
-    pontuação do CelularRank.
-
-    IMPORTANTE:
-    Estes valores são uma estimativa
-    baseada nos dados do catálogo.
-    Não são resultados oficiais do AnTuTu.
+    Isso evita o problema que estava acontecendo
+    com window.celulares / window.pcs.
 */
 
+function obterProdutos() {
+
+    let celularesLista = [];
+
+    let pcsLista = [];
+
+
+    /*
+        CELULARES
+    */
+
+    if (
+        typeof celulares !== "undefined" &&
+        Array.isArray(celulares)
+    ) {
+
+        celularesLista = celulares;
+
+    }
+
+
+    /*
+        PCS
+    */
+
+    if (
+        typeof pcs !== "undefined" &&
+        Array.isArray(pcs)
+    ) {
+
+        pcsLista = pcs;
+
+    }
+
+
+    /*
+        Junta tudo
+    */
+
+    return [
+
+        ...celularesLista.map(produto => ({
+
+            ...produto,
+
+            tipo: "celular"
+
+        })),
+
+        ...pcsLista.map(produto => ({
+
+            ...produto,
+
+            tipo: "pc"
+
+        }))
+
+    ];
+
+}
+
+
+/* =========================================================
+   CÁLCULO DOS PONTOS
+========================================================= */
 
 function calcularPontos(produto) {
+
+    /*
+        Notas do catálogo:
+        0 até 100
+    */
 
     const desempenho =
         Number(produto.desempenho) || 0;
@@ -319,64 +420,91 @@ function calcularPontos(produto) {
     const qualidade =
         Number(produto.qualidade) || 0;
 
+
+    /*
+        TRABALHO
+
+        Se existir uma nota específica de trabalho,
+        usa ela.
+
+        Caso contrário usa qualidade.
+    */
+
     const trabalho =
         Number(produto.trabalho) ||
-        Number(produto.qualidade) ||
-        0;
+        qualidade;
 
 
     /*
-        CPU
+        =========================
+        CPU — 300.000 pontos
+        =========================
     */
 
     const CPU =
         Math.round(
-            desempenho * 3000
+            (desempenho / 100) * 300000
         );
 
 
     /*
-        GPU
+        =========================
+        GPU — 300.000 pontos
+        =========================
     */
 
     const GPU =
         Math.round(
-            jogos * 3000
+            (jogos / 100) * 300000
         );
 
 
     /*
-        MEM
+        =========================
+        MEM — 200.000 pontos
+        =========================
+
+        Considera RAM.
+
+        16 GB ou mais = 200.000
     */
 
-    const RAM =
-        parseInt(produto.ram) || 0;
+    let RAM = parseInt(
+        String(produto.ram || "0")
+            .replace(/[^\d]/g, "")
+    ) || 0;
 
-    const MEM =
-        Math.min(
-            200000,
-            Math.round(
-                (RAM / 16) * 200000
-            )
+
+    let MEM =
+        Math.round(
+            Math.min(RAM, 16) / 16 * 200000
         );
 
 
     /*
-        UX
+        =========================
+        UX — 200.000 pontos
+        =========================
     */
+
+    const mediaUX =
+        (
+            desempenho +
+            qualidade +
+            trabalho
+        ) / 3;
+
 
     const UX =
         Math.round(
-            (
-                desempenho +
-                qualidade +
-                trabalho
-            ) / 3 * 2000
+            (mediaUX / 100) * 200000
         );
 
 
     /*
-        TOTAL
+        =========================
+        TOTAL — 1.000.000
+        =========================
     */
 
     const total =
@@ -402,64 +530,51 @@ function calcularPontos(produto) {
 }
 
 
+/* =========================================================
+   FILTRO ATUAL
+========================================================= */
+
 let filtroAtual = "todos";
 
 
-function obterProdutos() {
-
-    const celularesLista =
-        Array.isArray(window.celulares)
-            ? window.celulares
-            : [];
-
-    const pcsLista =
-        Array.isArray(window.pcs)
-            ? window.pcs
-            : [];
-
-    return [
-
-        ...celularesLista.map(
-            produto => ({
-                ...produto,
-                tipo: "celular"
-            })
-        ),
-
-        ...pcsLista.map(
-            produto => ({
-                ...produto,
-                tipo: "pc"
-            })
-        )
-
-    ];
-
-}
-
+/* =========================================================
+   MOSTRAR FILTRO
+========================================================= */
 
 function mostrar(filtro, botao) {
 
     filtroAtual = filtro;
 
+
     document
         .querySelectorAll(".filtros button")
-        .forEach(
-            b => b.classList.remove("ativo")
-        );
+        .forEach(button => {
+
+            button.classList.remove("ativo");
+
+        });
+
 
     botao.classList.add("ativo");
+
 
     renderizar();
 
 }
 
 
+/* =========================================================
+   RENDERIZAR
+========================================================= */
+
 function renderizar() {
 
-    let produtos =
-        obterProdutos();
+    let produtos = obterProdutos();
 
+
+    /*
+        Filtro
+    */
 
     if (filtroAtual !== "todos") {
 
@@ -477,16 +592,14 @@ function renderizar() {
     */
 
     produtos =
-        produtos.map(
-            produto => ({
+        produtos.map(produto => ({
 
-                ...produto,
+            ...produto,
 
-                pontos:
-                    calcularPontos(produto)
+            pontos:
+                calcularPontos(produto)
 
-            })
-        );
+        }));
 
 
     /*
@@ -506,15 +619,36 @@ function renderizar() {
         );
 
 
+    /*
+        Nenhum produto
+    */
+
     if (!produtos.length) {
 
-        lista.innerHTML =
-            "<p>Nenhum dispositivo encontrado.</p>";
+        lista.innerHTML = `
+
+            <div class="erro">
+
+                <h3>Nenhum dispositivo encontrado.</h3>
+
+                <p style="margin-top:8px;">
+                    Verifique se o arquivo
+                    <strong>dados.js</strong>
+                    possui os celulares e PCs.
+                </p>
+
+            </div>
+
+        `;
 
         return;
 
     }
 
+
+    /*
+        Cria os cards
+    */
 
     lista.innerHTML =
         produtos.map(
@@ -522,6 +656,26 @@ function renderizar() {
 
                 const p =
                     produto.pontos;
+
+
+                const camera =
+                    produto.camera ||
+                    "Não informado";
+
+
+                const bateria =
+                    produto.bateria ||
+                    "Não informado";
+
+
+                const tela =
+                    produto.tela ||
+                    "Não informado";
+
+
+                const carregamento =
+                    produto.carregamento ||
+                    "Não informado";
 
 
                 return `
@@ -534,56 +688,127 @@ function renderizar() {
 
                             <h2>
                                 ${index + 1}º —
-                                ${produto.nome}
+                                ${produto.nome || "Dispositivo"}
                             </h2>
 
                             <div class="categoria">
+
                                 ${produto.marca || ""}
+
                                 •
+
                                 ${produto.categoria || ""}
+
                             </div>
 
                         </div>
 
+
                         <div class="total">
+
                             💠
                             ${p.total.toLocaleString("pt-BR")}
+
                         </div>
 
                     </div>
 
 
+                    <!-- PONTUAÇÃO -->
+
                     <div class="pontos-grid">
 
                         <div class="ponto">
-                            <strong>🧠 CPU</strong>
+
+                            <strong>
+                                🧠 CPU
+                            </strong>
+
                             <span>
                                 ${p.CPU.toLocaleString("pt-BR")}
                             </span>
+
                         </div>
 
 
                         <div class="ponto">
-                            <strong>🎮 GPU</strong>
+
+                            <strong>
+                                🎮 GPU
+                            </strong>
+
                             <span>
                                 ${p.GPU.toLocaleString("pt-BR")}
                             </span>
+
                         </div>
 
 
                         <div class="ponto">
-                            <strong>💾 MEM</strong>
+
+                            <strong>
+                                💾 MEM
+                            </strong>
+
                             <span>
                                 ${p.MEM.toLocaleString("pt-BR")}
                             </span>
+
                         </div>
 
 
                         <div class="ponto">
-                            <strong>📱 UX</strong>
+
+                            <strong>
+                                📱 UX
+                            </strong>
+
                             <span>
                                 ${p.UX.toLocaleString("pt-BR")}
                             </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- INFORMAÇÕES -->
+
+                    <div class="info-extra">
+
+                        <div class="info">
+
+                            📸 <strong>Câmera</strong><br>
+
+                            ${camera}
+
+                        </div>
+
+
+                        <div class="info">
+
+                            🔋 <strong>Bateria</strong><br>
+
+                            ${bateria}
+
+                        </div>
+
+
+                        <div class="info">
+
+                            📱 <strong>Tela</strong><br>
+
+                            ${tela}
+
+                        </div>
+
+
+                        <div class="info">
+
+                            ⚡ <strong>Carregamento</strong><br>
+
+                            ${carregamento}
+
                         </div>
 
                     </div>
@@ -599,7 +824,18 @@ function renderizar() {
 }
 
 
-renderizar();
+/* =========================================================
+   INICIALIZAÇÃO
+========================================================= */
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function() {
+
+        renderizar();
+
+    }
+);
 
 </script>
 
