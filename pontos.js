@@ -1,61 +1,42 @@
- /*
-====================================================
- CELULARRANK - SISTEMA DE PONTOS
- CPU + GPU + MEM + UX
-====================================================
+/* =========================================================
+   CELULARRANK — SISTEMA DE PONTOS
+   Compatível com dados.js
+========================================================= */
 
-Cada categoria vale no máximo:
+"use strict";
 
-CPU = 250.000
-GPU = 250.000
-MEM = 250.000
-UX  = 250.000
+(function () {
+    function numero(valor) {
+        const n = Number(valor);
+        return Number.isFinite(n) ? n : 0;
+    }
 
-TOTAL = 1.000.000
+    function calcularPontos(produto) {
+        const desempenho = Math.max(0, Math.min(100, numero(produto.desempenho)));
+        const jogos = Math.max(0, Math.min(100, numero(produto.jogos)));
+        const qualidade = Math.max(0, Math.min(100, numero(produto.qualidade)));
 
-O sistema é separado da dados.js.
-====================================================
-*/
+        const ramTexto = String(produto.ram || "0");
+        const ram = parseInt(ramTexto.replace(/[^\d]/g, ""), 10) || 0;
 
+        const CPU = Math.round((desempenho / 100) * 300000);
+        const GPU = Math.round((jogos / 100) * 300000);
+        const MEM = Math.round((Math.min(ram, 16) / 16) * 200000);
+        const UX = Math.round(((desempenho + qualidade) / 2 / 100) * 200000);
 
-document.addEventListener("DOMContentLoaded", iniciarPontos);
+        return {
+            CPU,
+            GPU,
+            MEM,
+            UX,
+            total: Math.min(1000000, CPU + GPU + MEM + UX)
+        };
+    }
 
-
-function iniciarPontos() {
-
-    console.log("💠 CelularRank - Sistema de pontos iniciado.");
-
-
-    /*
-    ====================================================
-    CARREGA OS PRODUTOS
-    ====================================================
-    */
-
-    const celulares =
-        Array.isArray(window.celulares)
-            ? window.celulares
-            : [];
-
-    const pcs =
-        Array.isArray(window.pcs)
-            ? window.pcs
-            : [];
-
-
-    const produtos = [
-
-        ...celulares.map(produto => ({
-            ...produto,
-            tipo: "Celular"
-        })),
-
-        ...pcs.map(produto => ({
-            ...produto,
-            tipo: "PC"
-        }))
-
-    ];
+    window.CelularRankPontos = {
+        calcularPontos
+    };
+})();
 
 
     console.log(
