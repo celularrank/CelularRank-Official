@@ -933,10 +933,9 @@ window.pcs = [
    🔗 BANCO UNIFICADO
 ========================================================= */
 
-window.todosProdutos = [
-
-    ...window.celulares,
-    ...window.pcs
+window.celulares = celulares;
+window.pcs = pcs;
+window.todosProdutos = todosProdutos;
 
 ];
 
