@@ -3,1018 +3,510 @@
 
 <head>
 
-<meta charset="UTF-8">
+    <meta charset="UTF-8">
 
-<meta name="viewport"
-      content="width=device-width, initial-scale=1.0">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
-<title>CelularRank — Pontos</title>
+    <title>Pontos - CelularRank</title>
 
-<style>
+    <meta
+        name="description"
+        content="Ranking de pontos e desempenho dos dispositivos no CelularRank."
+    >
 
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-family: Arial, Helvetica, sans-serif;
-}
-
-body {
-    background: #071a3d;
-    color: white;
-    min-height: 100vh;
-}
-
-header {
-    background: #061530;
-    padding: 22px 6%;
-    border-bottom: 1px solid rgba(255,255,255,.1);
-}
-
-.logo {
-    font-size: 25px;
-    font-weight: bold;
-}
-
-.logo span {
-    color: #35a9ff;
-}
-
-.container {
-    max-width: 1000px;
-    margin: auto;
-    padding: 40px 20px;
-}
-
-.voltar {
-    display: inline-block;
-    color: #58b7ff;
-    text-decoration: none;
-    font-size: 18px;
-    margin-bottom: 28px;
-}
-
-h1 {
-    text-align: center;
-    font-size: 42px;
-    margin-bottom: 10px;
-}
-
-.descricao {
-    text-align: center;
-    color: #b9c7dd;
-    font-size: 17px;
-    margin-bottom: 35px;
-}
-
-/* FILTROS */
-
-.filtros {
-    display: flex;
-    justify-content: center;
-    gap: 12px;
-    flex-wrap: wrap;
-    margin-bottom: 30px;
-}
-
-.filtros button {
-    background: #0b2552;
-    color: white;
-    border: 1px solid #1d5a9e;
-    padding: 12px 22px;
-    border-radius: 30px;
-    font-size: 16px;
-    cursor: pointer;
-}
-
-.filtros button.ativo {
-    background: #35a9ff;
-    border-color: #35a9ff;
-}
-
-/* LISTA */
-
-#lista-pontos {
-    display: grid;
-    gap: 18px;
-}
-
-.produto {
-    background: #0b2552;
-    border: 1px solid rgba(53,169,255,.25);
-    border-radius: 20px;
-    padding: 22px;
-}
-
-.produto-topo {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 15px;
-}
-
-.produto h2 {
-    font-size: 21px;
-}
-
-.categoria {
-    margin-top: 6px;
-    color: #8294b2;
-    font-size: 14px;
-}
-
-.total {
-    color: #35a9ff;
-    font-size: 22px;
-    font-weight: bold;
-    white-space: nowrap;
-}
-
-/* PONTUAÇÃO */
-
-.pontos-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
-    margin-top: 20px;
-}
-
-.ponto {
-    background: #071a3d;
-    border-radius: 12px;
-    padding: 15px 10px;
-    text-align: center;
-}
-
-.ponto strong {
-    display: block;
-    color: #b9c7dd;
-    font-size: 13px;
-    margin-bottom: 7px;
-}
-
-.ponto span {
-    font-size: 17px;
-    font-weight: bold;
-}
-
-/* INFORMAÇÕES DO PC */
-
-.informacoes {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 8px;
-    margin-top: 12px;
-}
-
-.info {
-    background: rgba(7,26,61,.7);
-    border-radius: 10px;
-    padding: 10px;
-    font-size: 12px;
-    color: #b9c7dd;
-}
-
-.info strong {
-    color: white;
-}
-
-/* ERRO */
-
-.erro {
-    background: #3d1621;
-    border: 1px solid #8e3047;
-    padding: 20px;
-    border-radius: 15px;
-    text-align: center;
-}
-
-/* MOBILE */
-
-@media (max-width: 700px) {
-
-    .container {
-        padding: 35px 15px;
-    }
-
-    h1 {
-        font-size: 35px;
-    }
-
-    .produto-topo {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .pontos-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .informacoes {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-}
-
-</style>
+    <link rel="stylesheet" href="style.css">
 
 </head>
 
+
 <body>
 
-<header>
+<header class="site-header">
 
-    <div class="logo">
-        Celular<span>Rank</span>
+    <div class="container header-content">
+
+        <a href="index.html" class="logo">
+            <span>CELULAR</span><strong>RANK</strong>
+        </a>
+
+        <button class="menu-toggle" id="menuToggle">
+            ☰
+        </button>
+
+        <nav class="main-nav" id="mainNav">
+
+            <a href="index.html">
+                Início
+            </a>
+
+            <a href="celulares.html">
+                Celulares
+            </a>
+
+            <a href="pcs.html">
+                PCs
+            </a>
+
+            <a href="pontos.html" class="active">
+                Pontos
+            </a>
+
+        </nav>
+
     </div>
 
 </header>
 
 
-<main class="container">
+<main>
 
-<a href="index.html" class="voltar">
-    ← Voltar
-</a>
+<section class="catalog-page">
 
+<div class="container">
 
-<h1>💠 Pontos</h1>
+    <div class="page-head">
 
-<p class="descricao">
-    Ranking de pontuação dos dispositivos do CelularRank.
-</p>
+        <div>
 
+            <span class="eyebrow">
+                CELULARRANK SCORE
+            </span>
 
-<div class="filtros">
+            <h1>
+                Pontuação
+            </h1>
 
-    <button
-        id="btnTodos"
-        class="ativo"
-        onclick="mostrar('todos', this)">
-        Todos
-    </button>
+            <p>
+                Ranking baseado nos critérios do CelularRank.
+            </p>
 
-    <button
-        id="btnCelulares"
-        onclick="mostrar('celular', this)">
-        📱 Celulares
-    </button>
+        </div>
 
-    <button
-        id="btnPCs"
-        onclick="mostrar('pc', this)">
-        💻 PCs
-    </button>
-
-</div>
-
-
-<div id="lista-pontos">
-
-    <div class="erro">
-        Carregando dispositivos...
     </div>
 
+
+    <div class="info-box">
+
+        <strong>
+            ℹ️ Como funciona?
+        </strong>
+
+        <p>
+            A pontuação abaixo é uma métrica própria e estimada
+            do CelularRank. Ela não representa uma pontuação oficial
+            de outros benchmarks.
+        </p>
+
+    </div>
+
+
+    <div class="points-controls">
+
+        <input
+            id="pointsSearch"
+            class="input"
+            type="search"
+            placeholder="🔎 Pesquisar dispositivo..."
+        >
+
+
+        <select id="pointsType" class="input">
+
+            <option value="todos">
+                Celulares e PCs
+            </option>
+
+            <option value="celulares">
+                Apenas celulares
+            </option>
+
+            <option value="pcs">
+                Apenas PCs
+            </option>
+
+        </select>
+
+
+        <select id="pointsSort" class="input">
+
+            <option value="total">
+                Maior pontuação
+            </option>
+
+            <option value="desempenho">
+                Desempenho
+            </option>
+
+            <option value="jogos">
+                Jogos
+            </option>
+
+            <option value="qualidade">
+                Qualidade
+            </option>
+
+        </select>
+
+    </div>
+
+
+    <div id="pointsList" class="points-list"></div>
+
 </div>
+
+</section>
 
 </main>
 
 
-<!-- =====================================================
-     DADOS DO CELULARRANK
-===================================================== -->
-
-<script src="./dados.js?v=20260913"></script>
-
+<script src="dados.js"></script>
 
 <script>
 
-/* =====================================================
-   CELULARRANK — PONTOS
-===================================================== */
+document.addEventListener(
+    "DOMContentLoaded",
+    () => {
 
+        const phones =
+            Array.isArray(window.celulares)
+                ? window.celulares
+                : [];
 
-/*
-   =====================================================
-   FALLBACK DOS PCs
-   =====================================================
 
-   Este bloco garante que os PCs apareçam mesmo se
-   window.pcs não estiver disponível por algum motivo.
+        const pcs =
+            Array.isArray(window.pcs)
+                ? window.pcs
+                : [];
 
-   Os dados principais continuam vindo do dados.js.
-*/
 
-const pcsFallback = [
-
-    {
-        id: "lenovo-ideapad-3",
-        nome: "IdeaPad 3",
-        marca: "Lenovo",
-        categoria: "Notebook",
-        preco: 3000,
-        ram: "8 GB",
-        armazenamento: "256 GB SSD",
-        processador: "Ryzen 5",
-        video: "Integrado",
-        desempenho: 78,
-        jogos: 65,
-        qualidade: 84
-    },
-
-    {
-        id: "lenovo-loq",
-        nome: "LOQ",
-        marca: "Lenovo",
-        categoria: "Notebook Gamer",
-        preco: 6500,
-        ram: "16 GB",
-        armazenamento: "512 GB SSD",
-        processador: "Core i5",
-        video: "NVIDIA GeForce RTX",
-        desempenho: 94,
-        jogos: 94,
-        qualidade: 93
-    },
-
-    {
-        id: "asus-vivobook",
-        nome: "Vivobook",
-        marca: "ASUS",
-        categoria: "Notebook",
-        preco: 3700,
-        ram: "8 GB",
-        armazenamento: "256 GB SSD",
-        processador: "Core i5",
-        video: "Integrado",
-        desempenho: 82,
-        jogos: 68,
-        qualidade: 87
-    },
-
-    {
-        id: "asus-tuf-gaming",
-        nome: "TUF Gaming",
-        marca: "ASUS",
-        categoria: "Notebook Gamer",
-        preco: 8700,
-        ram: "16 GB",
-        armazenamento: "512 GB SSD",
-        processador: "Ryzen 7",
-        video: "NVIDIA GeForce RTX",
-        desempenho: 96,
-        jogos: 97,
-        qualidade: 94
-    },
-
-    {
-        id: "acer-aspire-5",
-        nome: "Aspire 5",
-        marca: "Acer",
-        categoria: "Notebook",
-        preco: 4000,
-        ram: "8 GB",
-        armazenamento: "256 GB SSD",
-        processador: "Core i5",
-        video: "Integrado",
-        desempenho: 82,
-        jogos: 68,
-        qualidade: 86
-    },
-
-    {
-        id: "acer-nitro-v",
-        nome: "Nitro V",
-        marca: "Acer",
-        categoria: "Notebook Gamer",
-        preco: 7000,
-        ram: "16 GB",
-        armazenamento: "512 GB SSD",
-        processador: "Core i5",
-        video: "NVIDIA GeForce RTX",
-        desempenho: 94,
-        jogos: 95,
-        qualidade: 92
-    },
-
-    {
-        id: "dell-inspiron",
-        nome: "Inspiron",
-        marca: "Dell",
-        categoria: "Notebook",
-        preco: 4000,
-        ram: "8 GB",
-        armazenamento: "256 GB SSD",
-        processador: "Core i5",
-        video: "Integrado",
-        desempenho: 81,
-        jogos: 65,
-        qualidade: 89
-    },
-
-    {
-        id: "hp-250",
-        nome: "HP 250",
-        marca: "HP",
-        categoria: "Notebook",
-        preco: 3500,
-        ram: "8 GB",
-        armazenamento: "256 GB SSD",
-        processador: "Core i5",
-        video: "Integrado",
-        desempenho: 81,
-        jogos: 64,
-        qualidade: 86
-    },
-
-    {
-        id: "pc-ryzen-5-5600g",
-        nome: "PC Gamer Ryzen 5 5600G",
-        marca: "AMD",
-        categoria: "PC Gamer",
-        preco: 2500,
-        ram: "16 GB",
-        armazenamento: "480 GB SSD",
-        processador: "Ryzen 5 5600G",
-        video: "Radeon Vega Integrado",
-        desempenho: 85,
-        jogos: 78,
-        qualidade: 86
-    },
-
-    {
-        id: "pc-ryzen-5-5600",
-        nome: "PC Gamer Ryzen 5 5600",
-        marca: "AMD",
-        categoria: "PC Gamer",
-        preco: 3500,
-        ram: "16 GB",
-        armazenamento: "512 GB SSD",
-        processador: "Ryzen 5 5600",
-        video: "Placa de vídeo dedicada",
-        desempenho: 91,
-        jogos: 90,
-        qualidade: 90
-    },
-
-    {
-        id: "pc-ryzen-7-5700x",
-        nome: "PC Gamer Ryzen 7 5700X",
-        marca: "AMD",
-        categoria: "PC Gamer",
-        preco: 5000,
-        ram: "32 GB",
-        armazenamento: "1 TB SSD",
-        processador: "Ryzen 7 5700X",
-        video: "Placa de vídeo dedicada",
-        desempenho: 95,
-        jogos: 94,
-        qualidade: 94
-    },
-
-    {
-        id: "pc-core-i3",
-        nome: "PC Core i3",
-        marca: "Intel",
-        categoria: "PC",
-        preco: 2000,
-        ram: "8 GB",
-        armazenamento: "240 GB SSD",
-        processador: "Core i3",
-        video: "Integrado",
-        desempenho: 70,
-        jogos: 55,
-        qualidade: 78
-    },
-
-    {
-        id: "pc-core-i5",
-        nome: "PC Gamer Core i5",
-        marca: "Intel",
-        categoria: "PC Gamer",
-        preco: 3500,
-        ram: "16 GB",
-        armazenamento: "512 GB SSD",
-        processador: "Core i5",
-        video: "Placa de vídeo dedicada",
-        desempenho: 92,
-        jogos: 90,
-        qualidade: 91
-    },
-
-    {
-        id: "pc-core-i7",
-        nome: "PC Gamer Core i7",
-        marca: "Intel",
-        categoria: "PC Gamer",
-        preco: 5000,
-        ram: "32 GB",
-        armazenamento: "1 TB SSD",
-        processador: "Core i7",
-        video: "Placa de vídeo dedicada",
-        desempenho: 97,
-        jogos: 96,
-        qualidade: 96
-    },
-
-    {
-        id: "msi-katana",
-        nome: "MSI Katana",
-        marca: "MSI",
-        categoria: "Notebook Gamer",
-        preco: 7000,
-        ram: "16 GB",
-        armazenamento: "512 GB SSD",
-        processador: "Core i7",
-        video: "NVIDIA GeForce RTX",
-        desempenho: 96,
-        jogos: 97,
-        qualidade: 94
-    },
-
-    {
-        id: "gigabyte-g5",
-        nome: "Gigabyte G5",
-        marca: "Gigabyte",
-        categoria: "Notebook Gamer",
-        preco: 6500,
-        ram: "16 GB",
-        armazenamento: "512 GB SSD",
-        processador: "Core i5",
-        video: "NVIDIA GeForce RTX",
-        desempenho: 93,
-        jogos: 94,
-        qualidade: 91
-    }
-
-];
-
-
-/* =====================================================
-   BUSCAR CELULARES E PCS
-===================================================== */
-
-function obterProdutos() {
-
-    let listaCelulares = [];
-
-    let listaPCs = [];
-
-
-    /*
-       CELULARES
-    */
-
-    if (
-        typeof window.celulares !== "undefined" &&
-        Array.isArray(window.celulares)
-    ) {
-
-        listaCelulares =
-            window.celulares;
-
-    }
-
-
-    /*
-       PCs
-
-       Primeiro tenta pegar do dados.js.
-       Se não existir, usa o fallback.
-    */
-
-    if (
-        typeof window.pcs !== "undefined" &&
-        Array.isArray(window.pcs) &&
-        window.pcs.length > 0
-    ) {
-
-        listaPCs =
-            window.pcs;
-
-    } else {
-
-        listaPCs =
-            pcsFallback;
-
-    }
-
-
-    return [
-
-        ...listaCelulares.map(pc => ({
-            ...pc,
-            tipo: "celular"
-        })),
-
-        ...listaPCs.map(pc => ({
-            ...pc,
-            tipo: "pc"
-        }))
-
-    ];
-
-}
-
-
-/* =====================================================
-   CALCULAR PONTOS
-===================================================== */
-
-function calcularPontos(produto) {
-
-    const desempenho =
-        Number(produto.desempenho) || 0;
-
-    const jogos =
-        Number(produto.jogos) || 0;
-
-    const qualidade =
-        Number(produto.qualidade) || 0;
-
-
-    /*
-       CPU
-       300.000 pontos
-    */
-
-    const CPU =
-        Math.round(
-            (desempenho / 100) *
-            300000
-        );
-
-
-    /*
-       GPU
-       300.000 pontos
-    */
-
-    const GPU =
-        Math.round(
-            (jogos / 100) *
-            300000
-        );
-
-
-    /*
-       MEM
-       200.000 pontos
-
-       16 GB = máximo
-    */
-
-    const RAM =
-        parseInt(
-            String(produto.ram || "0")
-                .replace(/[^\d]/g, "")
-        ) || 0;
-
-
-    const MEM =
-        Math.round(
-            Math.min(RAM, 16) /
-            16 *
-            200000
-        );
-
-
-    /*
-       UX
-       200.000 pontos
-    */
-
-    const UX =
-        Math.round(
-            (
-                desempenho +
-                qualidade
-            ) / 2 / 100 *
-            200000
-        );
-
-
-    /*
-       TOTAL
-    */
-
-    const total =
-        Math.min(
-            1000000,
-            CPU +
-            GPU +
-            MEM +
-            UX
-        );
-
-
-    return {
-
-        CPU,
-        GPU,
-        MEM,
-        UX,
-        total
-
-    };
-
-}
-
-
-/* =====================================================
-   FILTRO
-===================================================== */
-
-let filtroAtual = "todos";
-
-
-function mostrar(filtro, botao) {
-
-    filtroAtual =
-        filtro;
-
-
-    document
-        .querySelectorAll(".filtros button")
-        .forEach(button => {
-
-            button.classList.remove("ativo");
-
-        });
-
-
-    botao.classList.add("ativo");
-
-
-    renderizar();
-
-}
-
-
-/* =====================================================
-   RENDERIZAR
-===================================================== */
-
-function renderizar() {
-
-    let produtos =
-        obterProdutos();
-
-
-    /*
-       Filtro
-    */
-
-    if (filtroAtual !== "todos") {
-
-        produtos =
-            produtos.filter(
-                produto =>
-                    produto.tipo ===
-                    filtroAtual
+        const list =
+            document.getElementById(
+                "pointsList"
             );
 
-    }
+
+        const search =
+            document.getElementById(
+                "pointsSearch"
+            );
 
 
-    /*
-       Calcula pontos
-    */
-
-    produtos =
-        produtos.map(produto => ({
-
-            ...produto,
-
-            pontos:
-                calcularPontos(produto)
-
-        }));
+        const type =
+            document.getElementById(
+                "pointsType"
+            );
 
 
-    /*
-       Ordena do maior para o menor
-    */
-
-    produtos.sort(
-        (a, b) =>
-            b.pontos.total -
-            a.pontos.total
-    );
+        const sort =
+            document.getElementById(
+                "pointsSort"
+            );
 
 
-    const lista =
-        document.getElementById(
-            "lista-pontos"
-        );
+        function calculate(item) {
+
+            const desempenho =
+                Number(item.desempenho || 0);
+
+            const jogos =
+                Number(item.jogos || 0);
+
+            const qualidade =
+                Number(item.qualidade || 0);
 
 
-    /*
-       Nenhum
-    */
-
-    if (!produtos.length) {
-
-        lista.innerHTML = `
-
-            <div class="erro">
-
-                <h3>
-                    Nenhum dispositivo encontrado.
-                </h3>
-
-                <p style="margin-top:8px;">
-                    Verifique o arquivo dados.js.
-                </p>
-
-            </div>
-
-        `;
-
-        return;
-
-    }
+            const total =
+                Math.round(
+                    (
+                        desempenho * 3000 +
+                        jogos * 3000 +
+                        qualidade * 2000 +
+                        qualidade * 2000
+                    )
+                );
 
 
-    /*
-       Cards
-    */
+            return {
+                cpu: desempenho,
+                gpu: jogos,
+                mem: qualidade,
+                ux: qualidade,
+                total
+            };
 
-    lista.innerHTML =
-        produtos.map(
-            (produto, index) => {
-
-                const p =
-                    produto.pontos;
+        }
 
 
-                return `
+        function render() {
 
-                <article class="produto">
+            const term =
+                search.value
+                    .toLowerCase()
+                    .trim();
 
-                    <div class="produto-topo">
 
-                        <div>
+            let data = [];
 
-                            <h2>
 
-                                ${index + 1}º —
-                                ${produto.nome}
+            if (
+                type.value === "todos" ||
+                type.value === "celulares"
+            ) {
 
-                            </h2>
+                phones.forEach(item => {
 
-                            <div class="categoria">
+                    data.push({
+                        ...item,
+                        categoria: "Celular"
+                    });
 
-                                ${produto.marca || ""}
+                });
 
-                                •
+            }
 
-                                ${produto.categoria || ""}
+
+            if (
+                type.value === "todos" ||
+                type.value === "pcs"
+            ) {
+
+                pcs.forEach(item => {
+
+                    data.push({
+                        ...item,
+                        categoria: "PC"
+                    });
+
+                });
+
+            }
+
+
+            data = data.filter(item => {
+
+                const text = `
+                    ${item.nome || ""}
+                    ${item.marca || ""}
+                    ${item.processador || ""}
+                `.toLowerCase();
+
+                return !term ||
+                    text.includes(term);
+
+            });
+
+
+            data.forEach(item => {
+
+                item.pontos =
+                    calculate(item);
+
+            });
+
+
+            if (
+                sort.value === "desempenho"
+            ) {
+
+                data.sort(
+                    (a, b) =>
+                        b.pontos.cpu -
+                        a.pontos.cpu
+                );
+
+            } else if (
+                sort.value === "jogos"
+            ) {
+
+                data.sort(
+                    (a, b) =>
+                        b.pontos.gpu -
+                        a.pontos.gpu
+                );
+
+            } else if (
+                sort.value === "qualidade"
+            ) {
+
+                data.sort(
+                    (a, b) =>
+                        b.pontos.ux -
+                        a.pontos.ux
+                );
+
+            } else {
+
+                data.sort(
+                    (a, b) =>
+                        b.pontos.total -
+                        a.pontos.total
+                );
+
+            }
+
+
+            list.innerHTML = "";
+
+
+            data.forEach(
+                (item, index) => {
+
+                    const card =
+                        document.createElement(
+                            "article"
+                        );
+
+                    card.className =
+                        "points-card";
+
+
+                    card.innerHTML = `
+
+                        <div class="rank-number">
+                            #${index + 1}
+                        </div>
+
+                        <div class="points-main">
+
+                            <div class="points-title">
+
+                                <span class="pill">
+                                    ${item.categoria}
+                                </span>
+
+                                <h2>
+                                    ${item.nome}
+                                </h2>
+
+                                <p>
+                                    ${item.processador || ""}
+                                </p>
+
+                            </div>
+
+
+                            <div class="points-total">
+
+                                <strong>
+                                    ${item.pontos.total.toLocaleString("pt-BR")}
+                                </strong>
+
+                                <span>
+                                    PONTOS
+                                </span>
 
                             </div>
 
                         </div>
 
 
-                        <div class="total">
+                        <div class="points-bars">
 
-                            💠
-                            ${p.total.toLocaleString("pt-BR")}
+                            <div class="point-bar">
 
-                        </div>
+                                <div>
+                                    <span>CPU</span>
+                                    <strong>
+                                        ${item.pontos.cpu}
+                                    </strong>
+                                </div>
 
-                    </div>
+                                <div class="bar">
+                                    <i style="width:${item.pontos.cpu}%"></i>
+                                </div>
 
-
-                    <div class="pontos-grid">
-
-                        <div class="ponto">
-
-                            <strong>
-                                🧠 CPU
-                            </strong>
-
-                            <span>
-                                ${p.CPU.toLocaleString("pt-BR")}
-                            </span>
-
-                        </div>
+                            </div>
 
 
-                        <div class="ponto">
+                            <div class="point-bar">
 
-                            <strong>
-                                🎮 GPU
-                            </strong>
+                                <div>
+                                    <span>GPU</span>
+                                    <strong>
+                                        ${item.pontos.gpu}
+                                    </strong>
+                                </div>
 
-                            <span>
-                                ${p.GPU.toLocaleString("pt-BR")}
-                            </span>
+                                <div class="bar">
+                                    <i style="width:${item.pontos.gpu}%"></i>
+                                </div>
 
-                        </div>
-
-
-                        <div class="ponto">
-
-                            <strong>
-                                💾 MEM
-                            </strong>
-
-                            <span>
-                                ${p.MEM.toLocaleString("pt-BR")}
-                            </span>
-
-                        </div>
+                            </div>
 
 
-                        <div class="ponto">
+                            <div class="point-bar">
 
-                            <strong>
-                                📱 UX
-                            </strong>
+                                <div>
+                                    <span>MEM</span>
+                                    <strong>
+                                        ${item.pontos.mem}
+                                    </strong>
+                                </div>
 
-                            <span>
-                                ${p.UX.toLocaleString("pt-BR")}
-                            </span>
+                                <div class="bar">
+                                    <i style="width:${item.pontos.mem}%"></i>
+                                </div>
 
-                        </div>
-
-                    </div>
+                            </div>
 
 
-                    <div class="informacoes">
+                            <div class="point-bar">
 
-                        <div class="info">
+                                <div>
+                                    <span>UX</span>
+                                    <strong>
+                                        ${item.pontos.ux}
+                                    </strong>
+                                </div>
 
-                            <strong>
-                                ⚙️ Processador
-                            </strong>
+                                <div class="bar">
+                                    <i style="width:${item.pontos.ux}%"></i>
+                                </div>
 
-                            <br>
-
-                            ${produto.processador || "Não informado"}
+                            </div>
 
                         </div>
 
-
-                        <div class="info">
-
-                            <strong>
-                                💾 RAM
-                            </strong>
-
-                            <br>
-
-                            ${produto.ram || "Não informado"}
-
-                        </div>
+                    `;
 
 
-                        <div class="info">
+                    list.appendChild(card);
 
-                            <strong>
-                                💿 Armazenamento
-                            </strong>
+                }
+            );
 
-                            <br>
-
-                            ${produto.armazenamento || "Não informado"}
-
-                        </div>
+        }
 
 
-                        <div class="info">
-
-                            <strong>
-                                🎮 Vídeo
-                            </strong>
-
-                            <br>
-
-                            ${produto.video || "Não informado"}
-
-                        </div>
-
-                    </div>
-
-                </article>
-
-                `;
-
-            }
-        )
-        .join("");
-
-}
+        search.addEventListener(
+            "input",
+            render
+        );
 
 
-/* =====================================================
-   INICIAR
-===================================================== */
+        type.addEventListener(
+            "change",
+            render
+        );
 
-renderizar();
+
+        sort.addEventListener(
+            "change",
+            render
+        );
+
+
+        render();
+
+    }
+);
 
 </script>
+
+<script src="script.js"></script>
 
 </body>
 
