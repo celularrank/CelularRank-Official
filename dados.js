@@ -869,12 +869,46 @@ const marcasPCs = [
 const celularesData = celulares;
 const pcsData = pcs;
 
+/* =========================================================
+   🧪 TESTE DO CATÁLOGO
+========================================================= */
 
-// Disponibiliza globalmente
+console.log("====================================");
+console.log("📱 CELULARRANK");
+console.log("====================================");
+
+console.log("Celulares:", celulares.length);
+console.log("PCs/Notebooks:", pcs.length);
+console.log("Total:", todosProdutos.length);
+
+console.log("====================================");
+console.log("✅ dados.js carregado corretamente!");
+console.log("====================================");
+
+
+/* =========================================================
+   🌐 DISPONIBILIZAR PARA AS PÁGINAS
+========================================================= */
+
 window.celulares = celulares;
 window.pcs = pcs;
 window.todosProdutos = todosProdutos;
+
 window.marcasCelulares = marcasCelulares;
 window.marcasPCs = marcasPCs;
-window.celularesData = celularesData;
-window.pcsData = pcsData;
+
+window.precoBRL = precoBRL;
+window.calcularNota = calcularNota;
+window.ordenarPorRanking = ordenarPorRanking;
+window.pesquisarProdutos = pesquisarProdutos;
+window.produtosComPreco = produtosComPreco;
+window.estatisticasCatalogo = estatisticasCatalogo;
+
+
+/* =========================================================
+   ✅ FINAL
+========================================================= */
+
+console.log("📱 Celulares disponíveis:", window.celulares.length);
+console.log("💻 PCs disponíveis:", window.pcs.length);
+console.log("📦 Produtos disponíveis:", window.todosProdutos.length);
