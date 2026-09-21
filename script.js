@@ -1,202 +1,271 @@
-/* ========================================
-   📱💻 CELULARRANK-OFFICIAL
-   script.js
-======================================== */
+/*
+=========================================================
+CELULARRANK - FUNÇÕES GERAIS
+=========================================================
+*/
 
-"use strict";
+(function () {
 
-document.addEventListener("DOMContentLoaded", () => {
+    "use strict";
 
-    console.log("🚀 CelularRank carregado com sucesso!");
 
-    /* ========================================
-       🔗 NAVEGAÇÃO SUAVE
-    ======================================== */
+    function setupMenu() {
 
-    document.querySelectorAll('a[href^="#"]').forEach(link => {
+        const button =
+            document.getElementById("menuToggle");
 
-        link.addEventListener("click", event => {
+        const nav =
+            document.getElementById("mainNav");
 
-            const destino = link.getAttribute("href");
 
-            if (!destino || destino === "#") return;
+        if (!button || !nav) {
+            return;
+        }
 
-            const elemento = document.querySelector(destino);
 
-            if (elemento) {
-                event.preventDefault();
+        button.addEventListener(
+            "click",
+            () => {
 
-                elemento.scrollIntoView({
-                    behavior: "smooth",
-                    block: "start"
-                });
+                const opened =
+                    nav.classList.toggle("open");
+
+                button.setAttribute(
+                    "aria-expanded",
+                    String(opened)
+                );
+
+            }
+        );
+
+
+        nav.querySelectorAll("a").forEach(
+            link => {
+
+                link.addEventListener(
+                    "click",
+                    () => {
+
+                        nav.classList.remove("open");
+
+                        button.setAttribute(
+                            "aria-expanded",
+                            "false"
+                        );
+
+                    }
+                );
+
+            }
+        );
+
+    }
+
+
+    function setupYear() {
+
+        const year =
+            document.getElementById(
+                "currentYear"
+            );
+
+
+        if (year) {
+            year.textContent =
+                new Date().getFullYear();
+        }
+
+    }
+
+
+    function searchHome() {
+
+        const input =
+            document.getElementById(
+                "homeSearch"
+            );
+
+        const button =
+            document.getElementById(
+                "homeSearchButton"
+            );
+
+        const results =
+            document.getElementById(
+                "homeSearchResults"
+            );
+
+
+        if (
+            !input ||
+            !button ||
+            !results
+        ) {
+            return;
+        }
+
+
+        function execute() {
+
+            const term =
+                input.value
+                    .toLowerCase()
+                    .trim();
+
+
+            results.innerHTML = "";
+
+
+            if (!term) {
+
+                results.innerHTML = `
+                    <div class="search-hint">
+                        Digite o nome de um celular ou PC.
+                    </div>
+                `;
+
+                return;
+
             }
 
-        });
 
-    });
+            const phones =
+                Array.isArray(window.celulares)
+                    ? window.celulares
+                    : [];
 
 
-    /* ========================================
-       🏷️ TAGS
-    ======================================== */
+            const pcs =
+                Array.isArray(window.pcs)
+                    ? window.pcs
+                    : [];
 
-    document.querySelectorAll(".tag").forEach(tag => {
 
-        tag.addEventListener("click", () => {
+            const all = [
 
-            document.querySelectorAll(".tag").forEach(item => {
-                item.classList.remove("ativa");
+                ...phones.map(
+                    item => ({
+                        ...item,
+                        category: "Celular"
+                    })
+                ),
+
+                ...pcs.map(
+                    item => ({
+                        ...item,
+                        category: "PC"
+                    })
+                )
+
+            ];
+
+
+            const found =
+                all.filter(item => {
+
+                    const text = `
+                        ${item.nome || ""}
+                        ${item.marca || ""}
+                        ${item.processador || ""}
+                        ${item.gpu || ""}
+                    `.toLowerCase();
+
+                    return text.includes(term);
+
+                }).slice(0, 8);
+
+
+            if (!found.length) {
+
+                results.innerHTML = `
+                    <div class="search-hint">
+                        Nenhum dispositivo encontrado.
+                    </div>
+                `;
+
+                return;
+
+            }
+
+
+            found.forEach(item => {
+
+                const link =
+                    item.category === "Celular"
+                        ? "celulares.html"
+                        : "pcs.html";
+
+
+                const card =
+                    document.createElement("a");
+
+
+                card.className =
+                    "search-result";
+
+
+                card.href = link;
+
+
+                card.innerHTML = `
+
+                    <span class="search-result-icon">
+                        ${
+                            item.category === "Celular"
+                                ? "📱"
+                                : "🖥️"
+                        }
+                    </span>
+
+                    <span>
+
+                        <strong>
+                            ${item.nome}
+                        </strong>
+
+                        <small>
+                            ${item.marca || ""}
+                            •
+                            ${item.processador || ""}
+                        </small>
+
+                    </span>
+
+                `;
+
+
+                results.appendChild(card);
+
             });
-
-            tag.classList.add("ativa");
-
-            console.log(
-                "Categoria selecionada:",
-                tag.textContent.trim()
-            );
-
-        });
-
-    });
-
-
-    /* ========================================
-       📱 CELULARES
-    ======================================== */
-
-    const cardCelulares =
-        document.querySelector('a[href="celulares.html"]');
-
-    if (cardCelulares) {
-
-        cardCelulares.addEventListener("click", () => {
-            console.log("📱 Abrindo página de celulares...");
-        });
-
-    }
-
-
-    /* ========================================
-       💻 PCS
-    ======================================== */
-
-    const cardPCs =
-        document.querySelector('a[href="pcs.html"]');
-
-    if (cardPCs) {
-
-        cardPCs.addEventListener("click", () => {
-            console.log("💻 Abrindo página de PCs...");
-        });
-
-    }
-
-
-    /* ========================================
-       🖱️ CARDS
-    ======================================== */
-
-    document.querySelectorAll(".card").forEach(card => {
-
-        card.addEventListener("mouseenter", () => {
-            card.style.transform = "translateY(-6px)";
-        });
-
-        card.addEventListener("mouseleave", () => {
-            card.style.transform = "translateY(0)";
-        });
-
-    });
-
-
-    /* ========================================
-       📅 ANO
-    ======================================== */
-
-    const footer = document.querySelector("footer");
-
-    if (footer) {
-
-        footer.innerHTML =
-            `© ${new Date().getFullYear()} CelularRank-Official — Compare. Escolha. Compre melhor.`;
-
-    }
-
-
-    /* ========================================
-       📊 SISTEMA CELULARRANK
-    ======================================== */
-
-    const CelularRank = {
-
-        nome: "CelularRank-Official",
-
-        versao: "1.0.0",
-
-        categorias: [
-            "Jogos",
-            "Desempenho",
-            "Trabalho",
-            "Qualidade",
-            "Preço",
-            "Custo-benefício"
-        ],
-
-        iniciar() {
-
-            console.log(
-                `✅ ${this.nome} v${this.versao} iniciado.`
-            );
 
         }
 
-    };
 
-
-    CelularRank.iniciar();
-
-
-    /* ========================================
-       🔍 VERIFICAÇÃO DOS DADOS
-    ======================================== */
-
-    if (typeof celulares !== "undefined") {
-
-        console.log(
-            `📱 ${celulares.length} celulares carregados.`
+        button.addEventListener(
+            "click",
+            execute
         );
 
-    } else {
 
-        console.error(
-            "❌ A variável 'celulares' não foi encontrada."
-        );
+        input.addEventListener(
+            "keydown",
+            event => {
 
-    }
+                if (
+                    event.key === "Enter"
+                ) {
+                    execute();
+                }
 
-
-    if (typeof pcs !== "undefined") {
-
-        console.log(
-            `💻 ${pcs.length} PCs/notebooks carregados.`
-        );
-
-    } else {
-
-        console.error(
-            "❌ A variável 'pcs' não foi encontrada."
+            }
         );
 
     }
 
 
-    if (typeof todosProdutos !== "undefined") {
+    setupMenu();
+    setupYear();
+    searchHome();
 
-        console.log(
-            `📦 ${todosProdutos.length} produtos no catálogo.`
-        );
 
-    }
-
-});  
+})();
