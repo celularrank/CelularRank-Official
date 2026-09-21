@@ -1,535 +1,393 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
-
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+    <title>CelularRank - Celulares e PCs</title>
 
-    <title>CelularRank-Official</title>
+    <meta name="description" content="CelularRank - Compare celulares e PCs por desempenho, jogos, preço, qualidade e especificações.">
 
-    <meta
-        name="description"
-        content="Compare celulares e PCs por desempenho, qualidade, jogos e trabalho."
-    >
-
-    <style>
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, Helvetica, sans-serif;
-        }
-
-        body {
-            background: #071a3d;
-            color: white;
-            min-height: 100vh;
-        }
-
-
-        /* ================================
-           CABEÇALHO
-        ================================= */
-
-        header {
-            width: 100%;
-            padding: 18px 6%;
-
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-
-            background: #061530;
-
-            border-bottom:
-                1px solid rgba(255,255,255,0.1);
-        }
-
-        .logo {
-            font-size: 22px;
-            font-weight: bold;
-        }
-
-        .logo span {
-            color: #35a9ff;
-        }
-
-        nav {
-            display: flex;
-            gap: 20px;
-        }
-
-        nav a {
-            color: white;
-            text-decoration: none;
-            font-size: 14px;
-        }
-
-        nav a:hover {
-            color: #35a9ff;
-        }
-
-
-        /* ================================
-           TELA INICIAL
-        ================================= */
-
-        .inicio {
-            min-height: calc(100vh - 70px);
-
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            padding: 50px 20px;
-        }
-
-        .conteudo {
-            width: 100%;
-            max-width: 1100px;
-
-            text-align: center;
-        }
-
-
-        /* ================================
-           BADGE
-        ================================= */
-
-        .badge {
-            display: inline-block;
-
-            background:
-                rgba(53,169,255,0.15);
-
-            color: #58b7ff;
-
-            padding: 8px 15px;
-
-            border-radius: 30px;
-
-            margin-bottom: 20px;
-
-            font-size: 14px;
-        }
-
-
-        /* ================================
-           TÍTULO
-        ================================= */
-
-        h1 {
-            font-size:
-                clamp(38px, 7vw, 70px);
-
-            margin-bottom: 15px;
-        }
-
-        h1 span {
-            color: #35a9ff;
-        }
-
-        .descricao {
-            max-width: 650px;
-
-            margin: auto;
-
-            color: #b9c7dd;
-
-            font-size: 17px;
-
-            line-height: 1.6;
-        }
-
-
-        /* ================================
-           CARDS
-        ================================= */
-
-        .opcoes {
-
-            width: 100%;
-
-            display: grid;
-
-            grid-template-columns:
-                repeat(2, 1fr);
-
-            gap: 25px;
-
-            margin-top: 45px;
-        }
-
-
-        .card {
-
-            display: block;
-
-            background: #0b2552;
-
-            border:
-                1px solid rgba(255,255,255,0.1);
-
-            border-radius: 20px;
-
-            padding: 35px 25px;
-
-            text-decoration: none;
-
-            color: white;
-
-            transition: 0.25s;
-        }
-
-
-        .card:hover {
-
-            transform:
-                translateY(-6px);
-
-            border-color:
-                #35a9ff;
-
-            box-shadow:
-                0 10px 35px
-                rgba(0,0,0,0.25);
-        }
-
-
-        .icone {
-
-            font-size: 55px;
-
-            margin-bottom: 15px;
-        }
-
-
-        .card h2 {
-
-            margin-bottom: 10px;
-
-            font-size: 25px;
-        }
-
-
-        .card p {
-
-            color: #b9c7dd;
-
-            line-height: 1.5;
-        }
-
-
-        /* ================================
-           PONTOS
-        ================================= */
-
-        .card-pontos {
-
-            grid-column:
-                1 / -1;
-        }
-
-
-        /* ================================
-           RODAPÉ
-        ================================= */
-
-        footer {
-
-            text-align: center;
-
-            padding: 25px;
-
-            color: #8294b2;
-
-            font-size: 13px;
-
-            background: #061530;
-        }
-
-
-        /* ================================
-           CELULAR
-        ================================= */
-
-        @media (max-width: 700px) {
-
-            header {
-
-                padding:
-                    16px 20px;
-            }
-
-
-            nav {
-
-                display: none;
-            }
-
-
-            .inicio {
-
-                padding:
-                    40px 18px;
-            }
-
-
-            .opcoes {
-
-                grid-template-columns:
-                    1fr;
-
-                gap: 20px;
-            }
-
-
-            .card-pontos {
-
-                grid-column:
-                    auto;
-            }
-
-
-            h1 {
-
-                font-size: 42px;
-            }
-
-
-            .descricao {
-
-                font-size: 15px;
-            }
-
-
-            .card {
-
-                padding:
-                    28px 20px;
-            }
-
-        }
-
-    </style>
-
+    <link rel="stylesheet" href="style.css">
 </head>
-
 
 <body>
 
+<header class="site-header">
+    <div class="container header-content">
 
-    <!-- ================================
-         CABEÇALHO
-    ================================= -->
+        <a href="index.html" class="logo">
+            <span>CELULAR</span><strong>RANK</strong>
+        </a>
 
-    <header>
+        <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">
+            ☰
+        </button>
 
-        <div class="logo">
-
-            Celular<span>Rank</span>
-
-        </div>
-
-
-        <nav>
-
-            <a href="#inicio">
-                Início
-            </a>
-
-            <a href="#categorias">
-                Categorias
-            </a>
-
+        <nav class="main-nav" id="mainNav">
+            <a href="index.html" class="active">Início</a>
+            <a href="celulares.html">Celulares</a>
+            <a href="pcs.html">PCs</a>
+            <a href="pontos.html">Pontos</a>
         </nav>
 
-    </header>
+    </div>
+</header>
 
+<main>
 
+    <section class="hero">
+        <div class="container hero-grid">
 
-    <!-- ================================
-         TELA INICIAL
-    ================================= -->
+            <div class="hero-text">
 
-    <main
-        class="inicio"
-        id="inicio"
-    >
+                <span class="eyebrow">CELULARRANK OFFICIAL</span>
 
-        <div class="conteudo">
+                <h1>
+                    Compare.<br>
+                    <span>Escolha.</span><br>
+                    Compre melhor.
+                </h1>
 
+                <p>
+                    Compare celulares e PCs por desempenho,
+                    jogos, preço, qualidade e especificações.
+                </p>
 
-            <!-- BADGE -->
+                <div class="hero-buttons">
+                    <a href="celulares.html" class="btn primary">
+                        📱 Ver celulares
+                    </a>
 
-            <div class="badge">
-
-                🚀 Compare antes de comprar
+                    <a href="pcs.html" class="btn secondary">
+                        🖥️ Ver PCs
+                    </a>
+                </div>
 
             </div>
 
+            <div class="hero-panel">
 
+                <div class="hero-panel-top">
+                    <span>CELULARRANK</span>
+                    <span class="online-dot">● ONLINE</span>
+                </div>
 
-            <!-- TÍTULO -->
+                <div class="hero-rank">
+                    <small>SISTEMA DE COMPARAÇÃO</small>
+                    <strong>RANK</strong>
+                    <span>Desempenho • Jogos • Preço</span>
+                </div>
 
-            <h1>
-
-                Encontre o melhor
-
-                <span>
-                    dispositivo
-                </span>
-
-            </h1>
-
-
-
-            <!-- DESCRIÇÃO -->
-
-            <p class="descricao">
-
-                Compare celulares e PCs
-                de forma simples.
-
-                Veja desempenho,
-                qualidade, jogos e trabalho
-                antes de escolher o seu
-                próximo dispositivo.
-
-            </p>
-
-
-
-            <!-- ================================
-                 CELULAR, PC E PONTOS
-            ================================= -->
-
-            <div class="opcoes">
-
-
-                <!-- ==========================
-                     CELULARES
-                =========================== -->
-
-                <a
-                    href="celulares.html"
-                    class="card"
-                >
-
-                    <div class="icone">
-                        📱
+                <div class="hero-stats">
+                    <div>
+                        <strong>CPU</strong>
+                        <span>Processador</span>
                     </div>
 
+                    <div>
+                        <strong>GPU</strong>
+                        <span>Gráficos</span>
+                    </div>
 
-                    <h2>
-                        Celulares
-                    </h2>
+                    <div>
+                        <strong>MEM</strong>
+                        <span>Memória</span>
+                    </div>
 
+                    <div>
+                        <strong>UX</strong>
+                        <span>Experiência</span>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+
+    <section class="section">
+        <div class="container">
+
+            <div class="section-heading">
+                <span class="eyebrow">PESQUISA</span>
+
+                <h2>Encontre seu dispositivo</h2>
+
+                <p>
+                    Pesquise rapidamente por celular ou PC.
+                </p>
+            </div>
+
+            <div class="home-search">
+
+                <input
+                    type="search"
+                    id="homeSearch"
+                    class="input"
+                    placeholder="Ex.: Galaxy S24, iPhone 15, Ryzen 5..."
+                >
+
+                <button id="homeSearchButton" class="btn primary">
+                    🔎 Pesquisar
+                </button>
+
+            </div>
+
+            <div id="homeSearchResults" class="home-search-results"></div>
+
+        </div>
+    </section>
+
+
+    <section class="section">
+        <div class="container">
+
+            <div class="section-heading">
+                <span class="eyebrow">CATEGORIAS</span>
+
+                <h2>Explore o CelularRank</h2>
+
+                <p>
+                    Escolha o tipo de dispositivo que deseja comparar.
+                </p>
+            </div>
+
+            <div class="category-grid">
+
+                <a href="celulares.html" class="category-card">
+
+                    <div class="category-icon">📱</div>
+
+                    <span>SMARTPHONES</span>
+
+                    <h3>Celulares</h3>
 
                     <p>
-
-                        Compare celulares
-                        por desempenho,
-                        jogos, câmera,
-                        bateria, memória,
-                        preço e
-                        custo-benefício.
-
+                        Compare processador, RAM, armazenamento,
+                        câmera, bateria, tela e desempenho.
                     </p>
+
+                    <b>Ver celulares →</b>
 
                 </a>
 
 
+                <a href="pcs.html" class="category-card">
 
-                <!-- ==========================
-                     PCS
-                =========================== -->
+                    <div class="category-icon">🖥️</div>
 
-                <a
-                    href="pcs.html"
-                    class="card"
-                >
+                    <span>COMPUTADORES</span>
 
-                    <div class="icone">
-                        💻
-                    </div>
-
-
-                    <h2>
-                        PCs
-                    </h2>
-
+                    <h3>PCs</h3>
 
                     <p>
-
-                        Compare computadores
-                        e notebooks para jogos,
-                        trabalho, estudos,
-                        desempenho e qualidade.
-
+                        Compare processadores, placas de vídeo,
+                        RAM, SSD e desempenho em jogos.
                     </p>
+
+                    <b>Ver PCs →</b>
 
                 </a>
 
 
+                <a href="pontos.html" class="category-card">
 
-                <!-- ==========================
-                     PONTOS
-                =========================== -->
+                    <div class="category-icon">🏆</div>
 
-                <a
-                    href="pontos.html"
-                    class="card card-pontos"
-                >
+                    <span>DESEMPENHO</span>
 
-                    <div class="icone">
-                        💠
-                    </div>
-
-
-                    <h2>
-                        Pontos
-                    </h2>
-
+                    <h3>Pontos</h3>
 
                     <p>
-
-                        Veja a pontuação
-                        dos dispositivos
-                        usando CPU, GPU,
-                        MEM e UX.
-
+                        Consulte a pontuação estimada dos dispositivos
+                        usando a metodologia do CelularRank.
                     </p>
+
+                    <b>Ver pontuação →</b>
 
                 </a>
 
+            </div>
+
+        </div>
+    </section>
+
+
+    <section class="section section-alt">
+
+        <div class="container">
+
+            <div class="section-heading">
+                <span class="eyebrow">RECURSOS</span>
+
+                <h2>O que você encontra aqui</h2>
+            </div>
+
+            <div class="feature-grid">
+
+                <article class="feature-card">
+                    <div>⚡</div>
+                    <h3>Desempenho</h3>
+                    <p>
+                        Compare desempenho e capacidade
+                        de diferentes dispositivos.
+                    </p>
+                </article>
+
+                <article class="feature-card">
+                    <div>🎮</div>
+                    <h3>Jogos</h3>
+                    <p>
+                        Veja quais dispositivos têm foco
+                        maior em desempenho para jogos.
+                    </p>
+                </article>
+
+                <article class="feature-card">
+                    <div>💰</div>
+                    <h3>Preço</h3>
+                    <p>
+                        Utilize filtros para encontrar
+                        aparelhos dentro do orçamento.
+                    </p>
+                </article>
+
+                <article class="feature-card">
+                    <div>⚖️</div>
+                    <h3>Comparação</h3>
+                    <p>
+                        Compare vários dispositivos
+                        lado a lado.
+                    </p>
+                </article>
 
             </div>
 
         </div>
 
-    </main>
+    </section>
 
 
+    <section class="section">
 
-    <!-- ================================
-         RODAPÉ
-    ================================= -->
+        <div class="container">
 
-    <footer>
+            <div class="section-heading">
+                <span class="eyebrow">COMO FUNCIONA</span>
 
-        © 2026 CelularRank-Official
-        — Compare. Escolha. Compre melhor.
+                <h2>Compare em poucos passos</h2>
+            </div>
 
-    </footer>
+            <div class="steps">
 
+                <div class="step">
+                    <strong>01</strong>
+                    <h3>Pesquise</h3>
+                    <p>
+                        Encontre o celular ou PC desejado.
+                    </p>
+                </div>
+
+                <div class="step">
+                    <strong>02</strong>
+                    <h3>Filtre</h3>
+                    <p>
+                        Use preço, marca e desempenho.
+                    </p>
+                </div>
+
+                <div class="step">
+                    <strong>03</strong>
+                    <h3>Compare</h3>
+                    <p>
+                        Coloque os dispositivos lado a lado.
+                    </p>
+                </div>
+
+                <div class="step">
+                    <strong>04</strong>
+                    <h3>Escolha</h3>
+                    <p>
+                        Analise as informações disponíveis.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <section class="section">
+
+        <div class="container">
+
+            <div class="cta-box">
+
+                <div>
+                    <span class="eyebrow">CELULARRANK</span>
+
+                    <h2>Pronto para comparar?</h2>
+
+                    <p>
+                        Escolha uma categoria e comece agora.
+                    </p>
+                </div>
+
+                <div class="hero-buttons">
+                    <a href="celulares.html" class="btn primary">
+                        📱 Celulares
+                    </a>
+
+                    <a href="pcs.html" class="btn secondary">
+                        🖥️ PCs
+                    </a>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<footer class="site-footer">
+
+    <div class="container footer-content">
+
+        <div>
+            <a href="index.html" class="logo">
+                <span>CELULAR</span><strong>RANK</strong>
+            </a>
+
+            <p>
+                Comparação de celulares e PCs.
+            </p>
+        </div>
+
+        <div class="footer-links">
+            <a href="index.html">Início</a>
+            <a href="celulares.html">Celulares</a>
+            <a href="pcs.html">PCs</a>
+            <a href="pontos.html">Pontos</a>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        © <span id="currentYear"></span> CelularRank
+    </div>
+
+</footer>
+
+
+<script src="dados.js"></script>
+<script src="script.js"></script>
 
 </body>
-
 </html>
