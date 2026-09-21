@@ -1,1071 +1,847 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
 
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
-
-    <title>PCs | CelularRank-Official</title>
+    <title>PCs - CelularRank</title>
 
     <meta
         name="description"
-        content="Ranking e comparação de PCs e notebooks do CelularRank-Official."
+        content="Compare PCs gamer, computadores e notebooks no CelularRank."
     >
 
-    <link
-        rel="stylesheet"
-        href="style.css"
-    >
-
-    <style>
-
-        .pagina {
-
-            min-height: 100vh;
-
-            padding:
-                45px
-                20px
-                70px;
-
-        }
-
-
-        .container {
-
-            width: 100%;
-
-            max-width: 1200px;
-
-            margin: 0 auto;
-
-        }
-
-
-        .voltar {
-
-            display: inline-block;
-
-            margin-bottom: 25px;
-
-            color: #58b7ff;
-
-            text-decoration: none;
-
-            font-weight: bold;
-
-        }
-
-
-        .pagina-topo {
-
-            text-align: center;
-
-            margin-bottom: 35px;
-
-        }
-
-
-        .pagina-topo h1 {
-
-            font-size:
-                clamp(
-                    34px,
-                    6vw,
-                    55px
-                );
-
-            margin-bottom: 12px;
-
-        }
-
-
-        .pagina-topo h1 span {
-
-            color: #35a9ff;
-
-        }
-
-
-        .pagina-topo p {
-
-            color: #b9c7dd;
-
-            line-height: 1.6;
-
-            max-width: 750px;
-
-            margin: 0 auto;
-
-        }
-
-
-        /* CONTROLES */
-
-        .controles {
-
-            display: grid;
-
-            grid-template-columns:
-                1fr
-                220px;
-
-            gap: 15px;
-
-            margin-bottom: 30px;
-
-        }
-
-
-        .campo,
-        .select {
-
-            width: 100%;
-
-            padding: 14px 16px;
-
-            border-radius: 12px;
-
-            border:
-                1px solid
-                rgba(
-                    255,
-                    255,
-                    255,
-                    0.12
-                );
-
-            background: #0b2552;
-
-            color: white;
-
-            outline: none;
-
-            font-size: 15px;
-
-        }
-
-
-        .campo::placeholder {
-
-            color: #8294b2;
-
-        }
-
-
-        .campo:focus,
-        .select:focus {
-
-            border-color:
-                #35a9ff;
-
-        }
-
-
-        .select option {
-
-            background: #0b2552;
-
-            color: white;
-
-        }
-
-
-        /* INFORMAÇÕES */
-
-        .informacoes {
-
-            display: flex;
-
-            justify-content:
-                space-between;
-
-            align-items: center;
-
-            margin-bottom: 20px;
-
-            color: #b9c7dd;
-
-            font-size: 14px;
-
-        }
-
-
-        /* PRODUTOS */
-
-        .produtos {
-
-            display: grid;
-
-            grid-template-columns:
-                repeat(
-                    3,
-                    1fr
-                );
-
-            gap: 20px;
-
-        }
-
-
-        /* CARD */
-
-        .produto {
-
-            background: #0b2552;
-
-            border:
-                1px solid
-                rgba(
-                    255,
-                    255,
-                    255,
-                    0.10
-                );
-
-            border-radius: 20px;
-
-            padding: 22px;
-
-            transition:
-                0.25s ease;
-
-        }
-
-
-        .produto:hover {
-
-            transform:
-                translateY(-5px);
-
-            border-color:
-                #35a9ff;
-
-        }
-
-
-        .marca {
-
-            display: inline-block;
-
-            padding:
-                6px
-                10px;
-
-            background:
-                rgba(
-                    53,
-                    169,
-                    255,
-                    0.12
-                );
-
-            color: #58b7ff;
-
-            border-radius: 20px;
-
-            font-size: 12px;
-
-            font-weight: bold;
-
-            margin-bottom: 12px;
-
-        }
-
-
-        .produto h2 {
-
-            font-size: 21px;
-
-            margin-bottom: 8px;
-
-        }
-
-
-        .categoria {
-
-            color: #8294b2;
-
-            font-size: 13px;
-
-            margin-bottom: 12px;
-
-        }
-
-
-        .preco {
-
-            font-size: 27px;
-
-            font-weight: bold;
-
-            margin-bottom: 18px;
-
-        }
-
-
-        /* ESPECIFICAÇÕES */
-
-        .especificacoes {
-
-            display: grid;
-
-            grid-template-columns:
-                repeat(
-                    2,
-                    1fr
-                );
-
-            gap: 9px;
-
-        }
-
-
-        .spec {
-
-            background: #071a3d;
-
-            border-radius: 10px;
-
-            padding: 11px;
-
-            color: #b9c7dd;
-
-            font-size: 12px;
-
-            line-height: 1.4;
-
-        }
-
-
-        .spec strong {
-
-            display: block;
-
-            color: white;
-
-            margin-bottom: 4px;
-
-        }
-
-
-        /* DESEMPENHO */
-
-        .desempenho {
-
-            margin-top: 15px;
-
-            padding-top: 15px;
-
-            border-top:
-                1px solid
-                rgba(
-                    255,
-                    255,
-                    255,
-                    0.08
-                );
-
-        }
-
-
-        .desempenho-titulo {
-
-            display: flex;
-
-            justify-content:
-                space-between;
-
-            margin-bottom: 7px;
-
-            font-size: 13px;
-
-            color: #b9c7dd;
-
-        }
-
-
-        .barra {
-
-            width: 100%;
-
-            height: 8px;
-
-            background: #071a3d;
-
-            border-radius: 10px;
-
-            overflow: hidden;
-
-        }
-
-
-        .barra span {
-
-            display: block;
-
-            height: 100%;
-
-            background: #35a9ff;
-
-            border-radius: 10px;
-
-        }
-
-
-        .vazio {
-
-            text-align: center;
-
-            padding: 40px;
-
-            color: #b9c7dd;
-
-            grid-column: 1 / -1;
-
-        }
-
-
-        /* MOBILE */
-
-        @media (max-width: 850px) {
-
-            .produtos {
-
-                grid-template-columns:
-                    repeat(
-                        2,
-                        1fr
-                    );
-
-            }
-
-        }
-
-
-        @media (max-width: 650px) {
-
-            .controles {
-
-                grid-template-columns:
-                    1fr;
-
-            }
-
-
-            .produtos {
-
-                grid-template-columns:
-                    1fr;
-
-            }
-
-
-            .informacoes {
-
-                flex-direction: column;
-
-                align-items: flex-start;
-
-                gap: 8px;
-
-            }
-
-        }
-
-    </style>
+    <link rel="stylesheet" href="style.css">
 
 </head>
 
-
 <body>
 
+<header class="site-header">
 
-<main class="pagina">
+    <div class="container header-content">
+
+        <a href="index.html" class="logo">
+            <span>CELULAR</span><strong>RANK</strong>
+        </a>
+
+        <button class="menu-toggle" id="menuToggle">
+            ☰
+        </button>
+
+        <nav class="main-nav" id="mainNav">
+            <a href="index.html">Início</a>
+            <a href="celulares.html">Celulares</a>
+            <a href="pcs.html" class="active">PCs</a>
+            <a href="pontos.html">Pontos</a>
+        </nav>
+
+    </div>
+
+</header>
+
+
+<main>
+
+<section class="catalog-page">
 
 <div class="container">
 
+    <div class="page-head">
 
-<a
-    href="index.html"
-    class="voltar"
->
-    ← Voltar
-</a>
+        <div>
 
+            <span class="eyebrow">
+                COMPUTADORES
+            </span>
 
-<section class="pagina-topo">
+            <h1>
+                PCs / Notebooks
+            </h1>
 
-    <h1>
-        💻 <span>PCs</span>
-    </h1>
+            <p>
+                Compare configurações, desempenho, jogos e preço.
+            </p>
 
-    <p>
-        Encontre PCs e notebooks,
-        compare desempenho, jogos,
-        processador, memória e armazenamento.
-    </p>
+        </div>
 
-</section>
+        <div class="catalog-count">
+            <strong id="pcCount">0</strong>
+            <span>modelos</span>
+        </div>
 
-
-<section class="controles">
-
-    <input
-        id="busca"
-        class="campo"
-        type="text"
-        placeholder="🔎 Pesquisar PC ou notebook..."
-        autocomplete="off"
-    >
-
-
-    <select
-        id="ordenacao"
-        class="select"
-    >
-
-        <option value="ranking">
-            Melhor desempenho
-        </option>
-
-        <option value="preco-menor">
-            Menor preço
-        </option>
-
-        <option value="preco-maior">
-            Maior preço
-        </option>
-
-        <option value="jogos">
-            Melhor para jogos
-        </option>
-
-        <option value="qualidade">
-            Melhor qualidade
-        </option>
-
-    </select>
-
-</section>
-
-
-<div class="informacoes">
-
-    <span id="contador">
-        Carregando PCs...
-    </span>
-
-</div>
-
-
-<section
-    id="produtos"
-    class="produtos"
->
-
-    <div class="vazio">
-        Carregando PCs...
     </div>
 
-</section>
 
+    <section class="filter-panel">
+
+        <div class="filter-row">
+
+            <input
+                id="pcSearch"
+                class="input"
+                type="search"
+                placeholder="🔎 Pesquisar PC..."
+            >
+
+            <select id="pcBrand" class="input">
+
+                <option value="">
+                    Todas as marcas
+                </option>
+
+            </select>
+
+
+            <select id="pcType" class="input">
+
+                <option value="">
+                    Todos os tipos
+                </option>
+
+                <option value="Gamer">
+                    Gamer
+                </option>
+
+                <option value="Notebook">
+                    Notebook
+                </option>
+
+                <option value="Trabalho">
+                    Trabalho
+                </option>
+
+            </select>
+
+        </div>
+
+
+        <div class="filter-row">
+
+            <div class="range-box">
+
+                <label>
+                    Preço mínimo:
+                    <strong id="pcMinLabel">
+                        R$ 0
+                    </strong>
+                </label>
+
+                <input
+                    id="pcMin"
+                    type="range"
+                    min="0"
+                    max="15000"
+                    step="100"
+                    value="0"
+                >
+
+            </div>
+
+
+            <div class="range-box">
+
+                <label>
+                    Preço máximo:
+                    <strong id="pcMaxLabel">
+                        R$ 15.000
+                    </strong>
+                </label>
+
+                <input
+                    id="pcMax"
+                    type="range"
+                    min="0"
+                    max="15000"
+                    step="100"
+                    value="15000"
+                >
+
+            </div>
+
+        </div>
+
+
+        <div class="filter-actions">
+
+            <button
+                id="clearPcFilters"
+                class="btn secondary"
+            >
+                Limpar filtros
+            </button>
+
+            <select id="pcSort" class="input">
+
+                <option value="relevancia">
+                    Ordenar: Relevância
+                </option>
+
+                <option value="preco-menor">
+                    Menor preço
+                </option>
+
+                <option value="preco-maior">
+                    Maior preço
+                </option>
+
+                <option value="desempenho">
+                    Maior desempenho
+                </option>
+
+                <option value="jogos">
+                    Melhor para jogos
+                </option>
+
+            </select>
+
+        </div>
+
+    </section>
+
+
+    <div class="compare-toolbar" id="pcCompareToolbar">
+
+        <span>
+            🖥️ <strong id="pcCompareCount">0</strong>
+            selecionados
+        </span>
+
+        <button id="comparePcButton" class="btn primary">
+            Comparar selecionados
+        </button>
+
+    </div>
+
+
+    <div id="pcGrid" class="product-grid"></div>
+
+    <div id="pcEmpty" class="empty" style="display:none;">
+        <strong>Nenhum PC encontrado.</strong>
+        <span>Tente alterar os filtros.</span>
+    </div>
 
 </div>
+
+</section>
 
 </main>
 
 
-<!-- DADOS -->
+<div id="pcModal" class="modal">
 
-<script src="./dados.js?v=20260913"></script>
+    <div class="modal-box">
 
+        <div class="modal-head">
+
+            <div>
+                <span class="eyebrow">COMPARAÇÃO</span>
+                <h2>PCs selecionados</h2>
+            </div>
+
+            <button id="closePcModal" class="close">
+                ×
+            </button>
+
+        </div>
+
+        <div id="pcCompareContent"></div>
+
+    </div>
+
+</div>
+
+
+<script src="dados.js"></script>
 
 <script>
 
-/* =====================================================
-   CELULARRANK — PÁGINA DE PCS
-===================================================== */
+document.addEventListener("DOMContentLoaded", () => {
+
+    const products =
+        Array.isArray(window.pcs)
+            ? window.pcs
+            : [];
 
 
-const produtosContainer =
-    document.getElementById(
-        "produtos"
-    );
+    const grid =
+        document.getElementById("pcGrid");
+
+    const empty =
+        document.getElementById("pcEmpty");
+
+    const count =
+        document.getElementById("pcCount");
 
 
-const busca =
-    document.getElementById(
-        "busca"
-    );
+    const search =
+        document.getElementById("pcSearch");
+
+    const brand =
+        document.getElementById("pcBrand");
+
+    const type =
+        document.getElementById("pcType");
+
+    const min =
+        document.getElementById("pcMin");
+
+    const max =
+        document.getElementById("pcMax");
+
+    const minLabel =
+        document.getElementById("pcMinLabel");
+
+    const maxLabel =
+        document.getElementById("pcMaxLabel");
+
+    const sort =
+        document.getElementById("pcSort");
 
 
-const ordenacao =
-    document.getElementById(
-        "ordenacao"
-    );
+    let selected = [];
 
 
-const contador =
-    document.getElementById(
-        "contador"
-    );
+    count.textContent =
+        products.length;
 
 
-let listaPCs = [];
+    function money(value) {
 
+        if (
+            value === null ||
+            value === undefined ||
+            Number(value) <= 0
+        ) {
+            return "Preço não informado";
+        }
 
-/* =====================================================
-   CARREGAR PCS
-===================================================== */
-
-function carregarPCs() {
-
-    if (
-        typeof window.pcs === "undefined" ||
-        !Array.isArray(window.pcs)
-    ) {
-
-        produtosContainer.innerHTML = `
-
-            <div class="vazio">
-
-                ❌ Não foi possível carregar os PCs.
-
-                <br><br>
-
-                Verifique o arquivo
-                <strong>dados.js</strong>.
-
-            </div>
-
-        `;
-
-        contador.textContent =
-            "Erro ao carregar PCs.";
-
-        return;
-
-    }
-
-
-    listaPCs =
-        [...window.pcs];
-
-
-    renderizar();
-
-}
-
-
-/* =====================================================
-   ESCAPAR HTML
-===================================================== */
-
-function escaparHTML(valor) {
-
-    return String(valor ?? "")
-        .replace(
-            /&/g,
-            "&amp;"
-        )
-        .replace(
-            /</g,
-            "&lt;"
-        )
-        .replace(
-            />/g,
-            "&gt;"
-        )
-        .replace(
-            /"/g,
-            "&quot;"
-        )
-        .replace(
-            /'/g,
-            "&#039;"
+        return Number(value).toLocaleString(
+            "pt-BR",
+            {
+                style: "currency",
+                currency: "BRL"
+            }
         );
 
-}
+    }
 
 
-/* =====================================================
-   PREÇO
-===================================================== */
+    function createBrands() {
 
-function formatarPreco(valor) {
+        const brands = [
+            ...new Set(
+                products
+                    .map(item => item.marca)
+                    .filter(Boolean)
+            )
+        ].sort();
 
-    const numero =
-        Number(valor);
 
+        brands.forEach(item => {
 
-    if (
-        !Number.isFinite(numero) ||
-        numero <= 0
-    ) {
+            const option =
+                document.createElement("option");
 
-        return "Preço não informado";
+            option.value = item;
+            option.textContent = item;
+
+            brand.appendChild(option);
+
+        });
 
     }
 
 
-    return numero.toLocaleString(
-        "pt-BR",
-        {
-            style: "currency",
-            currency: "BRL"
-        }
-    );
+    function render() {
 
-}
+        const term =
+            search.value.toLowerCase().trim();
 
+        const selectedBrand =
+            brand.value;
 
-/* =====================================================
-   RENDERIZAR
-===================================================== */
+        const selectedType =
+            type.value;
 
-function renderizar() {
+        const minValue =
+            Number(min.value);
 
-    let produtos =
-        [...listaPCs];
+        const maxValue =
+            Number(max.value);
 
 
-    const termo =
-        busca.value
-            .toLowerCase()
-            .trim()
-            .normalize("NFD")
-            .replace(
-                /[\u0300-\u036f]/g,
-                ""
-            );
+        let result = products.filter(item => {
+
+            const text = `
+                ${item.nome || ""}
+                ${item.marca || ""}
+                ${item.processador || ""}
+                ${item.gpu || ""}
+            `.toLowerCase();
 
 
-    /* PESQUISA */
+            const matchesSearch =
+                !term || text.includes(term);
 
-    if (termo) {
 
-        produtos =
-            produtos.filter(
-                pc => {
+            const matchesBrand =
+                !selectedBrand ||
+                item.marca === selectedBrand;
 
-                    const texto = [
 
-                        pc.nome,
-                        pc.marca,
-                        pc.categoria,
-                        pc.processador,
-                        pc.video,
-                        pc.ram,
-                        pc.armazenamento
-
-                    ]
-                    .join(" ")
+            const matchesType =
+                !selectedType ||
+                String(item.tipo || "")
                     .toLowerCase()
-                    .normalize("NFD")
-                    .replace(
-                        /[\u0300-\u036f]/g,
-                        ""
+                    .includes(
+                        selectedType.toLowerCase()
                     );
 
 
-                    return texto.includes(
-                        termo
-                    );
+            const price =
+                Number(item.preco || 0);
 
-                }
+
+            const matchesPrice =
+                !price ||
+                (
+                    price >= minValue &&
+                    price <= maxValue
+                );
+
+
+            return (
+                matchesSearch &&
+                matchesBrand &&
+                matchesType &&
+                matchesPrice
             );
 
-    }
+        });
 
 
-    /* ORDENAÇÃO */
+        if (sort.value === "preco-menor") {
 
-    switch (
-        ordenacao.value
-    ) {
-
-        case "preco-menor":
-
-            produtos.sort(
+            result.sort(
                 (a, b) =>
-                    Number(a.preco || 0) -
-                    Number(b.preco || 0)
+                    Number(a.preco || 999999) -
+                    Number(b.preco || 999999)
             );
 
-            break;
+        }
 
 
-        case "preco-maior":
+        if (sort.value === "preco-maior") {
 
-            produtos.sort(
+            result.sort(
                 (a, b) =>
                     Number(b.preco || 0) -
                     Number(a.preco || 0)
             );
 
-            break;
+        }
 
 
-        case "jogos":
+        if (
+            sort.value === "desempenho" ||
+            sort.value === "jogos"
+        ) {
 
-            produtos.sort(
+            const key =
+                sort.value === "jogos"
+                    ? "jogos"
+                    : "desempenho";
+
+            result.sort(
                 (a, b) =>
-                    Number(b.jogos || 0) -
-                    Number(a.jogos || 0)
+                    Number(b[key] || 0) -
+                    Number(a[key] || 0)
             );
 
-            break;
+        }
 
 
-        case "qualidade":
-
-            produtos.sort(
-                (a, b) =>
-                    Number(b.qualidade || 0) -
-                    Number(a.qualidade || 0)
-            );
-
-            break;
+        grid.innerHTML = "";
 
 
-        default:
+        result.forEach(item => {
 
-            produtos.sort(
-                (a, b) => {
+            const card =
+                document.createElement("article");
 
-                    const notaA =
-                        (
-                            Number(a.desempenho || 0) +
-                            Number(a.jogos || 0) +
-                            Number(a.qualidade || 0)
-                        ) / 3;
+            card.className =
+                "product-card pc-card";
 
 
-                    const notaB =
-                        (
-                            Number(b.desempenho || 0) +
-                            Number(b.jogos || 0) +
-                            Number(b.qualidade || 0)
-                        ) / 3;
+            const isSelected =
+                selected.includes(item.id);
 
 
-                    return notaB - notaA;
+            card.innerHTML = `
 
-                }
-            );
+                <div class="product-top">
 
-    }
-
-
-    contador.textContent =
-        `${produtos.length} PC${produtos.length !== 1 ? "s" : ""} encontrado${produtos.length !== 1 ? "s" : ""}.`;
-
-
-    /* VAZIO */
-
-    if (!produtos.length) {
-
-        produtosContainer.innerHTML = `
-
-            <div class="vazio">
-
-                Nenhum PC encontrado.
-
-            </div>
-
-        `;
-
-        return;
-
-    }
-
-
-    /* CARDS */
-
-    produtosContainer.innerHTML =
-        produtos.map(
-            (pc, index) => {
-
-                const desempenho =
-                    Number(
-                        pc.desempenho || 0
-                    );
-
-
-                return `
-
-                <article class="produto">
-
-                    <span class="marca">
-
-                        ${escaparHTML(
-                            pc.marca || "Marca"
-                        )}
-
+                    <span class="pill">
+                        ${item.marca || "PC"}
                     </span>
 
+                    <label class="compare-check">
 
-                    <h2>
+                        <input
+                            type="checkbox"
+                            data-pc-compare="${item.id}"
+                            ${isSelected ? "checked" : ""}
+                        >
 
-                        ${escaparHTML(
-                            pc.nome || "PC"
-                        )}
+                        <span>Comparar</span>
 
-                    </h2>
+                    </label>
 
+                </div>
 
-                    <div class="categoria">
+                <div class="product-icon">
+                    🖥️
+                </div>
 
-                        ${escaparHTML(
-                            pc.categoria || "PC"
-                        )}
+                <h2>
+                    ${item.nome || "PC"}
+                </h2>
 
+                <p class="processor">
+                    ${item.processador || "-"}
+                </p>
+
+                <div class="gpu-text">
+                    🎮 ${item.gpu || "GPU não informada"}
+                </div>
+
+                <div class="price">
+                    ${money(item.preco)}
+                </div>
+
+                <div class="score-row">
+
+                    <div>
+                        <span>Desempenho</span>
+                        <strong>${item.desempenho || 0}</strong>
                     </div>
 
-
-                    <div class="preco">
-
-                        ${formatarPreco(
-                            pc.preco
-                        )}
-
+                    <div>
+                        <span>Jogos</span>
+                        <strong>${item.jogos || 0}</strong>
                     </div>
 
-
-                    <div class="especificacoes">
-
-                        <div class="spec">
-
-                            <strong>
-                                ⚙️ Processador
-                            </strong>
-
-                            ${escaparHTML(
-                                pc.processador ||
-                                "Não informado"
-                            )}
-
-                        </div>
-
-
-                        <div class="spec">
-
-                            <strong>
-                                💾 RAM
-                            </strong>
-
-                            ${escaparHTML(
-                                pc.ram ||
-                                "Não informado"
-                            )}
-
-                        </div>
-
-
-                        <div class="spec">
-
-                            <strong>
-                                💿 Armazenamento
-                            </strong>
-
-                            ${escaparHTML(
-                                pc.armazenamento ||
-                                "Não informado"
-                            )}
-
-                        </div>
-
-
-                        <div class="spec">
-
-                            <strong>
-                                🎮 Vídeo
-                            </strong>
-
-                            ${escaparHTML(
-                                pc.video ||
-                                "Não informado"
-                            )}
-
-                        </div>
-
+                    <div>
+                        <span>Qualidade</span>
+                        <strong>${item.qualidade || 0}</strong>
                     </div>
 
+                </div>
 
-                    <div class="desempenho">
+                <div class="spec-grid">
 
-                        <div class="desempenho-titulo">
-
-                            <span>
-                                🏆 Desempenho
-                            </span>
-
-                            <strong>
-                                ${desempenho}/100
-                            </strong>
-
-                        </div>
-
-
-                        <div class="barra">
-
-                            <span
-                                style="
-                                    width:${Math.max(
-                                        0,
-                                        Math.min(
-                                            100,
-                                            desempenho
-                                        )
-                                    )}%;
-                                "
-                            ></span>
-
-                        </div>
-
+                    <div>
+                        <small>RAM</small>
+                        <strong>${item.ram || "-"}</strong>
                     </div>
 
-                </article>
+                    <div>
+                        <small>SSD</small>
+                        <strong>${item.armazenamento || "-"}</strong>
+                    </div>
 
+                    <div>
+                        <small>GPU</small>
+                        <strong>${item.gpu || "-"}</strong>
+                    </div>
+
+                    <div>
+                        <small>Tipo</small>
+                        <strong>${item.tipo || "-"}</strong>
+                    </div>
+
+                </div>
+
+            `;
+
+
+            grid.appendChild(card);
+
+        });
+
+
+        empty.style.display =
+            result.length ? "none" : "flex";
+
+
+        document.querySelectorAll(
+            "[data-pc-compare]"
+        ).forEach(input => {
+
+            input.addEventListener("change", () => {
+
+                const id =
+                    input.dataset.pcCompare;
+
+
+                if (input.checked) {
+
+                    if (selected.length >= 4) {
+
+                        input.checked = false;
+
+                        alert(
+                            "Você pode comparar até 4 PCs."
+                        );
+
+                        return;
+
+                    }
+
+                    selected.push(id);
+
+                } else {
+
+                    selected =
+                        selected.filter(
+                            item => item !== id
+                        );
+
+                }
+
+
+                updateCompare();
+
+            });
+
+        });
+
+    }
+
+
+    function updateCompare() {
+
+        document.getElementById(
+            "pcCompareCount"
+        ).textContent = selected.length;
+
+
+        document.getElementById(
+            "pcCompareToolbar"
+        ).classList.toggle(
+            "show",
+            selected.length > 0
+        );
+
+    }
+
+
+    function compare() {
+
+        if (selected.length < 2) {
+
+            alert(
+                "Selecione pelo menos 2 PCs."
+            );
+
+            return;
+
+        }
+
+
+        const items =
+            selected
+                .map(id =>
+                    products.find(
+                        item =>
+                            String(item.id) === String(id)
+                    )
+                )
+                .filter(Boolean);
+
+
+        let html = `
+            <div class="compare-wrap">
+
+            <table class="compare-table">
+
+            <tr>
+                <th>Especificação</th>
+        `;
+
+
+        items.forEach(item => {
+
+            html += `
+                <th>${item.nome}</th>
+            `;
+
+        });
+
+
+        html += "</tr>";
+
+
+        const rows = [
+
+            ["Marca", "marca"],
+            ["Tipo", "tipo"],
+            ["Processador", "processador"],
+            ["GPU", "gpu"],
+            ["RAM", "ram"],
+            ["Armazenamento", "armazenamento"],
+            ["Desempenho", "desempenho"],
+            ["Jogos", "jogos"],
+            ["Qualidade", "qualidade"],
+            ["Preço", "preco"]
+
+        ];
+
+
+        rows.forEach(([label, key]) => {
+
+            html += `
+                <tr>
+                    <td class="compare-label">
+                        ${label}
+                    </td>
+            `;
+
+
+            items.forEach(item => {
+
+                let value =
+                    item[key] ?? "-";
+
+
+                if (key === "preco") {
+                    value = money(value);
+                }
+
+
+                html += `
+                    <td>${value}</td>
                 `;
 
+            });
+
+
+            html += "</tr>";
+
+        });
+
+
+        html += `
+            </table>
+            </div>
+        `;
+
+
+        document.getElementById(
+            "pcCompareContent"
+        ).innerHTML = html;
+
+
+        document.getElementById(
+            "pcModal"
+        ).classList.add("open");
+
+    }
+
+
+    search.addEventListener("input", render);
+    brand.addEventListener("change", render);
+    type.addEventListener("change", render);
+    sort.addEventListener("change", render);
+
+
+    min.addEventListener("input", () => {
+
+        minLabel.textContent =
+            money(min.value);
+
+        render();
+
+    });
+
+
+    max.addEventListener("input", () => {
+
+        maxLabel.textContent =
+            money(max.value);
+
+        render();
+
+    });
+
+
+    document.getElementById(
+        "clearPcFilters"
+    ).addEventListener("click", () => {
+
+        search.value = "";
+        brand.value = "";
+        type.value = "";
+
+        min.value = 0;
+        max.value = 15000;
+
+        minLabel.textContent = "R$ 0";
+        maxLabel.textContent = "R$ 15.000";
+
+        sort.value = "relevancia";
+
+        render();
+
+    });
+
+
+    document.getElementById(
+        "comparePcButton"
+    ).addEventListener(
+        "click",
+        compare
+    );
+
+
+    document.getElementById(
+        "closePcModal"
+    ).addEventListener(
+        "click",
+        () => {
+            document
+                .getElementById("pcModal")
+                .classList.remove("open");
+        }
+    );
+
+
+    document.getElementById(
+        "pcModal"
+    ).addEventListener(
+        "click",
+        event => {
+
+            if (
+                event.target.id === "pcModal"
+            ) {
+                event.target.classList.remove("open");
             }
-        )
-        .join("");
 
-}
-
-
-/* =====================================================
-   EVENTOS
-===================================================== */
-
-busca.addEventListener(
-    "input",
-    renderizar
-);
+        }
+    );
 
 
-ordenacao.addEventListener(
-    "change",
-    renderizar
-);
+    createBrands();
+    render();
 
-
-/* =====================================================
-   INICIAR
-===================================================== */
-
-carregarPCs();
+});
 
 </script>
 
-</body>
+<script src="script.js"></script>
 
+</body>
 </html>
