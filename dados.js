@@ -1,889 +1,896 @@
-// ======================================================
-// CELULARRANK-OFFICIAL
-=========================================================
-CELULARRANK - BANCO DE DADOS
-=========================================================
-  
-window.celulares 
+/* =========================================================
+   CELULARRANK-OFFICIAL
+   dados.js
+   Catálogo de celulares, PCs e notebooks
+========================================================= */
+
+"use strict";
+
+/* =========================================================
+   📱 CELULARES
+========================================================= */
+
+const celulares = [
+
+    /* ================= SAMSUNG ================= */
 
     {
         id: "samsung-a15-5g",
-        nome: "Samsung Galaxy A15 5G",
+        nome: "Galaxy A15 5G",
         marca: "Samsung",
-        preco: 899,
+        categoria: "Celular",
+        preco: 1350,
         ram: "8 GB",
         armazenamento: "256 GB",
-        processador: "MediaTek Dimensity 6100+",
-        camera: "50 MP + 5 MP + 2 MP / 13 MP frontal",
-        bateria: "5000 mAh",
-        tela: "6.5 AMOLED 90Hz",
-        carregamento: "25W",
-        desempenho: 65,
-        jogos: 62,
-        qualidade: 78
+        processador: "Dimensity 6100+",
+        desempenho: 82,
+        jogos: 78,
+        qualidade: 84
     },
-
     {
         id: "samsung-a25-5g",
-        nome: "Samsung Galaxy A25 5G",
+        nome: "Galaxy A25 5G",
         marca: "Samsung",
-        preco: 1199,
+        categoria: "Celular",
+        preco: 1916,
         ram: "8 GB",
         armazenamento: "256 GB",
         processador: "Exynos 1280",
-        camera: "50 MP OIS + 8 MP + 2 MP / 13 MP",
-        bateria: "5000 mAh",
-        tela: "6.5 Super AMOLED 120Hz",
-        carregamento: "25W",
-        desempenho: 72,
-        jogos: 70,
-        qualidade: 82
-    },
-
-    {
-        id: "samsung-a35-5g",
-        nome: "Samsung Galaxy A35 5G",
-        marca: "Samsung",
-        preco: 1599,
-        ram: "8 GB",
-        armazenamento: "256 GB",
-        processador: "Exynos 1380",
-        camera: "50 MP OIS + 8 MP + 5 MP / 13 MP",
-        bateria: "5000 mAh",
-        tela: "6.6 Super AMOLED 120Hz",
-        carregamento: "25W",
-        desempenho: 78,
-        jogos: 76,
+        desempenho: 86,
+        jogos: 82,
         qualidade: 87
     },
-
     {
-        id: "samsung-a55-5g",
-        nome: "Samsung Galaxy A55 5G",
+        id: "samsung-a35-5g",
+        nome: "Galaxy A35 5G",
         marca: "Samsung",
+        categoria: "Celular",
         preco: 1899,
         ram: "8 GB",
         armazenamento: "256 GB",
-        processador: "Exynos 1480",
-        camera: "50 MP OIS + 12 MP + 5 MP / 32 MP",
-        bateria: "5000 mAh",
-        tela: "6.6 Super AMOLED 120Hz",
-        carregamento: "25W",
-        desempenho: 82,
-        jogos: 80,
+        processador: "Exynos 1380",
+        desempenho: 89,
+        jogos: 86,
         qualidade: 91
     },
-
     {
-        id: "samsung-s23",
-        nome: "Samsung Galaxy S23",
+        id: "samsung-a55-5g",
+        nome: "Galaxy A55 5G",
         marca: "Samsung",
+        categoria: "Celular",
         preco: 2399,
         ram: "8 GB",
         armazenamento: "256 GB",
-        processador: "Snapdragon 8 Gen 2",
-        camera: "50 MP + 10 MP tele + 12 MP ultra / 12 MP",
-        bateria: "3900 mAh",
-        tela: "6.1 Dynamic AMOLED 2X 120Hz",
-        carregamento: "25W",
-        desempenho: 94,
-        jogos: 94,
-        qualidade: 95
+        processador: "Exynos 1480",
+        desempenho: 92,
+        jogos: 89,
+        qualidade: 94
     },
-
+    {
+        id: "samsung-s23",
+        nome: "Galaxy S23",
+        marca: "Samsung",
+        categoria: "Celular",
+        preco: 2700,
+        ram: "8 GB",
+        armazenamento: "128 GB",
+        processador: "Snapdragon 8 Gen 2",
+        desempenho: 95,
+        jogos: 96,
+        qualidade: 96
+    },
     {
         id: "samsung-s24",
-        nome: "Samsung Galaxy S24",
+        nome: "Galaxy S24",
         marca: "Samsung",
-        preco: 2999,
+        categoria: "Celular",
+        preco: 3800,
         ram: "8 GB",
         armazenamento: "256 GB",
         processador: "Exynos 2400",
-        camera: "50 MP + 10 MP tele + 12 MP ultra / 12 MP",
-        bateria: "4000 mAh",
-        tela: "6.2 Dynamic AMOLED 2X 120Hz",
-        carregamento: "25W",
-        desempenho: 95,
-        jogos: 94,
-        qualidade: 96
+        desempenho: 96,
+        jogos: 95,
+        qualidade: 97
     },
-
     {
         id: "samsung-s24-ultra",
-        nome: "Samsung Galaxy S24 Ultra",
+        nome: "Galaxy S24 Ultra",
         marca: "Samsung",
-        preco: 5999,
+        categoria: "Celular",
+        preco: 6000,
         ram: "12 GB",
         armazenamento: "512 GB",
-        processador: "Snapdragon 8 Gen 3 for Galaxy",
-        camera: "200 MP + 50 MP + 10 MP + 12 MP / 12 MP",
-        bateria: "5000 mAh",
-        tela: "6.8 Dynamic AMOLED 2X QHD+ 120Hz",
-        carregamento: "45W",
+        processador: "Snapdragon 8 Gen 3",
         desempenho: 99,
         jogos: 99,
         qualidade: 99
     },
 
+    /* ================= APPLE ================= */
 
     {
-        id: "iphone-13",
+        id: "apple-iphone-13",
         nome: "iPhone 13",
         marca: "Apple",
-        preco: 2999,
+        categoria: "Celular",
+        preco: 2790,
         ram: "4 GB",
         armazenamento: "128 GB",
-        processador: "Apple A15 Bionic",
-        camera: "12 MP + 12 MP / 12 MP",
-        bateria: "3227 mAh",
-        tela: "6.1 Super Retina XDR OLED",
-        carregamento: "20W",
-        desempenho: 90,
-        jogos: 91,
-        qualidade: 91
-    },
-
-    {
-        id: "iphone-14",
-        nome: "iPhone 14",
-        marca: "Apple",
-        preco: 3399,
-        ram: "6 GB",
-        armazenamento: "128 GB",
-        processador: "Apple A15 Bionic",
-        camera: "12 MP + 12 MP / 12 MP",
-        bateria: "3279 mAh",
-        tela: "6.1 OLED",
-        carregamento: "20W",
-        desempenho: 91,
-        jogos: 92,
-        qualidade: 92
-    },
-
-    {
-        id: "iphone-15",
-        nome: "iPhone 15",
-        marca: "Apple",
-        preco: 3899,
-        ram: "6 GB",
-        armazenamento: "128 GB",
-        processador: "Apple A16 Bionic",
-        camera: "48 MP + 12 MP / 12 MP",
-        bateria: "3349 mAh",
-        tela: "6.1 OLED",
-        carregamento: "20W",
+        processador: "A15 Bionic",
         desempenho: 94,
-        jogos: 94,
+        jogos: 95,
         qualidade: 95
     },
-
     {
-        id: "iphone-15-pro",
+        id: "apple-iphone-14",
+        nome: "iPhone 14",
+        marca: "Apple",
+        categoria: "Celular",
+        preco: 3200,
+        ram: "6 GB",
+        armazenamento: "128 GB",
+        processador: "A15 Bionic",
+        desempenho: 95,
+        jogos: 96,
+        qualidade: 96
+    },
+    {
+        id: "apple-iphone-15",
+        nome: "iPhone 15",
+        marca: "Apple",
+        categoria: "Celular",
+        preco: 3900,
+        ram: "6 GB",
+        armazenamento: "128 GB",
+        processador: "A16 Bionic",
+        desempenho: 97,
+        jogos: 97,
+        qualidade: 97
+    },
+    {
+        id: "apple-iphone-15-pro",
         nome: "iPhone 15 Pro",
         marca: "Apple",
-        preco: 5299,
+        categoria: "Celular",
+        preco: 5000,
         ram: "8 GB",
         armazenamento: "256 GB",
-        processador: "Apple A17 Pro",
-        camera: "48 MP + 12 MP ultra + 12 MP tele 3x",
-        bateria: "3274 mAh",
-        tela: "6.1 OLED ProMotion 120Hz",
-        carregamento: "20W",
-        desempenho: 98,
-        jogos: 98,
-        qualidade: 98
+        processador: "A17 Pro",
+        desempenho: 99,
+        jogos: 99,
+        qualidade: 99
     },
-
     {
-        id: "iphone-16",
+        id: "apple-iphone-16",
         nome: "iPhone 16",
         marca: "Apple",
-        preco: 4999,
+        categoria: "Celular",
+        preco: 4600,
         ram: "8 GB",
         armazenamento: "128 GB",
-        processador: "Apple A18",
-        camera: "48 MP + 12 MP / 12 MP",
-        bateria: "3561 mAh",
-        tela: "6.1 OLED",
-        carregamento: "20W",
-        desempenho: 98,
-        jogos: 97,
-        qualidade: 98
+        processador: "A18",
+        desempenho: 99,
+        jogos: 98,
+        qualidade: 99
     },
 
+    /* ================= XIAOMI ================= */
 
     {
-        id: "redmi-note-13",
+        id: "xiaomi-redmi-note-13",
         nome: "Redmi Note 13",
         marca: "Xiaomi",
-        preco: 1099,
+        categoria: "Celular",
+        preco: 4000,
         ram: "8 GB",
         armazenamento: "256 GB",
         processador: "Snapdragon 685",
-        camera: "108 MP + 8 MP + 2 MP / 16 MP",
-        bateria: "5000 mAh",
-        tela: "6.67 AMOLED 120Hz",
-        carregamento: "33W",
-        desempenho: 70,
-        jogos: 67,
-        qualidade: 82
+        desempenho: 82,
+        jogos: 78,
+        qualidade: 84
     },
-
     {
-        id: "redmi-note-13-pro",
+        id: "xiaomi-redmi-note-13-pro",
         nome: "Redmi Note 13 Pro",
         marca: "Xiaomi",
-        preco: 1599,
+        categoria: "Celular",
+        preco: 1650,
         ram: "8 GB",
         armazenamento: "256 GB",
         processador: "Snapdragon 7s Gen 2",
-        camera: "200 MP OIS + 8 MP + 2 MP / 16 MP",
-        bateria: "5100 mAh",
-        tela: "6.67 AMOLED 1.5K 120Hz",
-        carregamento: "67W",
-        desempenho: 82,
-        jogos: 80,
-        qualidade: 90
+        desempenho: 90,
+        jogos: 87,
+        qualidade: 91
     },
-
     {
-        id: "redmi-note-13-pro-plus",
+        id: "xiaomi-redmi-note-13-pro-plus",
         nome: "Redmi Note 13 Pro+",
         marca: "Xiaomi",
-        preco: 2199,
+        categoria: "Celular",
+        preco: 1650,
         ram: "12 GB",
         armazenamento: "512 GB",
         processador: "Dimensity 7200 Ultra",
-        camera: "200 MP OIS + 8 MP + 2 MP / 16 MP",
-        bateria: "5000 mAh",
-        tela: "6.67 AMOLED 1.5K 120Hz",
-        carregamento: "120W",
-        desempenho: 88,
-        jogos: 87,
-        qualidade: 93
+        desempenho: 94,
+        jogos: 92,
+        qualidade: 94
     },
-
     {
         id: "xiaomi-14",
         nome: "Xiaomi 14",
         marca: "Xiaomi",
-        preco: 4999,
+        categoria: "Celular",
+        preco: 4000,
         ram: "12 GB",
         armazenamento: "512 GB",
         processador: "Snapdragon 8 Gen 3",
-        camera: "50 MP + 50 MP tele + 50 MP ultra / 32 MP",
-        bateria: "4610 mAh",
-        tela: "6.36 LTPO AMOLED 120Hz",
-        carregamento: "120W",
-        desempenho: 98,
+        desempenho: 99,
         jogos: 98,
         qualidade: 98
     },
 
+    /* ================= MOTOROLA ================= */
 
     {
-        id: "moto-g54",
-        nome: "Motorola Moto G54 5G",
+        id: "motorola-g54",
+        nome: "Moto G54 5G",
         marca: "Motorola",
-        preco: 999,
+        categoria: "Celular",
+        preco: 1200,
         ram: "8 GB",
         armazenamento: "256 GB",
         processador: "Dimensity 7020",
-        camera: "50 MP OIS + 2 MP / 16 MP",
-        bateria: "5000 mAh",
-        tela: "6.5 IPS LCD 120Hz",
-        carregamento: "20W",
-        desempenho: 70,
-        jogos: 68,
-        qualidade: 78
+        desempenho: 83,
+        jogos: 79,
+        qualidade: 84
     },
-
     {
-        id: "moto-g84",
-        nome: "Motorola Moto G84 5G",
+        id: "motorola-g84",
+        nome: "Moto G84 5G",
         marca: "Motorola",
-        preco: 1299,
+        categoria: "Celular",
+        preco: 1400,
         ram: "8 GB",
         armazenamento: "256 GB",
         processador: "Snapdragon 695",
-        camera: "50 MP OIS + 8 MP / 16 MP",
-        bateria: "5000 mAh",
-        tela: "6.55 pOLED 120Hz",
-        carregamento: "30W",
-        desempenho: 72,
-        jogos: 70,
-        qualidade: 84
+        desempenho: 84,
+        jogos: 80,
+        qualidade: 87
     },
-
     {
-        id: "edge-40",
+        id: "motorola-edge-40",
         nome: "Motorola Edge 40",
         marca: "Motorola",
-        preco: 1999,
+        categoria: "Celular",
+        preco: 2000,
         ram: "8 GB",
         armazenamento: "256 GB",
         processador: "Dimensity 8020",
-        camera: "50 MP OIS + 13 MP / 32 MP",
-        bateria: "4400 mAh",
-        tela: "6.55 pOLED 144Hz",
-        carregamento: "68W",
-        desempenho: 84,
-        jogos: 82,
-        qualidade: 91
+        desempenho: 91,
+        jogos: 88,
+        qualidade: 92
     },
-
     {
-        id: "edge-50-pro",
+        id: "motorola-edge-50-pro",
         nome: "Motorola Edge 50 Pro",
         marca: "Motorola",
-        preco: 2999,
+        categoria: "Celular",
+        preco: 2700,
         ram: "12 GB",
         armazenamento: "256 GB",
         processador: "Snapdragon 7 Gen 3",
-        camera: "50 MP OIS + 13 MP + 10 MP tele / 50 MP",
-        bateria: "4500 mAh",
-        tela: "6.7 pOLED 144Hz",
-        carregamento: "125W",
-        desempenho: 87,
-        jogos: 85,
+        desempenho: 92,
+        jogos: 89,
         qualidade: 95
     },
 
+    /* ================= REALME ================= */
 
     {
         id: "realme-c67",
         nome: "Realme C67",
         marca: "Realme",
-        preco: 899,
+        categoria: "Celular",
+        preco: 1200,
         ram: "8 GB",
         armazenamento: "256 GB",
         processador: "Snapdragon 685",
-        camera: "108 MP + 2 MP / 8 MP",
-        bateria: "5000 mAh",
-        tela: "6.72 IPS LCD 90Hz",
-        carregamento: "33W",
-        desempenho: 66,
-        jogos: 62,
-        qualidade: 78
+        desempenho: 82,
+        jogos: 78,
+        qualidade: 83
     },
-
     {
         id: "realme-12-pro",
         nome: "Realme 12 Pro",
         marca: "Realme",
-        preco: 2299,
+        categoria: "Celular",
+        preco: 2300,
         ram: "12 GB",
         armazenamento: "256 GB",
         processador: "Snapdragon 6 Gen 1",
-        camera: "50 MP OIS + 32 MP tele + 8 MP ultra / 16 MP",
-        bateria: "5000 mAh",
-        tela: "6.7 OLED 120Hz",
-        carregamento: "67W",
-        desempenho: 80,
-        jogos: 77,
-        qualidade: 91
+        desempenho: 87,
+        jogos: 83,
+        qualidade: 90
     },
-
     {
         id: "realme-gt-6",
         nome: "Realme GT 6",
         marca: "Realme",
-        preco: 3499,
-        ram: "16 GB",
-        armazenamento: "512 GB",
+        categoria: "Celular",
+        preco: 3000,
+        ram: "12 GB",
+        armazenamento: "256 GB",
         processador: "Snapdragon 8s Gen 3",
-        camera: "50 MP OIS + 50 MP tele + 8 MP ultra / 32 MP",
-        bateria: "5500 mAh",
-        tela: "6.78 LTPO AMOLED 120Hz",
-        carregamento: "120W",
-        desempenho: 96,
-        jogos: 96,
+        desempenho: 97,
+        jogos: 97,
         qualidade: 96
     },
 
+    /* ================= ASUS ================= */
 
     {
-        id: "zenfone-10",
-        nome: "ASUS Zenfone 10",
+        id: "asus-zenfone-10",
+        nome: "Zenfone 10",
         marca: "ASUS",
-        preco: 2999,
+        categoria: "Celular",
+        preco: 3000,
         ram: "8 GB",
-        armazenamento: "256 GB",
+        armazenamento: "128 GB",
         processador: "Snapdragon 8 Gen 2",
-        camera: "50 MP OIS Gimbal + 13 MP ultra / 32 MP",
-        bateria: "4300 mAh",
-        tela: "5.9 AMOLED 144Hz",
-        carregamento: "30W",
-        desempenho: 94,
-        jogos: 94,
+        desempenho: 96,
+        jogos: 97,
         qualidade: 94
     },
-
     {
-        id: "rog-phone-8",
-        nome: "ASUS ROG Phone 8",
+        id: "asus-rog-phone-8",
+        nome: "ROG Phone 8",
         marca: "ASUS",
-        preco: 5499,
+        categoria: "Celular Gamer",
+        preco: 5500,
         ram: "16 GB",
         armazenamento: "512 GB",
         processador: "Snapdragon 8 Gen 3",
-        camera: "50 MP OIS + 13 MP ultra + 32 MP tele / 32 MP",
-        bateria: "5500 mAh",
-        tela: "6.78 AMOLED 165Hz",
-        carregamento: "65W",
-        desempenho: 99,
+        desempenho: 100,
         jogos: 100,
         qualidade: 98
     },
 
+    /* ================= POCO ================= */
 
     {
         id: "poco-x6",
         nome: "POCO X6",
         marca: "POCO",
-        preco: 1599,
+        categoria: "Celular",
+        preco: 2199,
         ram: "8 GB",
         armazenamento: "256 GB",
         processador: "Snapdragon 7s Gen 2",
-        camera: "64 MP OIS + 8 MP + 2 MP / 16 MP",
-        bateria: "5100 mAh",
-        tela: "6.67 AMOLED 120Hz",
-        carregamento: "67W",
-        desempenho: 82,
-        jogos: 82,
+        desempenho: 90,
+        jogos: 88,
         qualidade: 88
     },
-
     {
         id: "poco-x6-pro",
         nome: "POCO X6 Pro",
         marca: "POCO",
-        preco: 1999,
-        ram: "12 GB",
-        armazenamento: "512 GB",
+        categoria: "Celular",
+        preco: 2231,
+        ram: "8 GB",
+        armazenamento: "256 GB",
         processador: "Dimensity 8300 Ultra",
-        camera: "64 MP OIS + 8 MP + 2 MP / 16 MP",
-        bateria: "5000 mAh",
-        tela: "6.67 Flow AMOLED 120Hz",
-        carregamento: "67W",
-        desempenho: 94,
-        jogos: 95,
+        desempenho: 97,
+        jogos: 98,
         qualidade: 91
     },
-
     {
         id: "poco-f6",
         nome: "POCO F6",
         marca: "POCO",
-        preco: 2399,
+        categoria: "Celular",
+        preco: 2199,
         ram: "12 GB",
         armazenamento: "512 GB",
         processador: "Snapdragon 8s Gen 3",
-        camera: "50 MP OIS + 8 MP ultra / 20 MP",
-        bateria: "5000 mAh",
-        tela: "6.67 AMOLED 120Hz",
-        carregamento: "90W",
-        desempenho: 96,
-        jogos: 97,
-        qualidade: 92
+        desempenho: 98,
+        jogos: 99,
+        qualidade: 93
     },
 
+    /* ================= GOOGLE ================= */
 
     {
-        id: "pixel-8",
-        nome: "Google Pixel 8",
+        id: "google-pixel-8",
+        nome: "Pixel 8",
         marca: "Google",
-        preco: 3999,
+        categoria: "Celular",
+        preco: 3200,
         ram: "8 GB",
         armazenamento: "128 GB",
         processador: "Google Tensor G3",
-        camera: "50 MP OIS + 12 MP ultra / 10.5 MP",
-        bateria: "4575 mAh",
-        tela: "6.2 OLED 120Hz",
-        carregamento: "27W",
-        desempenho: 88,
-        jogos: 84,
-        qualidade: 95
+        desempenho: 91,
+        jogos: 86,
+        qualidade: 96
     },
-
     {
-        id: "pixel-8-pro",
-        nome: "Google Pixel 8 Pro",
+        id: "google-pixel-8-pro",
+        nome: "Pixel 8 Pro",
         marca: "Google",
-        preco: 4999,
+        categoria: "Celular",
+        preco: 3200,
         ram: "12 GB",
         armazenamento: "256 GB",
         processador: "Google Tensor G3",
-        camera: "50 MP + 48 MP ultra + 48 MP tele 5x / 10.5 MP",
-        bateria: "5050 mAh",
-        tela: "6.7 LTPO OLED 120Hz",
-        carregamento: "30W",
-        desempenho: 90,
-        jogos: 86,
+        desempenho: 93,
+        jogos: 89,
         qualidade: 98
     },
 
+    /* ================= ONEPLUS ================= */
 
     {
         id: "oneplus-12",
         nome: "OnePlus 12",
         marca: "OnePlus",
-        preco: 4999,
-        ram: "16 GB",
-        armazenamento: "512 GB",
+        categoria: "Celular",
+        preco: 4000,
+        ram: "12 GB",
+        armazenamento: "256 GB",
         processador: "Snapdragon 8 Gen 3",
-        camera: "50 MP OIS + 64 MP tele + 48 MP ultra / 32 MP",
-        bateria: "5400 mAh",
-        tela: "6.82 LTPO AMOLED 120Hz",
-        carregamento: "100W",
         desempenho: 99,
         jogos: 99,
-        qualidade: 98
+        qualidade: 97
     },
+
+    /* ================= HONOR ================= */
 
     {
         id: "honor-90",
         nome: "Honor 90",
         marca: "Honor",
-        preco: 2199,
+        categoria: "Celular",
+        preco: 2200,
         ram: "12 GB",
         armazenamento: "512 GB",
-        processador: "Snapdragon 7 Gen 1 Accelerated",
-        camera: "200 MP + 12 MP + 2 MP / 50 MP",
-        bateria: "5000 mAh",
-        tela: "6.7 AMOLED 1.5K 120Hz",
-        carregamento: "66W",
-        desempenho: 81,
-        jogos: 77,
+        processador: "Snapdragon 7 Gen 1",
+        desempenho: 88,
+        jogos: 84,
         qualidade: 91
     },
+
+    /* ================= OPPO ================= */
 
     {
         id: "oppo-reno-11",
         nome: "OPPO Reno 11",
         marca: "OPPO",
-        preco: 2499,
+        categoria: "Celular",
+        preco: 2000,
         ram: "12 GB",
         armazenamento: "256 GB",
         processador: "Dimensity 7050",
-        camera: "50 MP OIS + 32 MP tele + 8 MP ultra / 32 MP",
-        bateria: "5000 mAh",
-        tela: "6.7 AMOLED 120Hz",
-        carregamento: "67W",
-        desempenho: 79,
-        jogos: 76,
+        desempenho: 86,
+        jogos: 82,
         qualidade: 91
     },
+
+    /* ================= NOTHING ================= */
 
     {
         id: "nothing-phone-2",
         nome: "Nothing Phone (2)",
         marca: "Nothing",
-        preco: 2999,
-        ram: "12 GB",
+        categoria: "Celular",
+        preco: 3000,
+        ram: "8 GB",
         armazenamento: "256 GB",
         processador: "Snapdragon 8+ Gen 1",
-        camera: "50 MP OIS + 50 MP ultra / 32 MP",
-        bateria: "4700 mAh",
-        tela: "6.7 LTPO OLED 120Hz",
-        carregamento: "45W",
-        desempenho: 88,
-        jogos: 87,
-        qualidade: 93
+        desempenho: 93,
+        jogos: 91,
+        qualidade: 94
     }
-
 ];
 
 
-window.pcs = [
+/* =========================================================
+   💻 PCS E NOTEBOOKS
+========================================================= */
+
+const pcs = [
 
     {
-        id: "pc-r5-4600g",
-        nome: "PC Gamer Ryzen 5 4600G",
-        marca: "AMD",
-        tipo: "Gamer",
-        preco: 1599,
-        ram: "16 GB DDR4",
-        armazenamento: "SSD 480 GB",
-        processador: "Ryzen 5 4600G",
-        gpu: "Radeon Vega integrada",
-        desempenho: 68,
-        jogos: 62,
-        qualidade: 78
-    },
-
-    {
-        id: "pc-r5-5600g",
-        nome: "PC Gamer Ryzen 5 5600G",
-        marca: "AMD",
-        tipo: "Gamer",
-        preco: 1899,
-        ram: "16 GB DDR4",
-        armazenamento: "SSD 512 GB",
-        processador: "Ryzen 5 5600G",
-        gpu: "Radeon Vega 7",
-        desempenho: 76,
-        jogos: 72,
+        id: "lenovo-ideapad-3",
+        nome: "IdeaPad 3",
+        marca: "Lenovo",
+        categoria: "Notebook",
+        preco: 3000,
+        ram: "8 GB",
+        armazenamento: "256 GB SSD",
+        processador: "Ryzen 5",
+        video: "Integrado",
+        desempenho: 78,
+        jogos: 65,
         qualidade: 84
     },
 
     {
-        id: "pc-r5-5600-rx6600",
-        nome: "PC Gamer Ryzen 5 5600 + RX 6600",
-        marca: "AMD",
-        tipo: "Gamer",
-        preco: 2599,
-        ram: "16 GB DDR4",
-        armazenamento: "SSD 512 GB",
-        processador: "Ryzen 5 5600",
-        gpu: "Radeon RX 6600 8 GB",
-        desempenho: 87,
-        jogos: 90,
-        qualidade: 89
-    },
-
-    {
-        id: "pc-r5-5600-rtx4060",
-        nome: "PC Gamer Ryzen 5 5600 + RTX 4060",
-        marca: "AMD",
-        tipo: "Gamer",
-        preco: 3299,
-        ram: "16 GB DDR4",
-        armazenamento: "SSD 1 TB",
-        processador: "Ryzen 5 5600",
-        gpu: "RTX 4060 8 GB",
-        desempenho: 91,
-        jogos: 94,
-        qualidade: 92
-    },
-
-    {
-        id: "pc-r7-5700x-4060",
-        nome: "PC Gamer Ryzen 7 5700X + RTX 4060",
-        marca: "AMD",
-        tipo: "Gamer",
-        preco: 3799,
-        ram: "32 GB DDR4",
-        armazenamento: "SSD 1 TB NVMe",
-        processador: "Ryzen 7 5700X",
-        gpu: "RTX 4060 8 GB",
-        desempenho: 94,
-        jogos: 95,
-        qualidade: 94
-    },
-
-    {
-        id: "pc-i5-12400f-4060",
-        nome: "PC Gamer Core i5-12400F + RTX 4060",
-        marca: "Intel",
-        tipo: "Gamer",
-        preco: 3399,
-        ram: "16 GB DDR4",
-        armazenamento: "SSD 1 TB",
-        processador: "Intel Core i5-12400F",
-        gpu: "RTX 4060 8 GB",
-        desempenho: 91,
-        jogos: 94,
-        qualidade: 91
-    },
-
-    {
-        id: "pc-i5-13400f-4060ti",
-        nome: "PC Gamer Core i5-13400F + RTX 4060 Ti",
-        marca: "Intel",
-        tipo: "Gamer",
-        preco: 4299,
-        ram: "32 GB DDR4",
-        armazenamento: "SSD 1 TB NVMe",
-        processador: "Intel Core i5-13400F",
-        gpu: "RTX 4060 Ti 8 GB",
-        desempenho: 95,
-        jogos: 97,
-        qualidade: 95
-    },
-
-    {
-        id: "pc-r7-7700x-4070",
-        nome: "PC Gamer Ryzen 7 7700X + RTX 4070",
-        marca: "AMD",
-        tipo: "Gamer",
-        preco: 6999,
-        ram: "32 GB DDR5",
-        armazenamento: "SSD 1 TB NVMe",
-        processador: "Ryzen 7 7700X",
-        gpu: "RTX 4070 12 GB",
-        desempenho: 99,
-        jogos: 99,
-        qualidade: 99
-    },
-
-    {
         id: "lenovo-loq",
-        nome: "Lenovo LOQ Gaming",
+        nome: "LOQ",
         marca: "Lenovo",
-        tipo: "Notebook",
-        preco: 3499,
+        categoria: "Notebook Gamer",
+        preco: 6500,
         ram: "16 GB",
-        armazenamento: "SSD 512 GB",
-        processador: "Intel Core i5",
-        gpu: "RTX 3050",
-        desempenho: 86,
-        jogos: 87,
-        qualidade: 90
+        armazenamento: "512 GB SSD",
+        processador: "Core i5",
+        video: "NVIDIA GeForce RTX",
+        desempenho: 94,
+        jogos: 94,
+        qualidade: 93
     },
 
     {
-        id: "asus-tuf-a15",
-        nome: "ASUS TUF Gaming A15",
+        id: "asus-vivobook",
+        nome: "Vivobook",
         marca: "ASUS",
-        tipo: "Notebook",
-        preco: 4299,
+        categoria: "Notebook",
+        preco: 3700,
+        ram: "8 GB",
+        armazenamento: "256 GB SSD",
+        processador: "Core i5",
+        video: "Integrado",
+        desempenho: 82,
+        jogos: 68,
+        qualidade: 87
+    },
+
+    {
+        id: "asus-tuf-gaming",
+        nome: "TUF Gaming",
+        marca: "ASUS",
+        categoria: "Notebook Gamer",
+        preco: 8700,
         ram: "16 GB",
-        armazenamento: "SSD 512 GB",
+        armazenamento: "512 GB SSD",
         processador: "Ryzen 7",
-        gpu: "RTX 4060",
-        desempenho: 94,
+        video: "NVIDIA GeForce RTX",
+        desempenho: 96,
         jogos: 97,
         qualidade: 94
     },
 
     {
-        id: "acer-nitro-v",
-        nome: "Acer Nitro V",
+        id: "acer-aspire-5",
+        nome: "Aspire 5",
         marca: "Acer",
-        tipo: "Notebook",
-        preco: 3999,
-        ram: "16 GB",
-        armazenamento: "SSD 512 GB",
-        processador: "Intel Core i5",
-        gpu: "RTX 4050",
-        desempenho: 91,
-        jogos: 93,
-        qualidade: 91
-    },
-
-    {
-        id: "lenovo-ideapad-3",
-        nome: "Lenovo IdeaPad 3",
-        marca: "Lenovo",
-        tipo: "Trabalho",
-        preco: 2299,
+        categoria: "Notebook",
+        preco: 4000,
         ram: "8 GB",
-        armazenamento: "SSD 512 GB",
-        processador: "Ryzen 5",
-        gpu: "Radeon integrada",
-        desempenho: 70,
-        jogos: 58,
-        qualidade: 82
-    },
-
-    {
-        id: "asus-vivobook-15",
-        nome: "ASUS Vivobook 15",
-        marca: "ASUS",
-        tipo: "Trabalho",
-        preco: 2499,
-        ram: "16 GB",
-        armazenamento: "SSD 512 GB",
-        processador: "Intel Core i5",
-        gpu: "Intel integrada",
-        desempenho: 75,
-        jogos: 60,
+        armazenamento: "256 GB SSD",
+        processador: "Core i5",
+        video: "Integrado",
+        desempenho: 82,
+        jogos: 68,
         qualidade: 86
     },
 
     {
-        id: "macbook-air-m2",
-        nome: "MacBook Air M2",
-        marca: "Apple",
-        tipo: "Notebook",
-        preco: 6499,
+        id: "acer-nitro-v",
+        nome: "Nitro V",
+        marca: "Acer",
+        categoria: "Notebook Gamer",
+        preco: 7000,
+        ram: "16 GB",
+        armazenamento: "512 GB SSD",
+        processador: "Core i5",
+        video: "NVIDIA GeForce RTX",
+        desempenho: 94,
+        jogos: 95,
+        qualidade: 92
+    },
+
+    {
+        id: "dell-inspiron",
+        nome: "Inspiron",
+        marca: "Dell",
+        categoria: "Notebook",
+        preco: 4000,
         ram: "8 GB",
-        armazenamento: "SSD 256 GB",
-        processador: "Apple M2",
-        gpu: "GPU integrada 8-core",
+        armazenamento: "256 GB SSD",
+        processador: "Core i5",
+        video: "Integrado",
+        desempenho: 81,
+        jogos: 65,
+        qualidade: 89
+    },
+
+    {
+        id: "hp-250",
+        nome: "HP 250",
+        marca: "HP",
+        categoria: "Notebook",
+        preco: 3500,
+        ram: "8 GB",
+        armazenamento: "256 GB SSD",
+        processador: "Core i5",
+        video: "Integrado",
+        desempenho: 81,
+        jogos: 64,
+        qualidade: 86
+    },
+
+    {
+        id: "pc-ryzen-5-5600g",
+        nome: "PC Gamer Ryzen 5 5600G",
+        marca: "AMD",
+        categoria: "PC Gamer",
+        preco: 2500,
+        ram: "16 GB",
+        armazenamento: "480 GB SSD",
+        processador: "Ryzen 5 5600G",
+        video: "Radeon Vega Integrado",
+        desempenho: 85,
+        jogos: 78,
+        qualidade: 86
+    },
+
+    {
+        id: "pc-ryzen-5-5600",
+        nome: "PC Gamer Ryzen 5 5600",
+        marca: "AMD",
+        categoria: "PC Gamer",
+        preco: 3500,
+        ram: "16 GB",
+        armazenamento: "512 GB SSD",
+        processador: "Ryzen 5 5600",
+        video: "Placa de vídeo dedicada",
         desempenho: 91,
-        jogos: 73,
+        jogos: 90,
+        qualidade: 90
+    },
+
+    {
+        id: "pc-ryzen-7-5700x",
+        nome: "PC Gamer Ryzen 7 5700X",
+        marca: "AMD",
+        categoria: "PC Gamer",
+        preco: 5000,
+        ram: "32 GB",
+        armazenamento: "1 TB SSD",
+        processador: "Ryzen 7 5700X",
+        video: "Placa de vídeo dedicada",
+        desempenho: 95,
+        jogos: 94,
+        qualidade: 94
+    },
+
+    {
+        id: "pc-core-i3",
+        nome: "PC Core i3",
+        marca: "Intel",
+        categoria: "PC",
+        preco: 2000,
+        ram: "8 GB",
+        armazenamento: "240 GB SSD",
+        processador: "Core i3",
+        video: "Integrado",
+        desempenho: 70,
+        jogos: 55,
+        qualidade: 78
+    },
+
+    {
+        id: "pc-core-i5",
+        nome: "PC Gamer Core i5",
+        marca: "Intel",
+        categoria: "PC Gamer",
+        preco: 3500,
+        ram: "16 GB",
+        armazenamento: "512 GB SSD",
+        processador: "Core i5",
+        video: "Placa de vídeo dedicada",
+        desempenho: 92,
+        jogos: 90,
+        qualidade: 91
+    },
+
+    {
+        id: "pc-core-i7",
+        nome: "PC Gamer Core i7",
+        marca: "Intel",
+        categoria: "PC Gamer",
+        preco: 5000,
+        ram: "32 GB",
+        armazenamento: "1 TB SSD",
+        processador: "Core i7",
+        video: "Placa de vídeo dedicada",
+        desempenho: 97,
+        jogos: 96,
         qualidade: 96
     },
 
     {
-        id: "macbook-air-m3",
-        nome: "MacBook Air M3",
-        marca: "Apple",
-        tipo: "Notebook",
-        preco: 7999,
-        ram: "8 GB",
-        armazenamento: "SSD 256 GB",
-        processador: "Apple M3",
-        gpu: "GPU integrada 8-core",
-        desempenho: 95,
-        jogos: 78,
-        qualidade: 98
+        id: "msi-katana",
+        nome: "MSI Katana",
+        marca: "MSI",
+        categoria: "Notebook Gamer",
+        preco: 7000,
+        ram: "16 GB",
+        armazenamento: "512 GB SSD",
+        processador: "Core i7",
+        video: "NVIDIA GeForce RTX",
+        desempenho: 96,
+        jogos: 97,
+        qualidade: 94
     },
 
     {
-        id: "pc-i3-rx580",
-        nome: "PC Gamer Core i3 + RX 580",
-        marca: "Intel",
-        tipo: "Gamer",
-        preco: 1899,
-        ram: "16 GB DDR4",
-        armazenamento: "SSD 480 GB",
-        processador: "Core i3-12100F",
-        gpu: "RX 580 8 GB",
-        desempenho: 75,
-        jogos: 79,
-        qualidade: 80
+        id: "gigabyte-g5",
+        nome: "Gigabyte G5",
+        marca: "Gigabyte",
+        categoria: "Notebook Gamer",
+        preco: 6500,
+        ram: "16 GB",
+        armazenamento: "512 GB SSD",
+        processador: "Core i5",
+        video: "NVIDIA GeForce RTX",
+        desempenho: 93,
+        jogos: 94,
+        qualidade: 91
     }
-
 ];
 
-// ======================================================
-// LISTAS AUXILIARES
-// ======================================================
-
-window.CelularRankData = {
-    celulares: window.celulares,
-    pcs: window.pcs
-};
-
-const marcasCelulares = [
-  ...new Set(
-    celulares.map(
-      item => item.marca
-    )
-  )
-].sort();
-
-const marcasPCs = [
-  ...new Set(
-    pcs.map(
-      item => item.marca
-    )
-  )
-].sort();
-
-
-// Compatibilidade com páginas antigas
-const celularesData = celulares;
-const pcsData = pcs;
 
 /* =========================================================
-   🧪 TESTE DO CATÁLOGO
+   🏷️ MARCAS
 ========================================================= */
 
-console.log("====================================");
-console.log("📱 CELULARRANK");
-console.log("====================================");
+const marcasCelulares = [
+    ...new Set(
+        celulares.map(celular => celular.marca)
+    )
+];
 
-console.log("Celulares:", celulares.length);
-console.log("PCs/Notebooks:", pcs.length);
-console.log("Total:", todosProdutos.length);
+const marcasPCs = [
+    ...new Set(
+        pcs.map(pc => pc.marca)
+    )
+];
 
-console.log("====================================");
-console.log("✅ dados.js carregado corretamente!");
-console.log("====================================");
+
+/* =========================================================
+   📦 TODOS OS PRODUTOS
+========================================================= */
+
+const todosProdutos = [
+    ...celulares,
+    ...pcs
+];
+
+
+/* =========================================================
+   💰 FORMATAÇÃO DE PREÇO
+========================================================= */
+
+function precoBRL(valor) {
+
+    const numero = Number(valor);
+
+    if (
+        valor === null ||
+        valor === undefined ||
+        valor === "" ||
+        !Number.isFinite(numero) ||
+        numero <= 0
+    ) {
+        return "Preço não informado";
+    }
+
+    return numero.toLocaleString(
+        "pt-BR",
+        {
+            style: "currency",
+            currency: "BRL"
+        }
+    );
+}
+
+
+/* =========================================================
+   🏆 NOTA GERAL
+========================================================= */
+
+function calcularNota(produto) {
+
+    const notas = [
+        Number(produto.desempenho),
+        Number(produto.jogos),
+        Number(produto.qualidade)
+    ].filter(Number.isFinite);
+
+    if (!notas.length) {
+        return 0;
+    }
+
+    return Math.round(
+        notas.reduce(
+            (total, nota) => total + nota,
+            0
+        ) / notas.length
+    );
+}
+
+
+/* =========================================================
+   🏆 RANKING
+========================================================= */
+
+function ordenarPorRanking(lista) {
+
+    return [...lista].sort(
+        (a, b) =>
+            calcularNota(b) -
+            calcularNota(a)
+    );
+}
+
+
+/* =========================================================
+   🔎 PESQUISA
+========================================================= */
+
+function pesquisarProdutos(lista, termo) {
+
+    const busca = String(termo || "")
+        .toLowerCase()
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "")
+        .trim();
+
+    if (!busca) {
+        return [...lista];
+    }
+
+    return lista.filter(produto => {
+
+        const texto = [
+            produto.nome,
+            produto.marca,
+            produto.processador,
+            produto.categoria,
+            produto.video,
+            produto.ram,
+            produto.armazenamento
+        ]
+        .map(
+            valor =>
+                String(valor || "")
+        )
+        .join(" ")
+        .toLowerCase()
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "");
+
+        return texto.includes(busca);
+    });
+}
+
+
+/* =========================================================
+   📊 ESTATÍSTICAS
+========================================================= */
+
+function estatisticasCatalogo() {
+
+    return {
+        celulares: celulares.length,
+        pcs: pcs.length,
+        total: todosProdutos.length,
+        marcasCelulares:
+            marcasCelulares.length,
+        marcasPCs:
+            marcasPCs.length
+    };
+}
 
 
 /* =========================================================
@@ -894,21 +901,63 @@ window.celulares = celulares;
 window.pcs = pcs;
 window.todosProdutos = todosProdutos;
 
-window.marcasCelulares = marcasCelulares;
-window.marcasPCs = marcasPCs;
+window.marcasCelulares =
+    marcasCelulares;
 
-window.precoBRL = precoBRL;
-window.calcularNota = calcularNota;
-window.ordenarPorRanking = ordenarPorRanking;
-window.pesquisarProdutos = pesquisarProdutos;
-window.produtosComPreco = produtosComPreco;
-window.estatisticasCatalogo = estatisticasCatalogo;
+window.marcasPCs =
+    marcasPCs;
+
+window.precoBRL =
+    precoBRL;
+
+window.calcularNota =
+    calcularNota;
+
+window.ordenarPorRanking =
+    ordenarPorRanking;
+
+window.pesquisarProdutos =
+    pesquisarProdutos;
+
+window.estatisticasCatalogo =
+    estatisticasCatalogo;
 
 
 /* =========================================================
-   ✅ FINAL
+   🧪 TESTE DO CATÁLOGO
 ========================================================= */
 
-console.log("📱 Celulares disponíveis:", window.celulares.length);
-console.log("💻 PCs disponíveis:", window.pcs.length);
-console.log("📦 Produtos disponíveis:", window.todosProdutos.length);
+console.log("====================================");
+console.log("📱 CELULARRANK");
+console.log("====================================");
+
+console.log(
+    "Celulares:",
+    celulares.length
+);
+
+console.log(
+    "PCs/Notebooks:",
+    pcs.length
+);
+
+console.log(
+    "Total:",
+    todosProdutos.length
+);
+
+console.log(
+    "Marcas de celulares:",
+    marcasCelulares.length
+);
+
+console.log(
+    "Marcas de PCs:",
+    marcasPCs.length
+);
+
+console.log("====================================");
+console.log(
+    "✅ dados.js carregado corretamente!"
+);
+console.log("====================================");
